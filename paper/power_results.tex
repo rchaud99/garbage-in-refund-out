@@ -1,0 +1,19 @@
+\subsection{Prospective six-wording, three-task Flash extension}
+
+The analysis and decision rule were frozen before the first call in \texttt{PREREGISTRATION.md}. There were 3,672 valid decisions, two repeats per item, three action-tied and three answer-tied triggers, with identical check content within each task. The sample was reduced before collection to fit the budget: 65 airline bases, 30 orders per retail-cancel family, 43 per retail-return family and five clean controls per family/task.
+
+\begin{center}\small\begin{tabular}{lccc}\toprule Task & Action refusals & Answer refusals & Bases \\\midrule
+Airline cancel & 288/390 & 10/390 & 65 \\
+Retail cancel & 0/180 & 0/180 & 30 \\
+Retail return & 0/258 & 0/258 & 43 \\
+\bottomrule\end{tabular}\end{center}
+
+The mixed-effects logistic model used random intercepts for base/order, paraphrase and task. The action/answer odds ratio was 4999.98, approximate 95\% Wald CI [97.51,256385.48], fitted by Laplace maximum likelihood. Only 1/3 tasks pointed in the predicted direction. The refusal leak was task-specific; the prespecified cross-task rule did not hold.
+
+
+
+The model assumes a common wording-type coefficient despite task heterogeneity; only three tasks and six paraphrases inform their variance components. Both retail tasks share one status/tracking invariant, verified on all 1,000 source orders. A deterministic 120-summary sample was read and annotated by Codex, with full records in \texttt{reports/power-review.md}. These are model-generated summaries, not direct observations of all internal computation. 
+
+The fitted task-intercept standard deviation was 13.52 log-odds units. With zero events in both retail tasks, the pooled odds-ratio magnitude is unstable and should not be treated as a portable multiplier. All four optimizer starts agreed numerically, but convergence does not resolve sparse task-level information. The paired airline refusal difference was 71.3 percentage points (95\% cluster-bootstrap CI [64.6,77.4]); both retail differences were zero. No bad payouts or return approvals were observed (0/1,656 corrupted yes decisions), and clean-control errors were 0/360 (only five bases per clean family/task).
+
+In the presampled qualitative review, 5/10 airline action-tied D summaries and 10/10 answer-tied D summaries showed a concrete arithmetic check. All 20 sampled airline C and all 80 retail summaries showed a concrete check. Seven of 120 summaries referred to a benchmark or test; these generated claims do not establish training contamination.

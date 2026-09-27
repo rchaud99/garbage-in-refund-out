@@ -1,0 +1,27 @@
+[project]
+name = "refundout"
+version = "0.1.0"
+description = "Garbage In, Refund Out: does a customer-service agent check a reservation's own receipt before refunding it?"
+requires-python = ">=3.12"
+dependencies = [
+    "lookworth",
+    "python-dotenv>=1.2.3",
+]
+
+[tool.uv.sources]
+lookworth = { path = "../how_much_is_a_look_worth", editable = true }
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.11.2",
+    "pytest>=8",
+    "ruff>=0.16.9",
+    "scipy>=1.18.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

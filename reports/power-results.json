@@ -1,0 +1,1923 @@
+{
+  "run": "2026-09-25_160547_power-flash",
+  "status": "complete",
+  "planned": 3672,
+  "received": 3672,
+  "valid": 3672,
+  "api_errors": 0,
+  "unreadable": 0,
+  "cost_usd": 21.71294325,
+  "rates": [
+    {
+      "task": "airline",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "wrongful_refusal",
+      "k": 288,
+      "n": 390,
+      "bases": 65,
+      "rate": 0.7384615384615385,
+      "ci95": [
+        0.6666666666666666,
+        0.8051282051282052
+      ],
+      "degenerate_bootstrap": false
+    },
+    {
+      "task": "airline",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 390,
+      "bases": 65,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "wrongful_refusal",
+      "k": 10,
+      "n": 390,
+      "bases": 65,
+      "rate": 0.02564102564102564,
+      "ci95": [
+        0.010256410256410256,
+        0.04358974358974359
+      ],
+      "degenerate_bootstrap": false
+    },
+    {
+      "task": "airline",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 390,
+      "bases": 65,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "wrongful_refusal",
+      "k": 75,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.5769230769230769,
+      "ci95": [
+        0.46923076923076923,
+        0.6846153846153846
+      ],
+      "degenerate_bootstrap": false
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "wrongful_refusal",
+      "k": 109,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.8384615384615385,
+      "ci95": [
+        0.7615384615384615,
+        0.9076923076923077
+      ],
+      "degenerate_bootstrap": false
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "wrongful_refusal",
+      "k": 104,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.8,
+      "ci95": [
+        0.7153846153846154,
+        0.8769230769230769
+      ],
+      "degenerate_bootstrap": false
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "wrongful_refusal",
+      "k": 10,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.07692307692307693,
+      "ci95": [
+        0.03076923076923077,
+        0.13076923076923078
+      ],
+      "degenerate_bootstrap": false
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 130,
+      "bases": 65,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "airline",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 180,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 180,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 180,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 180,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 60,
+      "bases": 30,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_cancel",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 258,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 258,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 258,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 258,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 30,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 86,
+      "bases": 43,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_return",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 10,
+      "bases": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    }
+  ],
+  "contrasts": {
+    "airline": {
+      "bases": 65,
+      "difference": 0.7128205128205127,
+      "ci95": [
+        0.6461538461538461,
+        0.7743589743589744
+      ]
+    },
+    "retail_cancel": {
+      "bases": 30,
+      "difference": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "retail_return": {
+      "bases": 43,
+      "difference": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "primary": {
+    "method": "Laplace maximum likelihood; approximate Wald CI",
+    "beta": [
+      -21.24389224248816,
+      8.517189501793693
+    ],
+    "se": [
+      4.945844924619648,
+      2.008799925341994
+    ],
+    "odds_ratio": 4999.981551921311,
+    "ci95": [
+      97.50870422516722,
+      256385.4757194174
+    ],
+    "p_value": 2.2358035965147413e-05,
+    "random_sd": {
+      "base": 1.9070680582285748,
+      "paraphrase": 1.8346076082652019,
+      "task": 13.517475790980471
+    },
+    "boundary_components": [],
+    "usable": true,
+    "min_information_eigenvalue": 0.040040293253179336,
+    "free_information_indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "fits": [
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "nll": 227.11488122938084,
+        "theta": [
+          -21.24371037628561,
+          8.51721692427935,
+          0.6455679891378107,
+          0.6068360449529363,
+          2.603953978382013
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "nll": 227.1148812280073,
+        "theta": [
+          -21.243880757386158,
+          8.517174040871287,
+          0.645567135116234,
+          0.6068259044531399,
+          2.603984071790266
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "nll": 227.11488122872188,
+        "theta": [
+          -21.243999586038658,
+          8.51717864667538,
+          0.6455679883482449,
+          0.6068253866306496,
+          2.6039957119062227
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "nll": 227.11488122798676,
+        "theta": [
+          -21.24389224248816,
+          8.517189501793693,
+          0.6455670146173125,
+          0.606830621182389,
+          2.603983351333301
+        ]
+      }
+    ],
+    "n": 1656
+  },
+  "same_direction_tasks": 1,
+  "rule_held": false
+}

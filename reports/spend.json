@@ -1,0 +1,319 @@
+{
+  "totals_usd": {
+    "historical": 66.0652715,
+    "historical_uncertain_reserve": 0.0,
+    "campaign": 23.17088625,
+    "campaign_uncertain_reserve": 0.0,
+    "effort": 4.0733895,
+    "effort_uncertain_reserve": 0.0
+  },
+  "cumulative_gemini_logged_cost_bound_usd": {
+    "single_decisions": 44.59704525,
+    "all_conversations_including_non_gemini": 6.88912,
+    "conservative_total": 51.48616525
+  },
+  "record_counts": {
+    "historical": 5409,
+    "campaign": 3922,
+    "effort": 600
+  },
+  "runs": [
+    {
+      "run": "2026-09-24_105442_gate-12-bases-gemini-3.8-flash-claude-sonnet-5-claude-opus-5-5",
+      "category": "historical",
+      "records": 420,
+      "cost_usd": 4.729328,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_114427_gate-12-bases-claude-opus-5-5",
+      "category": "historical",
+      "records": 60,
+      "cost_usd": 1.517784,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_114703_gate-12-bases-claude-sonnet-5-gemini-3.8-flash-claude-opus-5-5",
+      "category": "historical",
+      "records": 180,
+      "cost_usd": 2.76172625,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_115517_gate-12-bases-gemini-3.8-flash",
+      "category": "historical",
+      "records": 60,
+      "cost_usd": 0.3647535,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_120344_gate-12-bases-gemini-3.8-flash",
+      "category": "historical",
+      "records": 60,
+      "cost_usd": 0.4313685,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_121112_gate-12-bases-neutral-script-claude-sonnet-5-claude-opus-5-5",
+      "category": "historical",
+      "records": 180,
+      "cost_usd": 3.331716,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_121450_gate-12-bases-neutral-script-gemini-3.8-flash",
+      "category": "historical",
+      "records": 120,
+      "cost_usd": 0.7724055,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_124457_gate-12-bases-provenance-claude-opus-5-5-claude-sonnet-5-gemini-3.8-flash",
+      "category": "historical",
+      "records": 144,
+      "cost_usd": 1.8865685,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_124916_gate-12-bases-provenance-gemini-3.8-flash",
+      "category": "historical",
+      "records": 48,
+      "cost_usd": 0.40274325,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_131658_gate-12-bases-provenance-gemini-3.8-flash",
+      "category": "historical",
+      "records": 48,
+      "cost_usd": 0.588225,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_131700_gate-12-bases-gemini-3.8-flash",
+      "category": "historical",
+      "records": 60,
+      "cost_usd": 0.42140475,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_162222_gate-12-bases-provenance-claude-sonnet-5-claude-opus-5-5",
+      "category": "historical",
+      "records": 96,
+      "cost_usd": 2.17552,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_171057_retail-2-bases-gemini-3.8-flash",
+      "category": "historical",
+      "records": 48,
+      "cost_usd": 0.48658049999999997,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_171242_retail-12-bases-gemini-3.8-flash-claude-sonnet-5-claude-opus-5-5",
+      "category": "historical",
+      "records": 768,
+      "cost_usd": 2.68756575,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_171339_gate-12-bases-fee-35-gemini-3.8-flash-claude-sonnet-5-claude-opus-5-5",
+      "category": "historical",
+      "records": 180,
+      "cost_usd": 2.93431825,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_172059_retail-1-bases-claude-sonnet-5",
+      "category": "historical",
+      "records": 8,
+      "cost_usd": 0.113834,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_172122_retail-12-bases-claude-sonnet-5-claude-opus-5-5",
+      "category": "historical",
+      "records": 480,
+      "cost_usd": 11.403612,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_181940_episodes-1-bases-flash",
+      "category": "historical",
+      "records": 2,
+      "cost_usd": 0.13726,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-24_182105_episodes-8-bases-flash-sonnet",
+      "category": "historical",
+      "records": 96,
+      "cost_usd": 6.40846,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-25_151001_gate-48-bases-skip-12-cells-CD-neutral-script-gemini-3.8-flash-claude-sonnet-5",
+      "category": "historical",
+      "records": 768,
+      "cost_usd": 7.53728975,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-25_151002_gate-24-bases-skip-12-cells-CD-neutral-script-claude-opus-5-5",
+      "category": "historical",
+      "records": 192,
+      "cost_usd": 5.10408,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-25_151003_gate-12-bases-skip-12-cells-AB-neutral-script-gemini-3.8-flash-claude-sonnet-5",
+      "category": "historical",
+      "records": 192,
+      "cost_usd": 1.61143075,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-25_151513_cancel-36-12-orders-gemini-3.8-flash-claude-sonnet-5",
+      "category": "historical",
+      "records": 384,
+      "cost_usd": 2.855535,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-25_153920_gate-48-bases-skip-60-cells-CD-neutral-script-gemini-3.8-flash-claude-sonnet-5",
+      "category": "historical",
+      "records": 353,
+      "cost_usd": 2.461182,
+      "uncertain_reserve_usd": 0,
+      "status": "running"
+    },
+    {
+      "run": "2026-09-25_154341_gate-24-bases-skip-108-cells-ABCD-neutral-script-gemini-3.8-flash-claude-sonnet-5-claude-opus-5-5",
+      "category": "historical",
+      "records": 91,
+      "cost_usd": 0.423252,
+      "uncertain_reserve_usd": 0,
+      "status": "running"
+    },
+    {
+      "run": "2026-09-25_154345_cancel-36-12-orders-two-way-gemini-3.8-flash-claude-sonnet-5",
+      "category": "historical",
+      "records": 49,
+      "cost_usd": 0.24163425,
+      "uncertain_reserve_usd": 0,
+      "status": "running"
+    },
+    {
+      "run": "2026-09-25_154354_episodes-30-bases-skip-12-sonnet-F1-F1d",
+      "category": "historical",
+      "records": 6,
+      "cost_usd": 0.12348,
+      "uncertain_reserve_usd": 0,
+      "status": "running"
+    },
+    {
+      "run": "2026-09-25_154502_episodes-30-bases-skip-12-sonnet-F1-F1d",
+      "category": "historical",
+      "records": 3,
+      "cost_usd": 0.21992,
+      "uncertain_reserve_usd": 0,
+      "status": "running"
+    },
+    {
+      "run": "2026-09-25_154622_queued-48-bases-skip-12-gemini-3.8-flash",
+      "category": "historical",
+      "records": 150,
+      "cost_usd": 0.98329875,
+      "uncertain_reserve_usd": 0,
+      "status": "running"
+    },
+    {
+      "run": "2026-09-25_154628_gate-48-bases-skip-12-cells-ABCD-neutral-script-gemini-3.8-flash",
+      "category": "historical",
+      "records": 163,
+      "cost_usd": 0.94899525,
+      "uncertain_reserve_usd": 0,
+      "status": "running"
+    },
+    {
+      "run": "2026-09-25_160145_resume-2026-09-25-153920-gate-48-bases-skip-60-cells-CD-neutral-script-gemini-3.8-flash-claude-sonnet-5",
+      "category": "campaign",
+      "records": 31,
+      "cost_usd": 0.20558775,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-25_160217_resume-2026-09-25-154341-gate-24-bases-skip-108-cells-ABCD-neutral-script-gemini-3.8-flash-claude-sonnet-5-claude-opus-5-5",
+      "category": "campaign",
+      "records": 5,
+      "cost_usd": 0.02291025,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-25_160224_resume-2026-09-25-154345-cancel-36-12-orders-two-way-gemini-3.8-flash-claude-sonnet-5",
+      "category": "campaign",
+      "records": 143,
+      "cost_usd": 0.77586,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-25_160410_resume-2026-09-25-154622-queued-48-bases-skip-12-gemini-3.8-flash",
+      "category": "campaign",
+      "records": 42,
+      "cost_usd": 0.28403775,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-25_160451_resume-2026-09-25-154628-gate-48-bases-skip-12-cells-ABCD-neutral-script-gemini-3.8-flash",
+      "category": "campaign",
+      "records": 29,
+      "cost_usd": 0.16954725,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-25_160547_power-flash",
+      "category": "campaign",
+      "records": 3672,
+      "cost_usd": 21.71294325,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    },
+    {
+      "run": "2026-09-25_164210_effort-flash",
+      "category": "effort",
+      "records": 600,
+      "cost_usd": 4.0733895,
+      "uncertain_reserve_usd": 0,
+      "status": "complete"
+    }
+  ],
+  "basis": "Logged tokens at lookworth list prices; not a provider invoice. Historical interrupted calls without a saved usage record may be missing."
+}

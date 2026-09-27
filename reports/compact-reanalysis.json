@@ -1,0 +1,110 @@
+{
+  "counts": {
+    "retail_return/action": [
+      0,
+      258
+    ],
+    "retail_cancel/action": [
+      0,
+      180
+    ],
+    "retail_return/answer": [
+      0,
+      258
+    ],
+    "airline/answer": [
+      10,
+      390
+    ],
+    "airline/action": [
+      288,
+      390
+    ],
+    "retail_cancel/answer": [
+      0,
+      180
+    ]
+  },
+  "primary": {
+    "method": "Laplace maximum likelihood; approximate Wald CI",
+    "beta": [
+      -21.24389224248816,
+      8.517189501793693
+    ],
+    "se": [
+      4.945844924619648,
+      2.008799925341994
+    ],
+    "odds_ratio": 4999.981551921311,
+    "ci95": [
+      97.50870422516722,
+      256385.4757194174
+    ],
+    "p_value": 2.2358035965147413e-05,
+    "random_sd": {
+      "base": 1.9070680582285748,
+      "paraphrase": 1.8346076082652019,
+      "task": 13.517475790980471
+    },
+    "boundary_components": [],
+    "usable": true,
+    "min_information_eigenvalue": 0.040040293253179336,
+    "free_information_indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "fits": [
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "nll": 227.11488122938084,
+        "theta": [
+          -21.24371037628561,
+          8.51721692427935,
+          0.6455679891378107,
+          0.6068360449529363,
+          2.603953978382013
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "nll": 227.1148812280073,
+        "theta": [
+          -21.243880757386158,
+          8.517174040871287,
+          0.645567135116234,
+          0.6068259044531399,
+          2.603984071790266
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "nll": 227.11488122872188,
+        "theta": [
+          -21.243999586038658,
+          8.51717864667538,
+          0.6455679883482449,
+          0.6068253866306496,
+          2.6039957119062227
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "nll": 227.11488122798676,
+        "theta": [
+          -21.24389224248816,
+          8.517189501793693,
+          0.6455670146173125,
+          0.606830621182389,
+          2.603983351333301
+        ]
+      }
+    ]
+  }
+}

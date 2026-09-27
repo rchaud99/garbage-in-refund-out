@@ -1,0 +1,4 @@
+cost estimate (list price, no caching):
+  gemini-3.8-flash: 600 calls × ~4,167 input tokens; $5.02 typical, $7.50 high
+  total: $5.02 typical, $7.50 high
+Prior effort-campaign spend 0.0

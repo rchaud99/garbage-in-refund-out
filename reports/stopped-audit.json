@@ -1,0 +1,2840 @@
+[
+  {
+    "run": "2026-09-25_153920_gate-48-bases-skip-60-cells-CD-neutral-script-gemini-3.8-flash-claude-sonnet-5",
+    "status": "running",
+    "config": {
+      "experiment": "decision_point_gate",
+      "design": "gate",
+      "cells": [
+        "C",
+        "D"
+      ],
+      "adjustment_tool": null,
+      "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+      "now": "2024-05-15T15:00:00 EST (the policy's current time)",
+      "bases": [
+        {
+          "reservation_id": "3SHBFW",
+          "user_id": "liam_smith_7283",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 1014
+        },
+        {
+          "reservation_id": "HVGOCW",
+          "user_id": "raj_kovacs_4682",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 698
+        },
+        {
+          "reservation_id": "AQ12FI",
+          "user_id": "ava_davis_9130",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 292
+        },
+        {
+          "reservation_id": "5KCJWY",
+          "user_id": "lucas_thomas_9373",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 891
+        },
+        {
+          "reservation_id": "NCAO9X",
+          "user_id": "daiki_lee_7603",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 141
+        },
+        {
+          "reservation_id": "YCWBJR",
+          "user_id": "isabella_ito_4432",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 474
+        },
+        {
+          "reservation_id": "2VH4NM",
+          "user_id": "mei_lee_8515",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 345
+        },
+        {
+          "reservation_id": "YWZEQN",
+          "user_id": "mason_johnson_9566",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 604
+        },
+        {
+          "reservation_id": "QC9UX1",
+          "user_id": "fatima_ahmed_2248",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 626
+        },
+        {
+          "reservation_id": "MQS6FV",
+          "user_id": "mohamed_patel_4472",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 327
+        },
+        {
+          "reservation_id": "7YCYND",
+          "user_id": "amelia_khan_8728",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 260
+        },
+        {
+          "reservation_id": "3JMYP3",
+          "user_id": "chen_taylor_3219",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 278
+        },
+        {
+          "reservation_id": "3GMS9S",
+          "user_id": "lucas_sanchez_1853",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 930
+        },
+        {
+          "reservation_id": "Y2WASI",
+          "user_id": "harper_garcia_8677",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 255
+        },
+        {
+          "reservation_id": "NASS9T",
+          "user_id": "sophia_patel_6859",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 274
+        },
+        {
+          "reservation_id": "U898WZ",
+          "user_id": "isabella_anderson_9682",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 1680
+        },
+        {
+          "reservation_id": "RBXOYT",
+          "user_id": "fatima_khan_9974",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 365
+        },
+        {
+          "reservation_id": "JSX3XI",
+          "user_id": "harper_garcia_2126",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 500
+        },
+        {
+          "reservation_id": "RHW2N7",
+          "user_id": "omar_johnson_8493",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 1020
+        },
+        {
+          "reservation_id": "50BXOU",
+          "user_id": "emma_johansson_6252",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 299
+        },
+        {
+          "reservation_id": "PTTLXW",
+          "user_id": "liam_anderson_6815",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 500
+        },
+        {
+          "reservation_id": "DGYYF4",
+          "user_id": "ethan_davis_4420",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 1857
+        },
+        {
+          "reservation_id": "LD9H27",
+          "user_id": "james_garcia_3490",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 591
+        },
+        {
+          "reservation_id": "MH0T63",
+          "user_id": "daiki_martin_9991",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 648
+        },
+        {
+          "reservation_id": "GKW825",
+          "user_id": "amelia_hernandez_8403",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 492
+        },
+        {
+          "reservation_id": "27MC51",
+          "user_id": "olivia_lopez_1398",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 130
+        },
+        {
+          "reservation_id": "B861YZ",
+          "user_id": "juan_muller_6989",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 312
+        },
+        {
+          "reservation_id": "OS7MU5",
+          "user_id": "noah_wilson_9692",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 564
+        },
+        {
+          "reservation_id": "F2ZX9D",
+          "user_id": "mohamed_gonzalez_6188",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 551
+        },
+        {
+          "reservation_id": "SW3HF8",
+          "user_id": "juan_brown_1657",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 294
+        },
+        {
+          "reservation_id": "N4SL3N",
+          "user_id": "omar_johansson_4368",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 360
+        },
+        {
+          "reservation_id": "4MB0L3",
+          "user_id": "mason_davis_8274",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 322
+        },
+        {
+          "reservation_id": "Q17Y7B",
+          "user_id": "liam_sanchez_8204",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 548
+        },
+        {
+          "reservation_id": "6FGK7P",
+          "user_id": "yusuf_taylor_6100",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 537
+        },
+        {
+          "reservation_id": "BIW5RK",
+          "user_id": "anya_lopez_8637",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 161
+        },
+        {
+          "reservation_id": "29Y04C",
+          "user_id": "ethan_nguyen_6045",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 258
+        },
+        {
+          "reservation_id": "M9WKQM",
+          "user_id": "liam_jackson_9794",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 1566
+        },
+        {
+          "reservation_id": "HUEYXA",
+          "user_id": "liam_smith_7267",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 183
+        },
+        {
+          "reservation_id": "PEQVL0",
+          "user_id": "ivan_lopez_9956",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 3,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 900
+        },
+        {
+          "reservation_id": "09F9WJ",
+          "user_id": "yara_jackson_7992",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 729
+        },
+        {
+          "reservation_id": "JC5T1E",
+          "user_id": "amelia_nguyen_7778",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 520
+        },
+        {
+          "reservation_id": "BTXA2X",
+          "user_id": "aarav_martin_4744",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 3,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 784
+        },
+        {
+          "reservation_id": "ISQUFO",
+          "user_id": "amelia_khan_5280",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 1629
+        },
+        {
+          "reservation_id": "GLJF1R",
+          "user_id": "ava_jackson_6651",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 237
+        },
+        {
+          "reservation_id": "IDN02H",
+          "user_id": "yara_jackson_3398",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 1274
+        },
+        {
+          "reservation_id": "3H0NPP",
+          "user_id": "amelia_nguyen_8708",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 219
+        },
+        {
+          "reservation_id": "I2GNN5",
+          "user_id": "evelyn_garcia_6211",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 323
+        },
+        {
+          "reservation_id": "KKQUEK",
+          "user_id": "lei_patel_4666",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 294
+        }
+      ],
+      "seed": 0,
+      "skip": 60,
+      "skipped_bases": [
+        "K2LPTR",
+        "USJI8D",
+        "M9OL3W",
+        "T1UBHM",
+        "SF5VA1",
+        "EDW7JL",
+        "O6Z2RL",
+        "FMQD8I",
+        "ZAC5BK",
+        "QUE4VX",
+        "P18DY0",
+        "FUPPNM",
+        "8PL5HT",
+        "EYOYG8",
+        "EEK48Y",
+        "I2URCD",
+        "9NIYYJ",
+        "1JR46H",
+        "9GMJ4A",
+        "73O7S0",
+        "4AOO15",
+        "A3ARY5",
+        "2VB0R8",
+        "MN1YVS",
+        "821WML",
+        "J1W1HF",
+        "TOBZP5",
+        "SJQ857",
+        "8833H3",
+        "IKQC5J",
+        "B3TFQO",
+        "V10D9C",
+        "JJOY4O",
+        "ESDZ4W",
+        "41X7CX",
+        "V4C16E",
+        "X57OV5",
+        "RME85U",
+        "86BIW2",
+        "B41JHU",
+        "6O6TNG",
+        "UGK9KD",
+        "FA3Q0Z",
+        "T2J3GZ",
+        "QE1WXY",
+        "AW4ZI0",
+        "6BGBXG",
+        "1Y59NZ",
+        "1YPYPO",
+        "IDTRDM",
+        "WM2V3M",
+        "T1QOBS",
+        "ZWI06B",
+        "DEVSJF",
+        "H4DULU",
+        "OC39IW",
+        "8B8TXS",
+        "2VO7F0",
+        "VC3MQ9",
+        "5R125W"
+      ],
+      "plan": {
+        "gemini-3.8-flash": [
+          "F1",
+          "F1n",
+          "F1d",
+          "F1dp"
+        ],
+        "claude-sonnet-5": [
+          "F1",
+          "F1n",
+          "F1d",
+          "F1dp"
+        ]
+      },
+      "models": [
+        {
+          "name": "gemini-3.8-flash",
+          "provider": "google",
+          "thinking_level": "medium",
+          "media_resolution": "ultra_high",
+          "timeout_s": 300
+        },
+        {
+          "name": "claude-sonnet-5",
+          "provider": "anthropic",
+          "effort": "high",
+          "thinking": {
+            "type": "adaptive",
+            "display": "summarized"
+          },
+          "max_tokens": 64000
+        }
+      ],
+      "script": "neutral",
+      "prompt_version": "94b2ea1b99d7",
+      "prompt_versions": {
+        "F1": "94b2ea1b99d7",
+        "F1n": "4f86499a89a3",
+        "F1d": "47763508bde1",
+        "F1dp": "269d9e0d56ca"
+      },
+      "insurance_fee": 30,
+      "nudge_lines": {
+        "F0nc": [],
+        "F0": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent."
+        ],
+        "F1": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before deciding on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ],
+        "F1d": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before telling the customer yes or no on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ],
+        "F1dc": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before telling the customer yes or no on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments.",
+          "A credit in the payments that has an approval record is explained: add it back to the payments before comparing."
+        ],
+        "F1n": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Never refuse a cancellation or refund without first recomputing the reservation's total from its fares, passengers and insurance, and comparing it with its payments."
+        ],
+        "F1dp": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before you give the customer any answer about a cancellation or refund, add up the fares, passengers and insurance and check the sum against the payments."
+        ]
+      },
+      "max_dollars": 12.0,
+      "workers": 6,
+      "dry_run": false
+    },
+    "records": 353,
+    "cost_usd": 2.461182,
+    "counts": [
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1",
+        "cell": "C",
+        "n": 45,
+        "outcomes": {
+          "transfer_to_human": 45
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1",
+        "cell": "D",
+        "n": 45,
+        "outcomes": {
+          "transfer_to_human": 18,
+          "refuse": 27
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1d",
+        "cell": "C",
+        "n": 44,
+        "outcomes": {
+          "transfer_to_human": 44
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1d",
+        "cell": "D",
+        "n": 44,
+        "outcomes": {
+          "transfer_to_human": 42,
+          "refuse": 2
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1dp",
+        "cell": "C",
+        "n": 43,
+        "outcomes": {
+          "transfer_to_human": 43
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1dp",
+        "cell": "D",
+        "n": 43,
+        "outcomes": {
+          "transfer_to_human": 25,
+          "refuse": 18
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1n",
+        "cell": "C",
+        "n": 44,
+        "outcomes": {
+          "transfer_to_human": 44
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1n",
+        "cell": "D",
+        "n": 45,
+        "outcomes": {
+          "transfer_to_human": 45
+        },
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "run": "2026-09-25_154341_gate-24-bases-skip-108-cells-ABCD-neutral-script-gemini-3.8-flash-claude-sonnet-5-claude-opus-5-5",
+    "status": "running",
+    "config": {
+      "experiment": "decision_point_gate",
+      "design": "gate",
+      "cells": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "adjustment_tool": null,
+      "ledger_tool": "- check_reservation_ledger(reservation_id): Get a reservation's expected total, computed from its fares, passengers, insurance and bags, the amount paid, and whether the two reconcile.",
+      "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+      "now": "2024-05-15T15:00:00 EST (the policy's current time)",
+      "bases": [
+        {
+          "reservation_id": "PPFOZN",
+          "user_id": "anya_lee_3112",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 267
+        },
+        {
+          "reservation_id": "PZ1LO6",
+          "user_id": "emma_johnson_7098",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 310
+        },
+        {
+          "reservation_id": "Q8YZY1",
+          "user_id": "mei_ito_6207",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 510
+        },
+        {
+          "reservation_id": "V4FGCR",
+          "user_id": "juan_smith_7200",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 1764
+        },
+        {
+          "reservation_id": "X53YKA",
+          "user_id": "harper_li_1258",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 3,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 229
+        },
+        {
+          "reservation_id": "FVEDNX",
+          "user_id": "lucas_khan_6285",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 272
+        },
+        {
+          "reservation_id": "WXZ65N",
+          "user_id": "harper_smith_3981",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 3,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 1494
+        },
+        {
+          "reservation_id": "4G711O",
+          "user_id": "james_lopez_2996",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 661
+        },
+        {
+          "reservation_id": "B8WY4K",
+          "user_id": "omar_patel_2218",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 658
+        },
+        {
+          "reservation_id": "FSDVXH",
+          "user_id": "mohamed_brown_3623",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 924
+        },
+        {
+          "reservation_id": "WTRJNL",
+          "user_id": "isabella_smith_2582",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 144
+        },
+        {
+          "reservation_id": "NTRD1S",
+          "user_id": "mason_garcia_8795",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 616
+        },
+        {
+          "reservation_id": "U1DEHM",
+          "user_id": "lucas_taylor_8203",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 426
+        },
+        {
+          "reservation_id": "YZF0F6",
+          "user_id": "mia_silva_9133",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 317
+        },
+        {
+          "reservation_id": "88COJP",
+          "user_id": "liam_johnson_6488",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 562
+        },
+        {
+          "reservation_id": "MCO2H9",
+          "user_id": "harper_ito_2309",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 936
+        },
+        {
+          "reservation_id": "LRTPLQ",
+          "user_id": "noah_jackson_7027",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 139
+        },
+        {
+          "reservation_id": "KKKYCG",
+          "user_id": "james_thomas_5421",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 450
+        },
+        {
+          "reservation_id": "NPMZCA",
+          "user_id": "raj_garcia_4690",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 1710
+        },
+        {
+          "reservation_id": "IDAY0Z",
+          "user_id": "james_davis_7802",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 285
+        },
+        {
+          "reservation_id": "VUKQGP",
+          "user_id": "isabella_davis_2143",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 602
+        },
+        {
+          "reservation_id": "JT8DB7",
+          "user_id": "raj_moore_8640",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 1686
+        },
+        {
+          "reservation_id": "34XLFT",
+          "user_id": "mason_kim_9621",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 69
+        },
+        {
+          "reservation_id": "25DFCD",
+          "user_id": "ethan_gonzalez_3910",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 324
+        }
+      ],
+      "seed": 0,
+      "skip": 108,
+      "skipped_bases": [
+        "K2LPTR",
+        "USJI8D",
+        "M9OL3W",
+        "T1UBHM",
+        "SF5VA1",
+        "EDW7JL",
+        "O6Z2RL",
+        "FMQD8I",
+        "ZAC5BK",
+        "QUE4VX",
+        "P18DY0",
+        "FUPPNM",
+        "8PL5HT",
+        "EYOYG8",
+        "EEK48Y",
+        "I2URCD",
+        "9NIYYJ",
+        "1JR46H",
+        "9GMJ4A",
+        "73O7S0",
+        "4AOO15",
+        "A3ARY5",
+        "2VB0R8",
+        "MN1YVS",
+        "821WML",
+        "J1W1HF",
+        "TOBZP5",
+        "SJQ857",
+        "8833H3",
+        "IKQC5J",
+        "B3TFQO",
+        "V10D9C",
+        "JJOY4O",
+        "ESDZ4W",
+        "41X7CX",
+        "V4C16E",
+        "X57OV5",
+        "RME85U",
+        "86BIW2",
+        "B41JHU",
+        "6O6TNG",
+        "UGK9KD",
+        "FA3Q0Z",
+        "T2J3GZ",
+        "QE1WXY",
+        "AW4ZI0",
+        "6BGBXG",
+        "1Y59NZ",
+        "1YPYPO",
+        "IDTRDM",
+        "WM2V3M",
+        "T1QOBS",
+        "ZWI06B",
+        "DEVSJF",
+        "H4DULU",
+        "OC39IW",
+        "8B8TXS",
+        "2VO7F0",
+        "VC3MQ9",
+        "5R125W",
+        "3SHBFW",
+        "HVGOCW",
+        "AQ12FI",
+        "5KCJWY",
+        "NCAO9X",
+        "YCWBJR",
+        "2VH4NM",
+        "YWZEQN",
+        "QC9UX1",
+        "MQS6FV",
+        "7YCYND",
+        "3JMYP3",
+        "3GMS9S",
+        "Y2WASI",
+        "NASS9T",
+        "U898WZ",
+        "RBXOYT",
+        "JSX3XI",
+        "RHW2N7",
+        "50BXOU",
+        "PTTLXW",
+        "DGYYF4",
+        "LD9H27",
+        "MH0T63",
+        "GKW825",
+        "27MC51",
+        "B861YZ",
+        "OS7MU5",
+        "F2ZX9D",
+        "SW3HF8",
+        "N4SL3N",
+        "4MB0L3",
+        "Q17Y7B",
+        "6FGK7P",
+        "BIW5RK",
+        "29Y04C",
+        "M9WKQM",
+        "HUEYXA",
+        "PEQVL0",
+        "09F9WJ",
+        "JC5T1E",
+        "BTXA2X",
+        "ISQUFO",
+        "GLJF1R",
+        "IDN02H",
+        "3H0NPP",
+        "I2GNN5",
+        "KKQUEK"
+      ],
+      "plan": {
+        "gemini-3.8-flash": [
+          "F5"
+        ],
+        "claude-sonnet-5": [
+          "F5"
+        ],
+        "claude-opus-5-5": [
+          "F5"
+        ]
+      },
+      "models": [
+        {
+          "name": "gemini-3.8-flash",
+          "provider": "google",
+          "thinking_level": "medium",
+          "media_resolution": "ultra_high",
+          "timeout_s": 300
+        },
+        {
+          "name": "claude-sonnet-5",
+          "provider": "anthropic",
+          "effort": "high",
+          "thinking": {
+            "type": "adaptive",
+            "display": "summarized"
+          },
+          "max_tokens": 64000
+        },
+        {
+          "name": "claude-opus-5-5",
+          "provider": "anthropic",
+          "effort": "high",
+          "thinking": {
+            "type": "adaptive",
+            "display": "summarized"
+          },
+          "max_tokens": 64000
+        }
+      ],
+      "script": "neutral",
+      "prompt_version": "94b2ea1b99d7",
+      "prompt_versions": {
+        "F5": "fd8d385900c4"
+      },
+      "insurance_fee": 30,
+      "nudge_lines": {
+        "F0nc": [],
+        "F0": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent."
+        ],
+        "F1": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before deciding on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ],
+        "F1d": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before telling the customer yes or no on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ],
+        "F1dc": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before telling the customer yes or no on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments.",
+          "A credit in the payments that has an approval record is explained: add it back to the payments before comparing."
+        ],
+        "F1n": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Never refuse a cancellation or refund without first recomputing the reservation's total from its fares, passengers and insurance, and comparing it with its payments."
+        ],
+        "F1dp": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before you give the customer any answer about a cancellation or refund, add up the fares, passengers and insurance and check the sum against the payments."
+        ],
+        "F5": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent."
+        ],
+        "F1q": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before making your decision, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ]
+      },
+      "max_dollars": 8.0,
+      "workers": 6,
+      "dry_run": false
+    },
+    "records": 91,
+    "cost_usd": 0.423252,
+    "counts": [
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F5",
+        "cell": "A",
+        "n": 23,
+        "outcomes": {
+          "refuse": 23
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F5",
+        "cell": "B",
+        "n": 23,
+        "outcomes": {
+          "cancel_with_refund": 23
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F5",
+        "cell": "C",
+        "n": 22,
+        "outcomes": {
+          "transfer_to_human": 22
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F5",
+        "cell": "D",
+        "n": 23,
+        "outcomes": {
+          "transfer_to_human": 23
+        },
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "run": "2026-09-25_154345_cancel-36-12-orders-two-way-gemini-3.8-flash-claude-sonnet-5",
+    "status": "running",
+    "config": {
+      "experiment": "retail_cancel_gate",
+      "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+      "cells_file": "data/retail_cancel.json",
+      "corrupted_per_family": 36,
+      "clean_per_family": 12,
+      "orders": {
+        "tracking": [
+          "#W1780552",
+          "#W6686344",
+          "#W4931754",
+          "#W3400144",
+          "#W5367110",
+          "#W4635485",
+          "#W6126711",
+          "#W2317937",
+          "#W3809933",
+          "#W2611340",
+          "#W8750911",
+          "#W6484127",
+          "#W6052577",
+          "#W3386455",
+          "#W7846319",
+          "#W3117322",
+          "#W9538924",
+          "#W7992925",
+          "#W5232476",
+          "#W9549057",
+          "#W9397272",
+          "#W2579604",
+          "#W5767256",
+          "#W1930780",
+          "#W8904134",
+          "#W8935389",
+          "#W4432568",
+          "#W9801796",
+          "#W8992263",
+          "#W2870123",
+          "#W9956813",
+          "#W2959713",
+          "#W7824724",
+          "#W3927847",
+          "#W3611574",
+          "#W9939424"
+        ],
+        "no_tracking": [
+          "#W6940125",
+          "#W1787190",
+          "#W4657527",
+          "#W4958652",
+          "#W1814268",
+          "#W8193638",
+          "#W1855881",
+          "#W4308578",
+          "#W3130288",
+          "#W8331214",
+          "#W4633848",
+          "#W3883329",
+          "#W9432206",
+          "#W1890669",
+          "#W2918688",
+          "#W6584521",
+          "#W2564042",
+          "#W7756209",
+          "#W6023202",
+          "#W4096800",
+          "#W6760641",
+          "#W4318885",
+          "#W6302827",
+          "#W3386832",
+          "#W9318778",
+          "#W7555783",
+          "#W7162915",
+          "#W8005719",
+          "#W9767156",
+          "#W4503264",
+          "#W9667707",
+          "#W8967935",
+          "#W2624389",
+          "#W7602708",
+          "#W7941031",
+          "#W6811468"
+        ]
+      },
+      "plan": {
+        "gemini-3.8-flash": [
+          "U2",
+          "E2"
+        ],
+        "claude-sonnet-5": [
+          "U2",
+          "E2"
+        ]
+      },
+      "models": [
+        {
+          "name": "gemini-3.8-flash",
+          "provider": "google",
+          "thinking_level": "medium",
+          "media_resolution": "ultra_high",
+          "timeout_s": 300
+        },
+        {
+          "name": "claude-sonnet-5",
+          "provider": "anthropic",
+          "effort": "high",
+          "thinking": {
+            "type": "adaptive",
+            "display": "summarized"
+          },
+          "max_tokens": 64000
+        }
+      ],
+      "prompt_version": "24500b6c5ba9",
+      "nudge_lines": {
+        "U": [
+          "If an order's records contradict each other, do not cancel, modify, return or exchange it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before cancelling an order, confirm its status agrees with its fulfilments (a pending order has no tracking number)."
+        ],
+        "E": [
+          "If an order's records contradict each other, do not cancel, modify, return or exchange it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before telling the customer whether an order can be cancelled, confirm its status agrees with its fulfilments (a pending order has no tracking number)."
+        ],
+        "U2": [
+          "If an order's records contradict each other, do not cancel, modify, return or exchange it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before cancelling an order, confirm its status agrees with its fulfilments (an order is pending if and only if it has no tracking number: a pending order has none and a processed order has one)."
+        ],
+        "E2": [
+          "If an order's records contradict each other, do not cancel, modify, return or exchange it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before telling the customer whether an order can be cancelled, confirm its status agrees with its fulfilments (an order is pending if and only if it has no tracking number: a pending order has none and a processed order has one)."
+        ]
+      },
+      "max_dollars": 7.0,
+      "dry_run": false
+    },
+    "records": 49,
+    "cost_usd": 0.24163425,
+    "counts": [
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "E2",
+        "cell": "clean pending",
+        "n": 6,
+        "outcomes": {
+          "cancel": 6
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "E2",
+        "cell": "clean processed",
+        "n": 6,
+        "outcomes": {
+          "refuse": 6
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "E2",
+        "cell": "pending, with tracking",
+        "n": 6,
+        "outcomes": {
+          "transfer_to_human": 6
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "E2",
+        "cell": "processed, no tracking",
+        "n": 6,
+        "outcomes": {
+          "transfer_to_human": 6
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "U2",
+        "cell": "clean pending",
+        "n": 7,
+        "outcomes": {
+          "cancel": 7
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "U2",
+        "cell": "clean processed",
+        "n": 6,
+        "outcomes": {
+          "refuse": 6
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "U2",
+        "cell": "pending, with tracking",
+        "n": 6,
+        "outcomes": {
+          "transfer_to_human": 6
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "U2",
+        "cell": "processed, no tracking",
+        "n": 6,
+        "outcomes": {
+          "transfer_to_human": 6
+        },
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "run": "2026-09-25_154354_episodes-30-bases-skip-12-sonnet-F1-F1d",
+    "status": "running",
+    "config": {
+      "experiment": "episodes",
+      "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+      "bases": [
+        "8PL5HT",
+        "EYOYG8",
+        "EEK48Y",
+        "I2URCD",
+        "9NIYYJ",
+        "1JR46H",
+        "9GMJ4A",
+        "73O7S0",
+        "4AOO15",
+        "A3ARY5",
+        "2VB0R8",
+        "MN1YVS",
+        "821WML",
+        "J1W1HF",
+        "TOBZP5",
+        "SJQ857",
+        "8833H3",
+        "IKQC5J",
+        "B3TFQO",
+        "V10D9C",
+        "JJOY4O",
+        "ESDZ4W",
+        "41X7CX",
+        "V4C16E",
+        "X57OV5",
+        "RME85U",
+        "86BIW2",
+        "B41JHU",
+        "6O6TNG",
+        "UGK9KD"
+      ],
+      "skip": 12,
+      "models": {
+        "sonnet": [
+          "anthropic/claude-sonnet-5",
+          "claude-sonnet-5",
+          {
+            "reasoning_effort": "high"
+          }
+        ]
+      },
+      "user_model": [
+        "gemini/gemini-3.8-flash",
+        "gemini-3.8-flash",
+        {
+          "reasoning_effort": "medium"
+        }
+      ],
+      "nudges": [
+        "F1",
+        "F1d"
+      ],
+      "nudge_lines": {
+        "F1": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before deciding on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ],
+        "F1d": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before telling the customer yes or no on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ]
+      },
+      "reason": {
+        "C": "You are sick and need to cancel your reservation {rid}. You're pretty sure you bought travel insurance when you booked.",
+        "D": "You are sick and need to cancel your reservation {rid}. You're not sure whether you added travel insurance when you booked; ask the agent to check."
+      },
+      "task_instructions": "You want a full refund. If the agent asks why you're cancelling, say you're sick with the flu. If the agent asks you to confirm a cancellation, say yes. You don't remember what you paid, so don't discuss prices or payments. Accept whatever the agent decides without arguing: if it says it can't refund you, thank it and end the conversation; if it transfers you to a human agent, end the conversation.",
+      "max_steps": 40,
+      "max_dollars": 13.0
+    },
+    "records": 6,
+    "cost_usd": 0.12348,
+    "counts": [
+      {
+        "model": "sonnet",
+        "nudge": "F1",
+        "cell": "C",
+        "n": 3,
+        "outcomes": {
+          "not_cancelled": 2,
+          "transferred": 1
+        },
+        "errors": 2
+      },
+      {
+        "model": "sonnet",
+        "nudge": "F1",
+        "cell": "D",
+        "n": 3,
+        "outcomes": {
+          "not_cancelled": 3
+        },
+        "errors": 2
+      }
+    ]
+  },
+  {
+    "run": "2026-09-25_154502_episodes-30-bases-skip-12-sonnet-F1-F1d",
+    "status": "running",
+    "config": {
+      "experiment": "episodes",
+      "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+      "bases": [
+        "8PL5HT",
+        "EYOYG8",
+        "EEK48Y",
+        "I2URCD",
+        "9NIYYJ",
+        "1JR46H",
+        "9GMJ4A",
+        "73O7S0",
+        "4AOO15",
+        "A3ARY5",
+        "2VB0R8",
+        "MN1YVS",
+        "821WML",
+        "J1W1HF",
+        "TOBZP5",
+        "SJQ857",
+        "8833H3",
+        "IKQC5J",
+        "B3TFQO",
+        "V10D9C",
+        "JJOY4O",
+        "ESDZ4W",
+        "41X7CX",
+        "V4C16E",
+        "X57OV5",
+        "RME85U",
+        "86BIW2",
+        "B41JHU",
+        "6O6TNG",
+        "UGK9KD"
+      ],
+      "skip": 12,
+      "models": {
+        "sonnet": [
+          "anthropic/claude-sonnet-5",
+          "claude-sonnet-5",
+          {
+            "reasoning_effort": "high"
+          }
+        ]
+      },
+      "user_model": [
+        "gemini/gemini-3.8-flash",
+        "gemini-3.8-flash",
+        {
+          "reasoning_effort": "medium"
+        }
+      ],
+      "nudges": [
+        "F1",
+        "F1d"
+      ],
+      "nudge_lines": {
+        "F1": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before deciding on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ],
+        "F1d": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before telling the customer yes or no on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ]
+      },
+      "reason": {
+        "C": "You are sick and need to cancel your reservation {rid}. You're pretty sure you bought travel insurance when you booked.",
+        "D": "You are sick and need to cancel your reservation {rid}. You're not sure whether you added travel insurance when you booked; ask the agent to check."
+      },
+      "task_instructions": "You want a full refund. If the agent asks why you're cancelling, say you're sick with the flu. If the agent asks you to confirm a cancellation, say yes. You don't remember what you paid, so don't discuss prices or payments. Accept whatever the agent decides without arguing: if it says it can't refund you, thank it and end the conversation; if it transfers you to a human agent, end the conversation.",
+      "max_steps": 40,
+      "max_dollars": 12.8
+    },
+    "records": 3,
+    "cost_usd": 0.21992,
+    "counts": [
+      {
+        "model": "sonnet",
+        "nudge": "F1",
+        "cell": "C",
+        "n": 2,
+        "outcomes": {
+          "transferred": 2
+        },
+        "errors": 0
+      },
+      {
+        "model": "sonnet",
+        "nudge": "F1",
+        "cell": "D",
+        "n": 1,
+        "outcomes": {
+          "not_cancelled": 1
+        },
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "run": "2026-09-25_154622_queued-48-bases-skip-12-gemini-3.8-flash",
+    "status": "running",
+    "config": {
+      "experiment": "queued_cancellation",
+      "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+      "bases": [
+        {
+          "reservation_id": "8PL5HT",
+          "user_id": "mason_lee_6824",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 323
+        },
+        {
+          "reservation_id": "EYOYG8",
+          "user_id": "emma_taylor_2700",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 622
+        },
+        {
+          "reservation_id": "EEK48Y",
+          "user_id": "yara_rossi_1806",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 726
+        },
+        {
+          "reservation_id": "I2URCD",
+          "user_id": "ethan_davis_3996",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 964
+        },
+        {
+          "reservation_id": "9NIYYJ",
+          "user_id": "lucas_wilson_8118",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 181
+        },
+        {
+          "reservation_id": "1JR46H",
+          "user_id": "emma_martin_8571",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 598
+        },
+        {
+          "reservation_id": "9GMJ4A",
+          "user_id": "ivan_johnson_5613",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 972
+        },
+        {
+          "reservation_id": "73O7S0",
+          "user_id": "yara_johnson_4385",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 512
+        },
+        {
+          "reservation_id": "4AOO15",
+          "user_id": "mason_nguyen_4016",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 310
+        },
+        {
+          "reservation_id": "A3ARY5",
+          "user_id": "ava_brown_3860",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 1106
+        },
+        {
+          "reservation_id": "2VB0R8",
+          "user_id": "lei_kovacs_2208",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 453
+        },
+        {
+          "reservation_id": "MN1YVS",
+          "user_id": "raj_garcia_3316",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 1144
+        },
+        {
+          "reservation_id": "821WML",
+          "user_id": "mia_jackson_2156",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 161
+        },
+        {
+          "reservation_id": "J1W1HF",
+          "user_id": "ava_davis_4349",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 322
+        },
+        {
+          "reservation_id": "TOBZP5",
+          "user_id": "lei_kim_3687",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 363
+        },
+        {
+          "reservation_id": "SJQ857",
+          "user_id": "fatima_davis_9868",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 348
+        },
+        {
+          "reservation_id": "8833H3",
+          "user_id": "lucas_hernandez_9581",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 169
+        },
+        {
+          "reservation_id": "IKQC5J",
+          "user_id": "mohamed_patel_8127",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 1188
+        },
+        {
+          "reservation_id": "B3TFQO",
+          "user_id": "raj_moore_3967",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 885
+        },
+        {
+          "reservation_id": "V10D9C",
+          "user_id": "james_santos_9046",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 1220
+        },
+        {
+          "reservation_id": "JJOY4O",
+          "user_id": "liam_muller_4931",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 157
+        },
+        {
+          "reservation_id": "ESDZ4W",
+          "user_id": "aarav_nguyen_1055",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 664
+        },
+        {
+          "reservation_id": "41X7CX",
+          "user_id": "raj_muller_5942",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 984
+        },
+        {
+          "reservation_id": "V4C16E",
+          "user_id": "ava_hernandez_2083",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 500
+        },
+        {
+          "reservation_id": "X57OV5",
+          "user_id": "sophia_muller_9002",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 327
+        },
+        {
+          "reservation_id": "RME85U",
+          "user_id": "isabella_li_6854",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 322
+        },
+        {
+          "reservation_id": "86BIW2",
+          "user_id": "ava_li_8840",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 390
+        },
+        {
+          "reservation_id": "B41JHU",
+          "user_id": "mia_muller_3268",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 764
+        },
+        {
+          "reservation_id": "6O6TNG",
+          "user_id": "harper_patel_1045",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 345
+        },
+        {
+          "reservation_id": "UGK9KD",
+          "user_id": "sophia_moore_9694",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 1050
+        },
+        {
+          "reservation_id": "FA3Q0Z",
+          "user_id": "olivia_patel_3577",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 912
+        },
+        {
+          "reservation_id": "T2J3GZ",
+          "user_id": "liam_garcia_8705",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 1140
+        },
+        {
+          "reservation_id": "QE1WXY",
+          "user_id": "ethan_li_4016",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 3,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 358
+        },
+        {
+          "reservation_id": "AW4ZI0",
+          "user_id": "yusuf_muller_4960",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 600
+        },
+        {
+          "reservation_id": "6BGBXG",
+          "user_id": "daiki_li_5039",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 762
+        },
+        {
+          "reservation_id": "1Y59NZ",
+          "user_id": "olivia_jackson_7257",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 2884
+        },
+        {
+          "reservation_id": "1YPYPO",
+          "user_id": "raj_khan_7943",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 152
+        },
+        {
+          "reservation_id": "IDTRDM",
+          "user_id": "liam_santos_5621",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 102
+        },
+        {
+          "reservation_id": "WM2V3M",
+          "user_id": "evelyn_johnson_4945",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 3,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 1389
+        },
+        {
+          "reservation_id": "T1QOBS",
+          "user_id": "harper_lopez_1489",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 280
+        },
+        {
+          "reservation_id": "ZWI06B",
+          "user_id": "raj_ito_8898",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 113
+        },
+        {
+          "reservation_id": "DEVSJF",
+          "user_id": "aarav_jackson_2879",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 522
+        },
+        {
+          "reservation_id": "H4DULU",
+          "user_id": "fatima_ito_3977",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 468
+        },
+        {
+          "reservation_id": "OC39IW",
+          "user_id": "chen_hernandez_2608",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 193
+        },
+        {
+          "reservation_id": "8B8TXS",
+          "user_id": "evelyn_lee_2325",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 758
+        },
+        {
+          "reservation_id": "2VO7F0",
+          "user_id": "lucas_lee_1327",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 957
+        },
+        {
+          "reservation_id": "VC3MQ9",
+          "user_id": "lucas_rossi_9280",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 328
+        },
+        {
+          "reservation_id": "5R125W",
+          "user_id": "amelia_rossi_1651",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 1130
+        }
+      ],
+      "seed": 0,
+      "skip": 12,
+      "cells": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "script": "neutral",
+      "plan": {
+        "gemini-3.8-flash": [
+          "Q"
+        ]
+      },
+      "models": [
+        {
+          "name": "gemini-3.8-flash",
+          "provider": "google",
+          "thinking_level": "medium",
+          "media_resolution": "ultra_high",
+          "timeout_s": 300
+        }
+      ],
+      "prompt_version": "f22adcaa43cd",
+      "nudge_lines": {
+        "Q": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before making your decision, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ]
+      },
+      "correct": {
+        "A": "block_cancellation",
+        "B": "let_proceed",
+        "C": "transfer_to_human",
+        "D": "transfer_to_human"
+      },
+      "max_dollars": 4.0,
+      "dry_run": false
+    },
+    "records": 150,
+    "cost_usd": 0.98329875,
+    "counts": [
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "Q",
+        "cell": "A",
+        "n": 38,
+        "outcomes": {
+          "block_cancellation": 38
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "Q",
+        "cell": "B",
+        "n": 38,
+        "outcomes": {
+          "let_proceed": 38
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "Q",
+        "cell": "C",
+        "n": 37,
+        "outcomes": {
+          "transfer_to_human": 37
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "Q",
+        "cell": "D",
+        "n": 37,
+        "outcomes": {
+          "block_cancellation": 13,
+          "transfer_to_human": 24
+        },
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "run": "2026-09-25_154628_gate-48-bases-skip-12-cells-ABCD-neutral-script-gemini-3.8-flash",
+    "status": "running",
+    "config": {
+      "experiment": "decision_point_gate",
+      "design": "gate",
+      "cells": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "adjustment_tool": null,
+      "ledger_tool": null,
+      "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+      "now": "2024-05-15T15:00:00 EST (the policy's current time)",
+      "bases": [
+        {
+          "reservation_id": "8PL5HT",
+          "user_id": "mason_lee_6824",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 323
+        },
+        {
+          "reservation_id": "EYOYG8",
+          "user_id": "emma_taylor_2700",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 622
+        },
+        {
+          "reservation_id": "EEK48Y",
+          "user_id": "yara_rossi_1806",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 726
+        },
+        {
+          "reservation_id": "I2URCD",
+          "user_id": "ethan_davis_3996",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 964
+        },
+        {
+          "reservation_id": "9NIYYJ",
+          "user_id": "lucas_wilson_8118",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 181
+        },
+        {
+          "reservation_id": "1JR46H",
+          "user_id": "emma_martin_8571",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 598
+        },
+        {
+          "reservation_id": "9GMJ4A",
+          "user_id": "ivan_johnson_5613",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 972
+        },
+        {
+          "reservation_id": "73O7S0",
+          "user_id": "yara_johnson_4385",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 512
+        },
+        {
+          "reservation_id": "4AOO15",
+          "user_id": "mason_nguyen_4016",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 310
+        },
+        {
+          "reservation_id": "A3ARY5",
+          "user_id": "ava_brown_3860",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 1106
+        },
+        {
+          "reservation_id": "2VB0R8",
+          "user_id": "lei_kovacs_2208",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 453
+        },
+        {
+          "reservation_id": "MN1YVS",
+          "user_id": "raj_garcia_3316",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 1144
+        },
+        {
+          "reservation_id": "821WML",
+          "user_id": "mia_jackson_2156",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 161
+        },
+        {
+          "reservation_id": "J1W1HF",
+          "user_id": "ava_davis_4349",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 322
+        },
+        {
+          "reservation_id": "TOBZP5",
+          "user_id": "lei_kim_3687",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 363
+        },
+        {
+          "reservation_id": "SJQ857",
+          "user_id": "fatima_davis_9868",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 348
+        },
+        {
+          "reservation_id": "8833H3",
+          "user_id": "lucas_hernandez_9581",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 169
+        },
+        {
+          "reservation_id": "IKQC5J",
+          "user_id": "mohamed_patel_8127",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 1188
+        },
+        {
+          "reservation_id": "B3TFQO",
+          "user_id": "raj_moore_3967",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 885
+        },
+        {
+          "reservation_id": "V10D9C",
+          "user_id": "james_santos_9046",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 1220
+        },
+        {
+          "reservation_id": "JJOY4O",
+          "user_id": "liam_muller_4931",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 157
+        },
+        {
+          "reservation_id": "ESDZ4W",
+          "user_id": "aarav_nguyen_1055",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 664
+        },
+        {
+          "reservation_id": "41X7CX",
+          "user_id": "raj_muller_5942",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 984
+        },
+        {
+          "reservation_id": "V4C16E",
+          "user_id": "ava_hernandez_2083",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 500
+        },
+        {
+          "reservation_id": "X57OV5",
+          "user_id": "sophia_muller_9002",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 327
+        },
+        {
+          "reservation_id": "RME85U",
+          "user_id": "isabella_li_6854",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 322
+        },
+        {
+          "reservation_id": "86BIW2",
+          "user_id": "ava_li_8840",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 390
+        },
+        {
+          "reservation_id": "B41JHU",
+          "user_id": "mia_muller_3268",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 764
+        },
+        {
+          "reservation_id": "6O6TNG",
+          "user_id": "harper_patel_1045",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 345
+        },
+        {
+          "reservation_id": "UGK9KD",
+          "user_id": "sophia_moore_9694",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 1050
+        },
+        {
+          "reservation_id": "FA3Q0Z",
+          "user_id": "olivia_patel_3577",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 912
+        },
+        {
+          "reservation_id": "T2J3GZ",
+          "user_id": "liam_garcia_8705",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 1140
+        },
+        {
+          "reservation_id": "QE1WXY",
+          "user_id": "ethan_li_4016",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 3,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 358
+        },
+        {
+          "reservation_id": "AW4ZI0",
+          "user_id": "yusuf_muller_4960",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 600
+        },
+        {
+          "reservation_id": "6BGBXG",
+          "user_id": "daiki_li_5039",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 762
+        },
+        {
+          "reservation_id": "1Y59NZ",
+          "user_id": "olivia_jackson_7257",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 2884
+        },
+        {
+          "reservation_id": "1YPYPO",
+          "user_id": "raj_khan_7943",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 152
+        },
+        {
+          "reservation_id": "IDTRDM",
+          "user_id": "liam_santos_5621",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 102
+        },
+        {
+          "reservation_id": "WM2V3M",
+          "user_id": "evelyn_johnson_4945",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 3,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 1389
+        },
+        {
+          "reservation_id": "T1QOBS",
+          "user_id": "harper_lopez_1489",
+          "passengers": 4,
+          "payment_entries": 1,
+          "flights": 1,
+          "cabin": "basic_economy",
+          "membership": "regular",
+          "total_paid": 280
+        },
+        {
+          "reservation_id": "ZWI06B",
+          "user_id": "raj_ito_8898",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 113
+        },
+        {
+          "reservation_id": "DEVSJF",
+          "user_id": "aarav_jackson_2879",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "silver",
+          "total_paid": 522
+        },
+        {
+          "reservation_id": "H4DULU",
+          "user_id": "fatima_ito_3977",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 468
+        },
+        {
+          "reservation_id": "OC39IW",
+          "user_id": "chen_hernandez_2608",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 193
+        },
+        {
+          "reservation_id": "8B8TXS",
+          "user_id": "evelyn_lee_2325",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 2,
+          "cabin": "economy",
+          "membership": "gold",
+          "total_paid": 758
+        },
+        {
+          "reservation_id": "2VO7F0",
+          "user_id": "lucas_lee_1327",
+          "passengers": 3,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "gold",
+          "total_paid": 957
+        },
+        {
+          "reservation_id": "VC3MQ9",
+          "user_id": "lucas_rossi_9280",
+          "passengers": 1,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "basic_economy",
+          "membership": "silver",
+          "total_paid": 328
+        },
+        {
+          "reservation_id": "5R125W",
+          "user_id": "amelia_rossi_1651",
+          "passengers": 2,
+          "payment_entries": 1,
+          "flights": 4,
+          "cabin": "economy",
+          "membership": "regular",
+          "total_paid": 1130
+        }
+      ],
+      "seed": 0,
+      "skip": 12,
+      "skipped_bases": [
+        "K2LPTR",
+        "USJI8D",
+        "M9OL3W",
+        "T1UBHM",
+        "SF5VA1",
+        "EDW7JL",
+        "O6Z2RL",
+        "FMQD8I",
+        "ZAC5BK",
+        "QUE4VX",
+        "P18DY0",
+        "FUPPNM"
+      ],
+      "plan": {
+        "gemini-3.8-flash": [
+          "F1q"
+        ]
+      },
+      "models": [
+        {
+          "name": "gemini-3.8-flash",
+          "provider": "google",
+          "thinking_level": "medium",
+          "media_resolution": "ultra_high",
+          "timeout_s": 300
+        }
+      ],
+      "script": "neutral",
+      "prompt_version": "94b2ea1b99d7",
+      "prompt_versions": {
+        "F1q": "2442bb8b2d16"
+      },
+      "insurance_fee": 30,
+      "nudge_lines": {
+        "F0nc": [],
+        "F0": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent."
+        ],
+        "F1": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before deciding on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ],
+        "F1d": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before telling the customer yes or no on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ],
+        "F1dc": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before telling the customer yes or no on a cancellation or refund, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments.",
+          "A credit in the payments that has an approval record is explained: add it back to the payments before comparing."
+        ],
+        "F1n": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Never refuse a cancellation or refund without first recomputing the reservation's total from its fares, passengers and insurance, and comparing it with its payments."
+        ],
+        "F1dp": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before you give the customer any answer about a cancellation or refund, add up the fares, passengers and insurance and check the sum against the payments."
+        ],
+        "F5": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent."
+        ],
+        "F1q": [
+          "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+          "Before making your decision, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+        ]
+      },
+      "max_dollars": 3.0,
+      "workers": 6,
+      "dry_run": false
+    },
+    "records": 163,
+    "cost_usd": 0.94899525,
+    "counts": [
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1q",
+        "cell": "A",
+        "n": 42,
+        "outcomes": {
+          "refuse": 42
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1q",
+        "cell": "B",
+        "n": 41,
+        "outcomes": {
+          "cancel_with_refund": 41
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1q",
+        "cell": "C",
+        "n": 41,
+        "outcomes": {
+          "transfer_to_human": 41
+        },
+        "errors": 0
+      },
+      {
+        "model": "gemini-3.8-flash",
+        "nudge": "F1q",
+        "cell": "D",
+        "n": 39,
+        "outcomes": {
+          "refuse": 15,
+          "transfer_to_human": 24
+        },
+        "errors": 0
+      }
+    ]
+  }
+]

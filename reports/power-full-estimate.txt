@@ -1,0 +1,8 @@
+The requested 150 airline bases and about 100 orders per retail corrupted family would require
+9,120 calls with 10 clean controls per family, six wordings and two repeats. At the scaled plan's
+average prompt length this projects to about $74 typical / $112 high, before interrupted-run completions.
+This is a projection, not an executed item manifest: retail has only 78 distinct eligible processed users,
+and imposing distinct users across both retail tasks further constrains the largest balanced draw.
+
+The final pre-call estimate and exact hashed item manifest are power-scaled-estimate.txt and power-plan.json.
+Final fixed sizes: airline 65, retail cancel 30 per family, retail return 43 per family, five controls per family.

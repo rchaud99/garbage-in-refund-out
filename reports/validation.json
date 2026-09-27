@@ -1,0 +1,28 @@
+{
+  "tests": {
+    "passed": 109,
+    "log": "work/effort-final-tests.txt"
+  },
+  "new_code_lint": "passed",
+  "new_study": {
+    "valid": 600,
+    "api_errors": 0,
+    "unreadable": 0,
+    "prompt_hashes_verified": 600,
+    "frozen_hashes_verified": 4,
+    "all_model_version": "gemini-3.8-flash",
+    "all_finish_reason": "STOP",
+    "original_prompts": "pinned tests passed",
+    "native_first_payment_invariant_orders": 1000,
+    "compact_contrast": "exact match",
+    "cost_usd": 4.0733895,
+    "cap_usd": 8
+  },
+  "paper": {
+    "pages": 10,
+    "rendered_and_visually_reviewed": true,
+    "overflow_warnings": 0,
+    "remaining_warning": "One pre-existing underfull hbox in Table 1 caption; no clipping."
+  },
+  "git": "left unchanged per user; first commit remains uncreated"
+}

@@ -1,0 +1,13 @@
+{
+  "wrongful_refusals_available": 0,
+  "wrongful_refusals_reviewed": 0,
+  "transfers_reviewed": 10,
+  "explicit_numeric_reconciliation": 10,
+  "action_explicit": 5,
+  "answer_explicit": 5,
+  "skipped": 0,
+  "unclear": 0,
+  "benchmark_references_in_sample": 0,
+  "reviewer": "Codex; manual reading of model-generated summaries, not an independent human audit",
+  "paper_sentence": "There were no wrongful refusals to review. In ten deterministically selected corrupt-no transfer summaries (five per wording type, ten distinct orders), all ten explicitly compared a computed item sum with the recorded payment. None of these ten mentioned benchmarks. These summaries are not direct observations of all internal computation."
+}

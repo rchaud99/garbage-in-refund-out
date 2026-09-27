@@ -1,0 +1,482 @@
+{
+  "sources": {
+    "153920": [
+      "runs/2026-09-25_153920_gate-48-bases-skip-60-cells-CD-neutral-script-gemini-3.8-flash-claude-sonnet-5",
+      "runs/2026-09-25_160145_resume-2026-09-25-153920-gate-48-bases-skip-60-cells-CD-neutral-script-gemini-3.8-flash-claude-sonnet-5"
+    ],
+    "154341": [
+      "runs/2026-09-25_154341_gate-24-bases-skip-108-cells-ABCD-neutral-script-gemini-3.8-flash-claude-sonnet-5-claude-opus-5-5",
+      "runs/2026-09-25_160217_resume-2026-09-25-154341-gate-24-bases-skip-108-cells-ABCD-neutral-script-gemini-3.8-flash-claude-sonnet-5-claude-opus-5-5"
+    ],
+    "154345": [
+      "runs/2026-09-25_154345_cancel-36-12-orders-two-way-gemini-3.8-flash-claude-sonnet-5",
+      "runs/2026-09-25_160224_resume-2026-09-25-154345-cancel-36-12-orders-two-way-gemini-3.8-flash-claude-sonnet-5"
+    ],
+    "154622": [
+      "runs/2026-09-25_154622_queued-48-bases-skip-12-gemini-3.8-flash",
+      "runs/2026-09-25_160410_resume-2026-09-25-154622-queued-48-bases-skip-12-gemini-3.8-flash"
+    ],
+    "154628": [
+      "runs/2026-09-25_154628_gate-48-bases-skip-12-cells-ABCD-neutral-script-gemini-3.8-flash",
+      "runs/2026-09-25_160451_resume-2026-09-25-154628-gate-48-bases-skip-12-cells-ABCD-neutral-script-gemini-3.8-flash"
+    ]
+  },
+  "rows": [
+    {
+      "experiment": "wording_pooled",
+      "model": "claude-sonnet-5",
+      "nudge": "F1",
+      "cell": "C",
+      "n": 48,
+      "actions": {
+        "cancel_with_refund": 18,
+        "transfer_to_human": 30
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "claude-sonnet-5",
+      "nudge": "F1",
+      "cell": "D",
+      "n": 48,
+      "actions": {
+        "refuse": 37,
+        "transfer_to_human": 11
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "claude-sonnet-5",
+      "nudge": "F1d",
+      "cell": "C",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 33,
+        "cancel_with_refund": 15
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "claude-sonnet-5",
+      "nudge": "F1d",
+      "cell": "D",
+      "n": 48,
+      "actions": {
+        "refuse": 21,
+        "transfer_to_human": 27
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "claude-sonnet-5",
+      "nudge": "F1dp",
+      "cell": "C",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 38,
+        "cancel_with_refund": 10
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "claude-sonnet-5",
+      "nudge": "F1dp",
+      "cell": "D",
+      "n": 48,
+      "actions": {
+        "refuse": 31,
+        "transfer_to_human": 17
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "claude-sonnet-5",
+      "nudge": "F1n",
+      "cell": "C",
+      "n": 48,
+      "actions": {
+        "cancel_with_refund": 15,
+        "transfer_to_human": 33
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "claude-sonnet-5",
+      "nudge": "F1n",
+      "cell": "D",
+      "n": 48,
+      "actions": {
+        "refuse": 22,
+        "transfer_to_human": 26
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1",
+      "cell": "C",
+      "n": 96,
+      "actions": {
+        "transfer_to_human": 96
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1",
+      "cell": "D",
+      "n": 96,
+      "actions": {
+        "refuse": 55,
+        "transfer_to_human": 41
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1d",
+      "cell": "C",
+      "n": 96,
+      "actions": {
+        "transfer_to_human": 96
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1d",
+      "cell": "D",
+      "n": 96,
+      "actions": {
+        "refuse": 8,
+        "transfer_to_human": 88
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1dp",
+      "cell": "C",
+      "n": 96,
+      "actions": {
+        "transfer_to_human": 96
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1dp",
+      "cell": "D",
+      "n": 96,
+      "actions": {
+        "refuse": 30,
+        "transfer_to_human": 66
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1n",
+      "cell": "C",
+      "n": 96,
+      "actions": {
+        "transfer_to_human": 96
+      }
+    },
+    {
+      "experiment": "wording_pooled",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1n",
+      "cell": "D",
+      "n": 96,
+      "actions": {
+        "transfer_to_human": 96
+      }
+    },
+    {
+      "experiment": "153920",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1",
+      "cell": "C",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 48
+      }
+    },
+    {
+      "experiment": "153920",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1",
+      "cell": "D",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 19,
+        "refuse": 29
+      }
+    },
+    {
+      "experiment": "153920",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1d",
+      "cell": "C",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 48
+      }
+    },
+    {
+      "experiment": "153920",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1d",
+      "cell": "D",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 45,
+        "refuse": 3
+      }
+    },
+    {
+      "experiment": "153920",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1dp",
+      "cell": "C",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 48
+      }
+    },
+    {
+      "experiment": "153920",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1dp",
+      "cell": "D",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 30,
+        "refuse": 18
+      }
+    },
+    {
+      "experiment": "153920",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1n",
+      "cell": "C",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 48
+      }
+    },
+    {
+      "experiment": "153920",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1n",
+      "cell": "D",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 48
+      }
+    },
+    {
+      "experiment": "154341",
+      "model": "gemini-3.8-flash",
+      "nudge": "F5",
+      "cell": "A",
+      "n": 24,
+      "actions": {
+        "refuse": 24
+      }
+    },
+    {
+      "experiment": "154341",
+      "model": "gemini-3.8-flash",
+      "nudge": "F5",
+      "cell": "B",
+      "n": 24,
+      "actions": {
+        "cancel_with_refund": 24
+      }
+    },
+    {
+      "experiment": "154341",
+      "model": "gemini-3.8-flash",
+      "nudge": "F5",
+      "cell": "C",
+      "n": 24,
+      "actions": {
+        "transfer_to_human": 24
+      }
+    },
+    {
+      "experiment": "154341",
+      "model": "gemini-3.8-flash",
+      "nudge": "F5",
+      "cell": "D",
+      "n": 24,
+      "actions": {
+        "transfer_to_human": 24
+      }
+    },
+    {
+      "experiment": "154345",
+      "model": "gemini-3.8-flash",
+      "nudge": "E2",
+      "cell": "clean pending",
+      "n": 12,
+      "actions": {
+        "cancel": 12
+      }
+    },
+    {
+      "experiment": "154345",
+      "model": "gemini-3.8-flash",
+      "nudge": "E2",
+      "cell": "clean processed",
+      "n": 12,
+      "actions": {
+        "refuse": 12
+      }
+    },
+    {
+      "experiment": "154345",
+      "model": "gemini-3.8-flash",
+      "nudge": "E2",
+      "cell": "pending, with tracking",
+      "n": 36,
+      "actions": {
+        "transfer_to_human": 36
+      }
+    },
+    {
+      "experiment": "154345",
+      "model": "gemini-3.8-flash",
+      "nudge": "E2",
+      "cell": "processed, no tracking",
+      "n": 36,
+      "actions": {
+        "transfer_to_human": 36
+      }
+    },
+    {
+      "experiment": "154345",
+      "model": "gemini-3.8-flash",
+      "nudge": "U2",
+      "cell": "clean pending",
+      "n": 12,
+      "actions": {
+        "cancel": 12
+      }
+    },
+    {
+      "experiment": "154345",
+      "model": "gemini-3.8-flash",
+      "nudge": "U2",
+      "cell": "clean processed",
+      "n": 12,
+      "actions": {
+        "refuse": 12
+      }
+    },
+    {
+      "experiment": "154345",
+      "model": "gemini-3.8-flash",
+      "nudge": "U2",
+      "cell": "pending, with tracking",
+      "n": 36,
+      "actions": {
+        "transfer_to_human": 36
+      }
+    },
+    {
+      "experiment": "154345",
+      "model": "gemini-3.8-flash",
+      "nudge": "U2",
+      "cell": "processed, no tracking",
+      "n": 36,
+      "actions": {
+        "transfer_to_human": 36
+      }
+    },
+    {
+      "experiment": "154622",
+      "model": "gemini-3.8-flash",
+      "nudge": "Q",
+      "cell": "A",
+      "n": 48,
+      "actions": {
+        "block_cancellation": 48
+      }
+    },
+    {
+      "experiment": "154622",
+      "model": "gemini-3.8-flash",
+      "nudge": "Q",
+      "cell": "B",
+      "n": 48,
+      "actions": {
+        "let_proceed": 48
+      }
+    },
+    {
+      "experiment": "154622",
+      "model": "gemini-3.8-flash",
+      "nudge": "Q",
+      "cell": "C",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 48
+      }
+    },
+    {
+      "experiment": "154622",
+      "model": "gemini-3.8-flash",
+      "nudge": "Q",
+      "cell": "D",
+      "n": 48,
+      "actions": {
+        "block_cancellation": 15,
+        "transfer_to_human": 33
+      }
+    },
+    {
+      "experiment": "154628",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1q",
+      "cell": "A",
+      "n": 48,
+      "actions": {
+        "refuse": 48
+      }
+    },
+    {
+      "experiment": "154628",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1q",
+      "cell": "B",
+      "n": 48,
+      "actions": {
+        "cancel_with_refund": 48
+      }
+    },
+    {
+      "experiment": "154628",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1q",
+      "cell": "C",
+      "n": 48,
+      "actions": {
+        "transfer_to_human": 48
+      }
+    },
+    {
+      "experiment": "154628",
+      "model": "gemini-3.8-flash",
+      "nudge": "F1q",
+      "cell": "D",
+      "n": 48,
+      "actions": {
+        "refuse": 19,
+        "transfer_to_human": 29
+      }
+    }
+  ]
+}

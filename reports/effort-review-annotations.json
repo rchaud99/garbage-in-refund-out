@@ -1,0 +1,72 @@
+[
+  {
+    "id": "retail_arithmetic:#W3840181:corrupt_no:action2:0",
+    "type": "action",
+    "arithmetic": "explicit_numeric_reconciliation",
+    "benchmark_reference": false,
+    "note": "Lists four prices, computes 2456.57 and compares with 2947.87; discrepancy controls the handoff."
+  },
+  {
+    "id": "retail_arithmetic:#W2443586:corrupt_no:action2:1",
+    "type": "action",
+    "arithmetic": "explicit_numeric_reconciliation",
+    "benchmark_reference": false,
+    "note": "Explicit addition to 591.95 versus payment 710.33. Notices balance 651.14 fails the recorded charge but covers the item sum; transfers on mismatch."
+  },
+  {
+    "id": "retail_arithmetic:#W4862767:corrupt_no:action2:0",
+    "type": "action",
+    "arithmetic": "explicit_numeric_reconciliation",
+    "benchmark_reference": false,
+    "note": "Reports computed item sum 2492.53 versus payment 2991.03. Balance comparison is secondary; individual price addition is not expanded."
+  },
+  {
+    "id": "retail_arithmetic:#W1620235:corrupt_no:action3:0",
+    "type": "action",
+    "arithmetic": "explicit_numeric_reconciliation",
+    "benchmark_reference": false,
+    "note": "Explicit three-item addition to 1077.71 versus payment 1293.25, then notes balance 1185.48 is insufficient for the recorded charge."
+  },
+  {
+    "id": "retail_arithmetic:#W6368178:corrupt_no:action2:1",
+    "type": "action",
+    "arithmetic": "explicit_numeric_reconciliation",
+    "benchmark_reference": false,
+    "note": "Lists all five item prices and sums to 1166.43 versus payment 1399.71; prioritizes record mismatch."
+  },
+  {
+    "id": "retail_arithmetic:#W6979932:corrupt_no:answer1:1",
+    "type": "answer",
+    "arithmetic": "explicit_numeric_reconciliation",
+    "benchmark_reference": false,
+    "note": "Explicit four-item addition to 1291.82 versus payment 1550.18; calls balance irrelevant to resolving contradiction."
+  },
+  {
+    "id": "retail_arithmetic:#W5911003:corrupt_no:answer2:1",
+    "type": "answer",
+    "arithmetic": "explicit_numeric_reconciliation",
+    "benchmark_reference": false,
+    "note": "Explicit three-item addition to 881.58 versus payment 1057.88; uses the answer trigger and escalates."
+  },
+  {
+    "id": "retail_arithmetic:#W7988753:corrupt_no:answer1:1",
+    "type": "answer",
+    "arithmetic": "explicit_numeric_reconciliation",
+    "benchmark_reference": false,
+    "note": "Explicit three-item addition to 3864.28 versus payment 4637.12; transfers before a payment decision."
+  },
+  {
+    "id": "retail_arithmetic:#W4538969:corrupt_no:answer1:1",
+    "type": "answer",
+    "arithmetic": "explicit_numeric_reconciliation",
+    "benchmark_reference": false,
+    "note": "Shows intermediate sums ending at 6307.49 versus payment 7568.97; recognizes contradiction."
+  },
+  {
+    "id": "retail_arithmetic:#W2325029:corrupt_no:answer2:0",
+    "type": "answer",
+    "arithmetic": "explicit_numeric_reconciliation",
+    "benchmark_reference": false,
+    "note": "Shows intermediate sums ending at 2440.77 versus payment 2928.91; prioritizes arithmetic before card eligibility."
+  }
+]

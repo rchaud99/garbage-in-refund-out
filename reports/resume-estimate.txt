@@ -1,0 +1,20 @@
+2026-09-25_153920_gate-48-bases-skip-60-cells-CD-neutral-script-gemini-3.8-flash-claude-sonnet-5 31
+cost estimate (list price, no caching):
+  gemini-3.8-flash: 31 calls × ~3,717 input tokens; $0.25 typical, $0.38 high
+  total: $0.25 typical, $0.38 high
+2026-09-25_154341_gate-24-bases-skip-108-cells-ABCD-neutral-script-gemini-3.8-flash-claude-sonnet-5-claude-opus-5-5 5
+cost estimate (list price, no caching):
+  gemini-3.8-flash: 5 calls × ~3,842 input tokens; $0.04 typical, $0.06 high
+  total: $0.04 typical, $0.06 high
+2026-09-25_154345_cancel-36-12-orders-two-way-gemini-3.8-flash-claude-sonnet-5 143
+cost estimate (list price, no caching):
+  gemini-3.8-flash: 143 calls × ~3,905 input tokens; $1.17 typical, $1.76 high
+  total: $1.17 typical, $1.76 high
+2026-09-25_154622_queued-48-bases-skip-12-gemini-3.8-flash 42
+cost estimate (list price, no caching):
+  gemini-3.8-flash: 42 calls × ~3,813 input tokens; $0.34 typical, $0.51 high
+  total: $0.34 typical, $0.51 high
+2026-09-25_154628_gate-48-bases-skip-12-cells-ABCD-neutral-script-gemini-3.8-flash 29
+cost estimate (list price, no caching):
+  gemini-3.8-flash: 29 calls × ~3,707 input tokens; $0.23 typical, $0.35 high
+  total: $0.23 typical, $0.35 high

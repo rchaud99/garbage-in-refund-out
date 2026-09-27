@@ -1,0 +1,115 @@
+{
+  "n": 120,
+  "test_references": 7,
+  "groups": [
+    {
+      "task": "airline",
+      "wording_type": "action",
+      "cell": "corrupt_no",
+      "counts": {
+        "explicit": 5,
+        "none": 5
+      },
+      "n": 10
+    },
+    {
+      "task": "airline",
+      "wording_type": "action",
+      "cell": "corrupt_yes",
+      "counts": {
+        "explicit": 10
+      },
+      "n": 10
+    },
+    {
+      "task": "airline",
+      "wording_type": "answer",
+      "cell": "corrupt_no",
+      "counts": {
+        "explicit": 10
+      },
+      "n": 10
+    },
+    {
+      "task": "airline",
+      "wording_type": "answer",
+      "cell": "corrupt_yes",
+      "counts": {
+        "explicit": 10
+      },
+      "n": 10
+    },
+    {
+      "task": "retail_cancel",
+      "wording_type": "action",
+      "cell": "corrupt_no",
+      "counts": {
+        "explicit": 10
+      },
+      "n": 10
+    },
+    {
+      "task": "retail_cancel",
+      "wording_type": "action",
+      "cell": "corrupt_yes",
+      "counts": {
+        "explicit": 10
+      },
+      "n": 10
+    },
+    {
+      "task": "retail_cancel",
+      "wording_type": "answer",
+      "cell": "corrupt_no",
+      "counts": {
+        "explicit": 10
+      },
+      "n": 10
+    },
+    {
+      "task": "retail_cancel",
+      "wording_type": "answer",
+      "cell": "corrupt_yes",
+      "counts": {
+        "explicit": 10
+      },
+      "n": 10
+    },
+    {
+      "task": "retail_return",
+      "wording_type": "action",
+      "cell": "corrupt_no",
+      "counts": {
+        "explicit": 10
+      },
+      "n": 10
+    },
+    {
+      "task": "retail_return",
+      "wording_type": "action",
+      "cell": "corrupt_yes",
+      "counts": {
+        "explicit": 10
+      },
+      "n": 10
+    },
+    {
+      "task": "retail_return",
+      "wording_type": "answer",
+      "cell": "corrupt_no",
+      "counts": {
+        "explicit": 10
+      },
+      "n": 10
+    },
+    {
+      "task": "retail_return",
+      "wording_type": "answer",
+      "cell": "corrupt_yes",
+      "counts": {
+        "explicit": 10
+      },
+      "n": 10
+    }
+  ]
+}

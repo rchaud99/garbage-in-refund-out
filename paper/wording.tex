@@ -1,0 +1,48 @@
+\subsection{Wording follow-up and stopped-round recovery}
+
+The original action-tied sentence and the answer-tied sentence share the same arithmetic instruction.
+Across 96 Flash bases outside the initial 12, wrongful refusals were 55/96 under F1, 8/96 under F1d,
+0/96 under F1n (``Never refuse \ldots\ without first recomputing''), and 30/96 under F1dp (``any answer'',
+with differently phrased check content). The paired F1d--F1 difference was $-49$ points, 95\% cluster-bootstrap
+CI $[-59,-38]$; F1dp--F1d was $+23$ points $[12,34]$. All four gave 0/96 C payouts. The earlier Sonnet
+sample has 37/48 versus 21/48 refusals (difference $-33$ points $[-50,-17]$); no new Sonnet calls were made.
+F1dp changes more than the trigger, so it is not a clean lexical isolation experiment.
+
+Five interrupted Gemini experiments were completed with 250 missing-only calls (\$1.46). Original files and
+partial status flags were retained. The computed ledger shown under F5 gave 0/24 C payouts, 0/24 D refusals
+and 0/48 control errors. This tests supplied evidence, not whether the agent calls an optional checker.
+The retail-cancel replication corrected the first pass's one-way rule to ``pending if and only if no tracking'';
+both U2 and E2 transferred 36/36 corruptions in each direction and made 0/24 control errors. The wording
+effect did not replicate there. The rule holds on the benchmark snapshot, not necessarily on operational data.
+
+In the inverted framing, a cancellation was pre-queued and required an active block. With the same neutral
+check trigger, Flash blocked D in 15/48 cases versus 19/48 refusals in the ordinary framing (paired difference
+$-8$ points $[-25,8]$); both had 0/48 C payouts. This is inconclusive about action versus omission.
+
+\subsection{Full conversations}
+
+A separate completed run used \tautwo{}'s orchestrator, agent-selected lookups, and a cooperative Flash user
+simulator: 96 episodes on eight bases, C/D, three prompts, Flash/Sonnet agents (\$6.41).
+Under stock policy, each agent paid all 8/8 C cases and refused all 8/8 D cases without flagging the payments.
+The checking prompts gave the results below. A flagged discrepancy without a transfer call counts as held;
+this is a conversation-specific endpoint, not the exact single-decision transfer criterion.
+
+\begin{center}\small
+\begin{tabular}{llcc}
+\toprule
+Agent & Wording & C paid & D refused without flag \\
+\midrule
+Flash & F1 & 0/8 & 0/8 \\
+Flash & F1d & 0/8 & 0/8 \\
+Sonnet & F1 & 0/8 & 4/8 \\
+Sonnet & F1d & 0/8 & 1/8 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Flash's single-decision wording gap disappears here. Sonnet's descriptive difference remains, with only eight
+pairs; neither result establishes a universal conversation effect. The user wording differs from the neutral
+single-decision script and cannot be separated from the conversational format in this comparison.
+The stopped larger Sonnet attempts saved nine rows: four failed before any turn with Gemini simulator
+DNS/connection errors, and five usable F1 episodes (3/3 C transferred, 2/2 D refused). No F1d was reached;
+there is no additional paired wording comparison.

@@ -1,0 +1,46 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.DS_Store
+vendor/
+.env
+.env.*
+!.env.example
+work/
+runs/
+*.aux
+*.log
+*.synctex.gz
+paper/main.xdv
+
+# --- added for GitHub publish ---
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+credentials*.json
+# environments, caches, tooling
+.venv*/
+__pycache__/
+*.py[oc]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+node_modules/
+.DS_Store
+.claude/
+# weights, checkpoints, API caches
+*.safetensors
+*.npz
+*.ckpt
+*.pt
+*.bin
+adapters/
+checkpoints/
+*.sqlite
+*.sqlite3

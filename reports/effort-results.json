@@ -1,0 +1,624 @@
+{
+  "run": "2026-09-25_164210_effort-flash",
+  "status": "complete",
+  "planned": 600,
+  "received": 600,
+  "valid": 600,
+  "api_errors": 0,
+  "unreadable": 0,
+  "cost_usd": 4.0733895,
+  "rates": [
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 126,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 126,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 24,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 24,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording_type",
+      "level": "action",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 24,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 126,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 126,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 24,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 24,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording_type",
+      "level": "answer",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 24,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action1",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action2",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "action3",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer1",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer2",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "wrongful_refusal",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "bad_payout_or_approval",
+      "k": 0,
+      "n": 42,
+      "bases": 21,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "false_hold",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "clean_no_error",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    },
+    {
+      "task": "retail_arithmetic",
+      "dimension": "wording",
+      "level": "answer3",
+      "metric": "clean_no_transfer",
+      "k": 0,
+      "n": 8,
+      "bases": 4,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "degenerate_bootstrap": true
+    }
+  ],
+  "prompt_hashes_verified": 600,
+  "contrast": {
+    "bases": 21,
+    "difference": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  "effort_pattern_rule_held": false,
+  "causal_effort_isolated": false,
+  "original_generality_rule_held": false
+}
