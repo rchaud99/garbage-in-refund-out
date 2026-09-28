@@ -17,6 +17,8 @@ from pathlib import Path
 
 from scipy.stats import binomtest
 
+from refundout import ladder
+
 SEED = 20260928
 BOOT = 10_000
 FLOOR_REFUSAL = 0.10
@@ -42,6 +44,9 @@ def load(dirs):
         if meta["config"].get("pilot"):
             raise SystemExit(f"{d} is a pilot run; pilots are excluded from the confirmatory analysis")
         rows += [json.loads(line) for line in (Path(d) / "decisions.jsonl").read_text().splitlines()]
+    for r in rows:  # one parser for every run: re-read the stored reply with the current rule
+        if r.get("reply"):
+            r["action"], r["message"], r["parse_error"] = ladder.parse(r["task"], r["reply"]["text"])
     seen = {}
     for r in rows:  # a (model, id) answered twice (e.g. a resumed stage) keeps its first record
         seen.setdefault((r["model"], r["id"]), r)

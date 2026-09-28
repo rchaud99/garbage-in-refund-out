@@ -207,15 +207,27 @@ def parse(task: str, text: str | None) -> tuple[str | None, str | None, str | No
     try:
         data = json.loads(t)
     except json.JSONDecodeError:
-        start, end = t.find("{"), t.rfind("}")
-        try:
-            data = json.loads(t[start:end + 1]) if start >= 0 else None
-        except json.JSONDecodeError:
-            data = None
+        data = _decision_object(task, t)
     if not isinstance(data, dict) or data.get("action") not in (GRANT[task], "refuse", "transfer_to_human") \
             or not isinstance(data.get("message_to_customer"), str):
         return None, None, "invalid decision JSON"
     return data["action"], data["message_to_customer"], None
+
+
+def _decision_object(task: str, text: str):
+    """The one decision object in a reply that has extra text or extra JSON objects around it (e.g. a model that
+    first writes a transfer summary object). Ambiguous if objects carrying different valid actions appear."""
+    decoder, found, i = json.JSONDecoder(), [], text.find("{")
+    while i >= 0:
+        try:
+            obj, end = decoder.raw_decode(text, i)
+        except json.JSONDecodeError:
+            i = text.find("{", i + 1)
+            continue
+        if isinstance(obj, dict) and obj.get("action") in (GRANT[task], "refuse", "transfer_to_human"):
+            found.append(obj)
+        i = text.find("{", end)
+    return found[-1] if found and len({o["action"] for o in found}) == 1 else None
 
 
 def with_wording(item: Item, airline: Airline, wording: str) -> Item:

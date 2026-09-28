@@ -97,3 +97,10 @@ def test_missing_answers_are_not_refusals():
     table = ladder_analysis.cells(rows)
     cell = table[("gemini-3.8-flash", "cancel", "SA", "D")]
     assert cell["missing"] == 1 and cell["n"] == 19
+
+
+def test_parse_takes_the_decision_object_among_several():
+    text = '{"summary": "records conflict"}junk\n\n{"action":"transfer_to_human","message_to_customer":"HOLD ON."}'
+    assert ladder.parse("comp", text)[0] == "transfer_to_human"
+    two = '{"action":"refuse","message_to_customer":"a"} {"action":"transfer_to_human","message_to_customer":"b"}'
+    assert ladder.parse("comp", two)[2]

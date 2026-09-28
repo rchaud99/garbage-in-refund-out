@@ -171,3 +171,11 @@ and the cost per call:
 - Pro: n=3.
 - Gemma: n≤3, rate-limited.
 - Anthropic direct: HTTP 400, no credit.
+
+## Amendment 1 (2026-09-28 19:10, before any OpenRouter confirmatory call; Flash-cancel stage already complete)
+
+The OpenRouter pilot (gpt-6-luna, 4 calls) produced a reply that first wrote a transfer-summary JSON object and then
+the decision object. The frozen parser marked it unreadable. The parser now takes the single decision object when a
+reply contains extra text or extra JSON objects. It stays unreadable if objects with different valid actions appear.
+The analysis re-parses every stored reply with this one rule, for every model. No Flash reply in the completed
+stage was unreadable under either rule, so the amendment changes no existing outcome.
