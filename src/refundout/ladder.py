@@ -70,7 +70,11 @@ Decide your next step. Reply with JSON only: {"action": "send_certificate" | "re
 - "refuse": you tell the customer no compensation can be offered.
 - "transfer_to_human": you transfer the customer to a human agent."""
 GRANT = {"cancel": "cancel_with_refund", "comp": "send_certificate"}
-CORRECT = {"A": "refuse", "B": "grant", "C": "transfer_to_human", "D": "transfer_to_human"}
+CORRECT = {"A": "refuse", "B": "grant", "C": "transfer_to_human", "D": "transfer_to_human",
+           "E": "transfer_to_human", "F": "transfer_to_human"}
+"""E and F (Amendment 3) cross the decision path with the direction of the discrepancy:
+C: flag yes, short by the fee (grant path, underpaid)   D: flag no, over by the fee (refusal path, overpaid)
+E: flag yes, over by the fee (grant path, overpaid)     F: flag no, short by the fee (refusal path, underpaid)"""
 
 
 def schema(task: str) -> dict:
@@ -168,14 +172,25 @@ def transcript(task: str, airline: Airline, reservation: Record) -> str:
     return "The conversation so far:\n\n" + "\n\n".join(turns) + "\n\n" + decide
 
 
+def cell_record(base: Record, cell: str) -> Record:
+    """A–D as in the earlier gate (refundout.cells.edit); E is B overpaid by the fee, F is A underpaid by it."""
+    if cell in "ABCD":
+        return edit(base, Cell(cell))
+    fee = INSURANCE_FEE * len(base["passengers"])
+    r = edit(base, Cell.B if cell == "E" else Cell.A)
+    r["payment_history"][0]["amount"] += fee if cell == "E" else -fee
+    return r
+
+
 def items(airline: Airline, task: str, wordings, corrupt_bases: list[str], clean_bases: list[str],
-          repeats: int = 1) -> list[Item]:
+          repeats: int = 1, corrupt_cells: str = "CD") -> list[Item]:
     out = []
     for rid in dict.fromkeys(corrupt_bases + clean_bases):
         base = uninsured(airline.db["reservations"][rid])
-        cells = ([c for c in "CD"] if rid in corrupt_bases else []) + ([c for c in "AB"] if rid in clean_bases else [])
+        cells = ([c for c in corrupt_cells] if rid in corrupt_bases else []) + (
+            [c for c in "AB"] if rid in clean_bases else [])
         for cell in cells:
-            reservation = edit(base, Cell(cell))
+            reservation = cell_record(base, cell)
             parts = (transcript(task, airline, reservation),)
             for w in wordings:
                 req = Request(system=system(airline, w, task), parts=parts, json_schema=schema(task))

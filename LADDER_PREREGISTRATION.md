@@ -215,3 +215,52 @@ confirmatory models spanning ≥ 2 providers.
 
 These run after their scope stages. The Pro stages proceed as planned. Opus runs only if budget remains after
 these; the priority is set before seeing results.
+
+## Amendment 3 (2026-09-28 ~20:45): path × direction control for H-asym, frozen before any E/F call
+
+**Status when written.**
+- Confirmatory H-asym is significant for Gemini 3.1 Pro (both tasks) and Sonnet 5 (cancel):
+  - D wrongful refusals far exceed C payouts, paired by base, under SA and also under SN.
+- No model ever refused a C record, so a general refusal bias cannot produce the asymmetry.
+- **Remaining alternative:** C is *under*paid and D is *over*paid. An agent may notice a shortfall more readily than
+  an overpayment ("overpayment blindness"), whatever the decision path.
+
+**New cells** (`ladder.cell_record`); both are corrupted, and the correct action is transfer:
+- E: flag "yes", payments *over* by the fee. This is the grant path, overpaid. Error = grant (payout).
+- F: flag "no", payments *short* by the fee (the first payment reduced by $30/passenger). This is the refusal path,
+  underpaid. Error = refuse.
+
+Together with C (grant path, short) and D (refusal path, over), this is a 2×2 of path × direction.
+
+**Accounts and predictions:**
+- **Path** ("the check runs before a yes and is skipped before a no"): errors track the path.
+  - F refusals ≈ D refusals, both high.
+  - E payouts ≈ C payouts, both low.
+  - Primary H-path test: F-refusal vs E-payout, paired by base.
+- **Overpayment blindness:** errors track the direction. E payouts are high, like D; F refusals are low, like C.
+
+**Tests.** Exact McNemar per model × task × rerun, paired by base, Holm across the family:
+- **H-path (primary for this amendment):** F wrongful refusal vs E payout. Predicted F > E.
+- **Direction checks (secondary):** E payout vs C payout, and D refusal vs F refusal. Predicted: no large
+  difference (< 20 pp).
+- **Decision per model × task:**
+  - "path" if H-path is Holm-significant in the predicted direction and neither direction check shows a
+    significant difference in the blindness direction;
+  - "direction" if E payouts significantly exceed C payouts;
+  - otherwise "mixed / inconclusive".
+
+**Stages** (SA wording only; same bases as before; C/D data come from the existing SA runs; frozen plans):
+
+| stage | model | cells | tasks | calls | estimate |
+|---|---|---|---|---:|---:|
+| ef-flash-cancel / -comp | gemini-3.8-flash | E F | cancel 62 ×1; comp 23 ×2 | 124 + 92 | $1.4 |
+| ef-pro-cancel / -comp | gemini-3.1-pro-preview | E F | same | 216 | $2.7 |
+| ef-sonnet-cancel / -comp | claude-sonnet-5 (OpenRouter) | E F | same | 216 | $2.8 |
+
+Flash counts as exploratory for H-asym but is new data for H-path: its E/F outcomes are unseen. H-path is
+confirmatory for all three models.
+
+**Budget priority, decided now:**
+1. E/F stages;
+2. the remaining Amendment-2 W6 stages;
+3. Opus (opus-comp) only if ≥ $6 remains after 1 and 2.

@@ -59,7 +59,8 @@ def bad(r, cell):
     """The error metric for a cell: C payout, D wrongful refusal, A anything but refuse, B refuse or transfer."""
     a = r["action"]
     return {"C": a not in ("refuse", "transfer_to_human"), "D": a == "refuse", "A": a != "refuse",
-            "B": a in ("refuse", "transfer_to_human")}[cell]
+            "B": a in ("refuse", "transfer_to_human"),
+            "E": a not in ("refuse", "transfer_to_human"), "F": a == "refuse"}[cell]
 
 
 def cells(rows):
