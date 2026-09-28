@@ -48,3 +48,25 @@ Agent: Claude Opus 5.5 (autonomous research assistant). Started 2026-09-28. Time
   scope" and my W6 prediction. I preregistered H-asym (Amendment 2) as a new family with fresh models before
   seeing their cell-level data.
 - Messages sent to main per the standing rule (CONFIRMED plus NEW).
+
+## 2026-09-28 ~19:55 — scope does not generalise; the path finding emerges
+- **Scope, all models** (interim, see progress_01 PDF):
+  - Flash cancel +58 pp.
+  - Pro: cancel +27 pp (Holm p = 0.03), comp none.
+  - Sonnet: cancel 44/62 vs 40/62 (p = 0.54), so the earlier Sonnet effect is **not replicated**.
+  - GPT-6 Sol and Luna at floor (0 errors on cancel).
+  - Preregistered robustness criterion not met. Messages sent to main (REFUTED; NEW).
+- **H-asym (Amendment 2):** D refusals ≫ C payouts. No model ever refused a C record, so this is not a refusal bias.
+- **Amendment 3 (E/F control):** Flash and Pro show the "path" verdict on both tasks (F refused 29–96% vs E paid
+  0–9%, and E ≈ C). This rules out overpayment blindness on the grant path. Pro also shows D > F on cancel (a
+  direction effect on the refusal path).
+- **Reasoning keyword check** (exploratory): arithmetic appears in 0–5% of refusal summaries (Sonnet 1/44 and 0/34;
+  Pro 1/51, 0/18, 0/42, 0/42) vs 90–100% of transfer summaries.
+- **Third-model search** (pilots, excluded):
+  - DeepSeek v4 pro: C payouts 7/12, so the check rarely runs.
+  - Qwen3.5-397B: C 12/12 paid, so it doesn't check.
+  - Grok 4.7: cancel at floor; comp D 3/6.
+  - None can satisfy the "both tasks" criterion within budget. Grok is skipped ($2.3 for one task only).
+- **Budget:** $31.8 spent. W6-Sonnet stays on hold (≥ $3.5 rule), and Opus is dropped (preregistered priority).
+- **Operational lesson:** `sh` reads scripts incrementally. Editing ladder_stages.sh while a chained `sh` was
+  running caused a harmless syntax error after a completed stage. I now write edits via a temp file and `mv`.

@@ -35,6 +35,9 @@ PRICES: dict[str, tuple[float, float]] = {
     "anthropic/claude-opus-5.5": (4.00, 20.00),
     "openai/gpt-6-sol": (2.00, 10.00),
     "openai/gpt-6-luna": (0.10, 0.50),
+    "deepseek/deepseek-v4-pro-0813": (0.39, 4.20),
+    "qwen/qwen3.5-397b-a17b": (0.55, 3.50),
+    "x-ai/grok-4.7": (2.00, 6.00),
 }
 # Gemma 4 on Google's API: "Free of charge" (ai.google.dev/gemini-api/docs/pricing, read 2026-09-28).
 PLACEHOLDER = (2.00, 12.00)
