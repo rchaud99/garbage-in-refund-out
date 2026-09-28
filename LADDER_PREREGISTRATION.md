@@ -264,3 +264,12 @@ confirmatory for all three models.
 1. E/F stages;
 2. the remaining Amendment-2 W6 stages;
 3. Opus (opus-comp) only if ≥ $6 remains after 1 and 2.
+
+**Amendment 3b** (2026-09-28 19:55; written before any Sonnet E/F reply existed; Flash and Pro E/F results already
+seen). This makes explicit the overall criterion Amendment 3 inherits from the main preregistration:
+
+- The path finding counts as **robust** if the "path" verdict holds in both tasks for ≥ 3 models spanning ≥ 2
+  providers.
+- Models with 0 errors on D and F under SA (floor) are "not testable".
+- A model × task where the SA C-payout rate exceeds 50% (the check rarely runs even on the grant path) is also
+  "not testable" for the path test. This mirrors the scope testability rule.
