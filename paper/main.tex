@@ -30,10 +30,13 @@ A support agent can follow policy while trusting a corrupt record. We plant dete
 In an airline single-decision follow-up, Gemini~3.8~Flash wrongfully refused 55/96 corrupted ``no'' records under
 ``before deciding on a cancellation or refund'', versus 8/96 under ``before telling the customer yes or no''
 (paired difference $-49$ percentage points, 95\% bootstrap CI $[-59,-38]$). A refusal-naming instruction gave 0/96;
-all three gave 0/96 corrupted payouts. This is not a universal result: a corrected retail-cancel replication gave
-0/36 refusals under either wording, and the earlier full-conversation Flash gap disappeared (0/8 under each).
+all three gave 0/96 corrupted payouts. Claude Opus~5.5 made 0/24 wrongful refusals and 0/24 corrupted payouts under
+every one of the four wordings (24 fresh bases): no wording effect is measurable at floor. This is not a universal
+result: a corrected retail-cancel replication gave 0/36 refusals under either wording, and in the earlier
+full-conversation study Flash refused 2/8 versus 1/8 in the raw harness output (0/8 under each after a hand recode
+that counts flagging without a transfer call as held; a small stress test that may reflect a format effect).
 Showing a deterministic airline reconciliation yielded 0/24 bad payouts, 0/24 wrongful refusals and 0/48 clean
-control errors. A prospectively specified 3,672-decision Flash extension found 288/390 airline refusals under action-tied wordings versus 10/390 under answer-tied wordings, but zero refusals under either type in both retail tasks. The prespecified requirement for the same direction in two of three tasks failed. A further 600-call retail arithmetic analogue used synthetic gift-card balances and produced 0/126 versus 0/126 wrongful refusals; the preregistered effort-pattern rule failed. The analogue does not isolate effort causally. The practical recommendation is to validate both approval and refusal
+control errors; the shown ledger states the mismatch, so this tests acting on a stated mismatch, not checking. A prospectively specified 3,672-decision Flash extension (six wordings, 65 airline bases, two calls per item) found 288/390 airline refusals under action-tied wordings versus 10/390 under answer-tied wordings, but zero refusals under either type in both retail tasks. The prespecified requirement for the same direction in two of three tasks was not met because both retail tasks were at floor (0 refusals under either wording); the retail tasks could not show the effect, so generality beyond this airline task is untested. A further 600-call retail arithmetic analogue used synthetic gift-card balances and produced 0/126 versus 0/126 wrongful refusals; the effort rule was not testable (retail analogue at floor; its `no' path runs through the corrupted number). The analogue does not isolate effort causally. The practical recommendation is to validate both approval and refusal
 paths per model and task, and expose deterministic checks with explicit adjustment provenance and counting rules.
 \end{abstract}
 
@@ -114,7 +117,9 @@ request is a ``yes''; only who loses varies.
 
 On the stock policy all three models paid out every corrupted refund (C) and refused every customer who had paid for
 insurance (D) (Table~\ref{tab:airline}); none of the 72 answers mentioned the payments to the customer. In retail,
-1 corrupted order in 144 was held. This is the rational default: the policy never asks for an audit. The clause,
+1 corrupted order in 144 was held. This is the rational default: the policy never asks for an audit. Under the
+stock policy trusting the database is what the policy asks for, so these are trust rates, not error rates (0/72
+airline, 1/144 retail). The clause,
 which says what to do about a contradiction but not how to find one, made Opus hold every corrupted record in both
 domains (C, D and all 48 retail cells), while Sonnet and Flash still paid out 92--100\% of airline C records and held
 only 40--50\% in retail. Whether a policy line does anything depends on the model.
@@ -167,7 +172,7 @@ policy's no (\quoted{no insurance \ldots\ none of the exceptions apply, so refus
 a refusal is not a cancellation or refund. The asymmetry is the same one that write-time guardrails have by
 construction (they only see writes), reappearing inside the agent's own reasoning.
 
-Anchoring the check to the answer (\emph{decision-time}) cut wrongful refusals to 17\% (Flash, whose reasoning quotes
+Anchoring the check to the answer (\emph{decision-time}) cut wrongful refusals, on these 12 bases, to 17\% (Flash, whose reasoning quotes
 the line: \quoted{Before I tell the user `no,' I need to recompute the total}), 42\% (Sonnet) and 0\% (Opus), with no
 new errors on consistent records.
 
@@ -268,7 +273,10 @@ that differs from the tool's charge is invisible to a guardrail on the write.
 \section{Limitations}
 
 Most trials are single decisions at a replayed decision point. The completed conversation study is small
-(8 bases), uses different customer wording and does not reproduce the Flash single-decision gap. Full conversations,
+(8 bases), uses different customer wording and does not reproduce the Flash single-decision gap (raw harness
+output 2/8 versus 1/8; 0/8 each after the hand recode). The Flash user simulator can hang up at the transfer
+offer, and Flash used \tautwo{}'s calculate tool in 12/16 of these episodes, which the single-decision format
+does not offer, so the difference may be a format effect; we treat conversations as a small stress test. Full conversations,
 customer pushback, optional lookup use and hand-off quality remain distinct deployment questions. The initial tests
 have 12 records per cell; the wording follow-up has 96 Flash bases but only four chosen sentences. The power extension
 has six trigger templates, three related tasks and only two domains; both retail tasks reuse one benchmark-specific
@@ -277,8 +285,13 @@ is a model-generated summary, not a complete account of internal computation. Ze
 degenerate, not evidence of zero risk. Model versions and reasoning settings may change the result.
 
 \section*{Reproducibility}
-Code, prompts, every model reply and reasoning summary, and hand-review files are in the repository
-(\texttt{src/refundout}, \texttt{runs/}); \texttt{FINDINGS.md} indexes each run. Historical and campaign spend are itemized in \texttt{reports/spend.json}; raw run folders remain local and compact analysis data are versioned.
+Code and prompts are in \texttt{src/refundout}; compact per-decision CSVs, hashed prompt manifests and analyses are
+in \texttt{reports/}. The raw per-call run folders (\texttt{runs/}, about 260\,MB) are kept locally and are not in
+the repository; \texttt{FINDINGS.md} indexes each run. Historical and campaign spend are itemized in
+\texttt{reports/spend.json}. The compact analyses rerun with
+\texttt{uv run --no-project --with numpy --with scipy python scripts/reanalyse\_compact.py}. Full reruns need
+\tautwo{} cloned at commit \texttt{b7ea907} into \texttt{vendor/tau2-bench} and the sibling \texttt{lookworth}
+package (a local path dependency, which currently blocks \texttt{uv sync} for outside users).
 
 \begin{thebibliography}{9}
 \bibitem{tau2} V.~Barres, H.~Dong, S.~Ray, X.~Si, K.~Narasimhan. $\tau^2$-Bench: Evaluating conversational agents in a

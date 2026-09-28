@@ -1,8 +1,8 @@
 # Findings: Garbage In, Refund Out
 
-**Latest follow-up:** The airline wording effect is large; the retail arithmetic follow-up does not support the effort rule. See the retail arithmetic effort section below.
+**Latest follow-up:** The airline wording effect is large; the retail follow-ups were at floor, so they could not test whether the effect generalises. See the retail arithmetic effort section below.
 
-**Original three-task conclusion (2026-09-25): task-specific; this extension is Flash-only.** The 3,672-decision study reduced airline refusals from 288/390 to 10/390, but both retail tasks had zero under either wording type. The preregistered 2-of-3-task rule failed. See the final sections; earlier sections below are the historical studies.
+**Original three-task conclusion (2026-09-25): generality beyond the airline task is untested; this extension is Flash-only.** The 3,672-decision Flash six-wording study (65 airline bases, two calls per item) reduced airline refusals from 288/390 to 10/390, but both retail tasks had zero under either wording type. The preregistered 2-of-3-task rule was not met because both retail tasks were at floor (0 refusals under either wording); the retail tasks could not show the effect, so generality beyond this airline task is untested. See the final sections; earlier sections below are the historical studies.
 
 
 Single-call decision test, 2026-09-24. Twelve real τ² airline reservations (commit b7ea907)
@@ -45,8 +45,9 @@ The reply format never asks about discrepancies. Every C and D answer was read b
    no ("no insurance… none of the exceptions apply, so refuse") and stops there, never adding up
    the payments. A refusal isn't "a cancellation or refund", so the check never fires. The same check
    worded as "before telling the customer **yes or no**" cut those refusals to Flash 17%, Sonnet
-   42%, Opus 0%. A check meant to catch bad data ends up protecting only the company unless it is
-   tied to every answer. (Details: What it shows, 3 and 4.)
+   42%, Opus 0% (12 bases). A check meant to catch bad data ends up protecting only the company unless it is
+   tied to every answer. (Details: What it shows, 3 and 4.) On 24 fresh bases, Opus showed no wording
+   effect: 0/24 wrongful refusals under all four wordings, at floor (see "Name the no" below).
 2. **A goodwill-credit label is not enough; an approval record plus a counting rule is.** Every
    agent that checks sees the line named `goodwill_credit_…` and still transfers the customer
    (83–100%), because the payments come out short and the label says nothing about who approved
@@ -99,7 +100,8 @@ runs that include them.
 1. **Nobody checks unprompted, Opus included.** With the stock policy, all three models paid every
    corrupted refund and refused every overpaid customer, never mentioning the payments to the
    customer. Expected: the policy never asks for an audit, so trusting the record is the rational
-   default. Opus sometimes *saw* the gap (3 of 12 D reasonings, e.g. "the payment total of 165 seems
+   default. Under the stock policy trusting the database is what the policy asks for, so this is a
+   trust rate, not an error rate (0/72 airline, 1/144 retail). Opus sometimes *saw* the gap (3 of 12 D reasonings, e.g. "the payment total of 165 seems
    to hint at insurance being included, but the record explicitly states no insurance… I need to
    follow the record as stated") and refused anyway: without a rule for contradictions, it follows
    the flag. The heuristic missed these ("doesn't quite match"), so `noticed` reads 0%.
@@ -148,7 +150,7 @@ record, and the transcript shows the agent's lookup of the credit returning its 
 `supervisor_NNNN` approver and an approval time between booking and "now"); C; and **C+forged-provenance** (C plus
 a credit and an equally official approval record, which leave the fee unpaid: correct is transfer). Runs:
 `runs/2026-09-24_124457_…provenance…` (reason v1; Opus $1.49, Flash $0.37) and `runs/2026-09-24_124916_…provenance…`
-(reason v2, Flash only, $0.40); $2.28 in all. **Sonnet was not measured**: the Anthropic account ran out of credit
+(reason v2, Flash only, $0.40); $2.29 in all. **Sonnet was not measured**: the Anthropic account ran out of credit
 after 2 of its 48 calls (HTTP 400 "credit balance is too low"), so Opus could not be rerun with v2 either.
 Figure: `figures/provenance.png`.
 
@@ -179,11 +181,12 @@ so nothing here tests whether a listed-but-unused tool would also let Opus accep
 ## For the deployment memo
 
 - No model checks the receipt unprompted; even the strongest follows a contradicted record
-  without a rule saying what to do about it.
+  without a rule saying what to do about it. Under the stock policy that trust is what the policy
+  asks for: a trust rate, not an error rate (0/72 airline, 1/144 retail).
 - A policy clause alone is model-dependent: verify it per model before relying on it.
 - A "recompute" checklist protects the company's money but still turns away customers the
   record shortchanges. Wording it as "before telling the customer yes or no" cut wrongful
-  refusals sharply for Flash (83% → 17%) and partly for Sonnet (75% → 42–50%), at no extra
+  refusals sharply for Flash (83% → 17%, 12 bases) and partly for Sonnet (75% → 42–50%, 12 bases), at no extra
   cost on normal records; it is worth adopting, but a prompt alone does not guarantee the
   check runs. Where refusals matter, compute the reconciliation in a tool and hand the
   agent the result instead of asking it to do the arithmetic.
@@ -379,7 +382,12 @@ then called the transfer tool:
 
 Caveats: 8 bases, one conversation each; a cooperative customer who never pushes back; outcomes where the agent
 flagged the discrepancy but didn't call the transfer tool (Flash, 4 conversations) count as held, since the
-customer was told the record was inconsistent and nothing was refunded or refused on its basis.
+customer was told the record was inconsistent and nothing was refunded or refused on its basis. The raw harness
+output (`runs/2026-09-24_182105_episodes-8-bases-flash-sonnet/summary.md`, before this hand recode) has Flash D
+refused 2/8 under the checklist (F1) versus 1/8 under decision-time (F1d); Sonnet's 4/8 versus 1/8 is the same in
+both. The Flash user simulator can hang up at the transfer offer, and Flash used τ²'s calculate tool in 12/16 of
+these episodes, which the single-decision format does not offer, so the single-decision vs conversation difference
+may be a format effect; treat conversations as a small stress test.
 
 ## Stopped-round audit and Gemini completions (2026-09-25)
 
@@ -394,19 +402,21 @@ parts now have 384, 96, 192, 192 and 192 records respectively.
 F1d **8/96**, F1n **0/96**, F1dp **30/96**. Paired F1d-minus-F1 difference **−49 percentage points**,
 95% cluster-bootstrap CI **[−59, −38]**, n=96 pairs. F1dp-minus-F1d is **+23 points [12,34]**.
 C payouts are **0/96 under each of the four wordings**. The earlier Sonnet sample remains n=48:
-F1 37/48 versus F1d 21/48 refusals; no second-pass Sonnet result exists.
+F1 37/48 versus F1d 21/48 refusals; no second-pass Sonnet result exists. Claude Opus 5.5 made 0/24 wrongful refusals and 0/24 corrupted payouts under every one of the four wordings F1, F1n, F1d, F1dp (24 fresh bases, neutral script, run `runs/2026-09-25_151002_gate-24-bases-skip-12-cells-CD-neutral-script-claude-opus-5-5`, $5.10): no wording effect is measurable at floor.
 `reports/wording-pooled-contrasts.md` contains all contrasts. Zero-event nonparametric bootstrap
 intervals collapse to [0,0]; they do not establish zero population risk.
 
 **Compute in code (F5).** The shown ledger result plus contradiction clause produced **0/24 C
-payouts, 0/24 D refusals, and 0/48 A+B control errors** in Flash. This supports handing the model
+payouts, 0/24 D refusals, and 0/48 A+B control errors** in Flash. The ledger output prints the verdict ("payments do not
+reconcile … insurance fee paid but insurance marked no"), so this tests whether the model acts on a stated
+mismatch, not whether it checks. This supports handing the model
 explicit evidence in this task. It does not prove that an optional tool will be called, that the model
 will always obey it, or that a production gate can be omitted. No new benign-adjustment F5 sample
 was collected; the prior provenance experiment remains separate evidence.
 
 **Retail two-way rule.** U2 and E2 both transferred **36/36** processed-without-tracking and
 **36/36** pending-with-tracking records; each had **0/24** control errors. The action/answer
-wording effect **did not replicate in this retail task** after fixing the one-way-rule confound.
+wording effect could not show in this retail task: both wordings were at floor (0 refusals), so it is untested there.
 The invariant is specific to these benchmark records, not a general shipping rule.
 
 **Inverted framing.** With cancellation pre-queued, Flash blocked D in **15/48** cases; under the
@@ -419,47 +429,51 @@ a Gemini simulator DNS/connection error, not evidence of an Anthropic-credit sto
 conversations remain: **3/3 C transferred, 2/2 D explicitly refused without payment arithmetic**.
 No F1d was reached. Small-n, unpaired and incomplete; no new conversation claim is justified.
 See `reports/conversation-audit.md`. The earlier completed 96-conversation result remains: Flash's
-single-decision refusal gap disappeared in conversation (F1/F1d 0/8 versus 0/8); Sonnet's descriptive
-gap was 4/8 versus 1/8. Different customer scripts prevent attributing this difference solely to format.
+single-decision refusal gap disappeared in conversation after the hand recode (F1/F1d 0/8 versus 0/8; raw harness
+output 2/8 versus 1/8, see the conversation caveats above); Sonnet's descriptive gap was 4/8 versus 1/8. Different
+customer scripts prevent attributing this difference solely to format; the Flash simulator's hang-ups and its use of
+the calculate tool also make it a small stress test, not a format-free comparison.
 
 ## Prospective Flash wording power study (2026-09-25)
 
-**The refusal leak was task-specific; the prespecified cross-task rule did not hold.** Fixed before API calls: six trigger templates, two repeats, 65 airline bases, 30 orders per retail-cancel family, 43 per retail-return family, and five clean controls per family/task. There were 3672/3672 valid decisions, 0 API errors and 0 unreadable replies; cost $21.712943. Selection and call order used seed 20260925.
+**The airline refusal leak was large; the prespecified cross-task rule was not met because both retail tasks were at floor (0 refusals under either wording); the retail tasks could not show the effect, so generality beyond this airline task is untested.** Fixed before API calls: six trigger templates, two repeats, 65 airline bases, 30 orders per retail-cancel family, 43 per retail-return family, and five clean controls per family/task. There were 3672/3672 valid decisions, 0 API errors and 0 unreadable replies; cost $21.712943. Selection and call order used seed 20260925.
 
 | Task | Action-tied refusal | Answer-tied refusal | Bases per corrupted cell |
 |---|---|---|---:|
 | Airline cancellation | 288/390 (73.8%, 95% CI 66.7–80.5) | 10/390 (2.6%, 95% CI 1.0–4.4) | 65 |
-| Retail cancellation | 0/180 (0.0%, 95% CI 0.0–0.0) | 0/180 (0.0%, 95% CI 0.0–0.0) | 30 |
-| Retail return | 0/258 (0.0%, 95% CI 0.0–0.0) | 0/258 (0.0%, 95% CI 0.0–0.0) | 43 |
+| Retail cancellation | 0/180 (0%; 95% upper bound 9.5%, 30 orders) | 0/180 (0%; 95% upper bound 9.5%, 30 orders) | 30 |
+| Retail return | 0/258 (0%; 95% upper bound 6.7%, 43 orders) | 0/258 (0%; 95% upper bound 6.7%, 43 orders) | 43 |
 
-Primary: Action/answer odds ratio 4999.98, approximate 95% CI [97.51, 256385.48]. Model usable: True; boundary random-effect components: [] (0=base, 1=paraphrase, 2=task). The prespecified criterion requires OR CI above 1 and strictly positive action-minus-answer refusal differences in at least two tasks; **1/3** had that direction, so **rule held = False**. Rates and 95% cluster-bootstrap intervals for every task and paraphrase, bad payouts/return approvals, false holds, and clean-no transfers are in `reports/power-results.md`. Returns are approvals to initiate a return, not executed cash payouts.
+Primary: the preregistration says to report the primary criterion as "not established" when the pooled model is unidentifiable. The pooled mixed model is quasi-separated (both retail tasks had zero events), so the pooled odds ratio is not reported; per-task counts are the result. The prespecified criterion requires OR CI above 1 and strictly positive action-minus-answer refusal differences in at least two tasks; **1/3** had that direction, so the preregistered rule was not met because both retail tasks were at floor (0 refusals under either wording); the retail tasks could not show the effect, so generality beyond this airline task is untested. Zero-event rows give exact one-sided 95% (Clopper-Pearson) upper bounds, 1 − 0.05^(1/n), on the n independent orders, not calls. Rates and 95% cluster-bootstrap intervals for every task and paraphrase, bad payouts/return approvals, false holds, and clean-no transfers are in `reports/power-results.md`. Returns are approvals to initiate a return, not executed cash payouts.
 
 Interpretation is limited to this Flash model and setting. Repeated calls do not turn 65 airline bases into 390 independent bases. Six chosen paraphrases and three related tasks provide weak information for random-effect generality. Both retail tasks use the same explicitly supplied pending-if-and-only-if-no-tracking rule; there is no third domain or third independent checking mechanism. Zero/all-one bootstrap intervals degenerate. No equivalence margin was preregistered, so an absence of observed payout errors is not equivalence evidence.
 
-Reasoning summaries were reviewed on a deterministic, outcome-independent sample of 120 replies (10 per task × wording type × corruption direction). The full sample, annotations and caveats are in `reports/power-review.md`; this is a Codex qualitative read, not an independent human coding study.
+Reasoning summaries were reviewed on a deterministic, outcome-independent sample of 120 replies (10 per task × wording type × corruption direction). The full sample, annotations and caveats are in `reports/power-review.md`; these are LLM-annotated (by Codex; not an independent human audit).
 
 New campaign spend: $23.170886 under the $50 shared cap; historical logged all-model spend $66.065271. No Claude calls, no deleted results, no post-hoc extension of the sample.
 
-**Pooled-model caution.** The pooled odds ratio is unstable in magnitude: both retail tasks have zero events and the fitted task-intercept SD is 13.52 log-odds units. Its very wide interval and common-effect assumption make it unsuitable as a portable deployment multiplier. The decision rule fails regardless because only the airline task has a positive difference. Four optimizer starts agree to within 0.000001 negative log likelihood; the information matrix is positive, but numerical convergence does not remove the weak information about task generality. The compact CSV reproduces the fit exactly.
+**Pooled-model caution.** The pooled model is quasi-separated: both retail tasks have zero events (fitted task-intercept SD 13.52 log-odds units), so its odds ratio is not reported. The 2-of-3-task rule is not met regardless, because only the airline task has a positive difference; the retail tasks were at floor, so they could not show the effect.
 
 **Qualitative check.** Visible reconciliation appeared in 5/10 sampled airline action-tied D summaries versus 10/10 answer-tied D summaries; all 20 sampled airline C and all 80 sampled retail summaries showed a concrete check. Benchmark/test references appeared in 7/120 summaries; these are not proof of training contamination.
 
 ## Retail arithmetic effort follow-up (2026-09-25)
 
-**The airline wording effect is large; the retail arithmetic follow-up does not support the effort rule.**
+**The airline wording effect is large; the retail follow-ups were at floor, so they could not test whether the effect generalises.**
+
+Gemini 3.8 Flash, six-wording study (airline: 65 bases, two calls per item) and retail follow-ups:
 
 | Task | Action-tied refusals | Answer-tied refusals | Orders/bases |
 |---|---|---|---:|
 | Airline arithmetic | 288/390 (73.8%; CI 66.7–80.5) | 10/390 (2.6%; CI 1.0–4.4) | 65 |
-| Retail arithmetic analogue | 0/126 (0.0%; CI 0.0–0.0) | 0/126 (0.0%; CI 0.0–0.0) | 21 |
-| Retail cancellation (glance) | 0/180 (0.0%; CI 0.0–0.0) | 0/180 (0.0%; CI 0.0–0.0) | 30 |
-| Retail return (glance) | 0/258 (0.0%; CI 0.0–0.0) | 0/258 (0.0%; CI 0.0–0.0) | 43 |
+| Retail arithmetic analogue | 0/126 (0%; 95% upper bound 13.3%, 21 orders) | 0/126 (0%; 95% upper bound 13.3%, 21 orders) | 21 |
+| Retail cancellation (glance) | 0/180 (0%; 95% upper bound 9.5%, 30 orders) | 0/180 (0%; 95% upper bound 9.5%, 30 orders) | 30 |
+| Retail return (glance) | 0/258 (0%; 95% upper bound 6.7%, 43 orders) | 0/258 (0%; 95% upper bound 6.7%, 43 orders) | 43 |
 
 
-The retail action-minus-answer gap is 0.0 percentage points (95% order-cluster CI 0.0–0.0; 21 orders). The frozen rule required at least +20 points with a CI above zero, while both glance tasks stayed near zero. **Effort-pattern rule held: False.** The original three-task generality rule remains **False** (only 1/3 tasks had the predicted direction); it was not retroactively changed.
+The retail arithmetic analogue had 0 events under either wording (21 orders), so the action-minus-answer difference is not estimable (both at floor). The frozen rule required at least +20 points with a CI above zero, while both glance tasks stayed near zero. **Effort rule: not testable (retail analogue at floor; its 'no' path runs through the corrupted number).** The original three-task generality rule was not met because both retail tasks were at floor (0 refusals under either wording); the retail tasks could not show the effect, so generality beyond this airline task is untested (only 1/3 tasks had the predicted direction); it was not retroactively changed.
 
 Cancellation/return eligibility is status-based, so a payment-only corruption cannot faithfully flip it. The closest native analogue switches a pending order to an existing gift card: τ²'s tool compares its balance with the first payment. We use real orders and item prices but explicitly synthetic balance scenarios. Only first-payment amount changes within a clean/corrupt pair. The arithmetic invariant holds on all 1,000 source orders. This changes the action, numeric eligibility and profile lookup as well as the check, so it cannot identify effort as the sole causal moderator.
 
-Fixed plan: 21 real multi-item orders per corrupted family, two synthetic baseline balance scenarios on those same orders, four clean counterparts per family, six identical trigger templates and two calls per item. 600/600 valid replies, 0 API errors, 0 invalid responses. All prompt hashes and the preregistration hash match. No post-hoc extension. Per-paraphrase refusal, approval, false-hold and clean-no error rates are in `reports/effort-results.md`; full qualitative read in `reports/effort-review.md`.
+Fixed plan: 21 real multi-item orders per corrupted family, two synthetic baseline balance scenarios on those same orders, four clean counterparts per family, six identical trigger templates and two calls per item. 600/600 valid replies, 0 API errors, 0 invalid responses. All prompt hashes and the preregistration hash match. No post-hoc extension. Per-paraphrase refusal, approval, false-hold and clean-no error rates are in `reports/effort-results.md`; LLM-annotated qualitative review (by Codex; not an independent human audit) in `reports/effort-review.md`.
 
 Effort follow-up: **$4.073390 / $8**; earlier continuation: **$23.170886**; both continuations: **$27.244276**. No Claude calls. Costs use logged tokens at list prices, not a provider invoice; historical all-model spend is separate ($66.065271).

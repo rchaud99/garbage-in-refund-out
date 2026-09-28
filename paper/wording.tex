@@ -6,14 +6,19 @@ Across 96 Flash bases outside the initial 12, wrongful refusals were 55/96 under
 with differently phrased check content). The paired F1d--F1 difference was $-49$ points, 95\% cluster-bootstrap
 CI $[-59,-38]$; F1dp--F1d was $+23$ points $[12,34]$. All four gave 0/96 C payouts. The earlier Sonnet
 sample has 37/48 versus 21/48 refusals (difference $-33$ points $[-50,-17]$); no new Sonnet calls were made.
+Claude Opus~5.5 made 0/24 wrongful refusals and 0/24 corrupted payouts under every one of the four wordings F1,
+F1n, F1d, F1dp (24 fresh bases, neutral script, run \texttt{2026-09-25\_151002}, \$5.10): no wording effect is
+measurable at floor.
 F1dp changes more than the trigger, so it is not a clean lexical isolation experiment.
 
 Five interrupted Gemini experiments were completed with 250 missing-only calls (\$1.46). Original files and
 partial status flags were retained. The computed ledger shown under F5 gave 0/24 C payouts, 0/24 D refusals
-and 0/48 control errors. This tests supplied evidence, not whether the agent calls an optional checker.
+and 0/48 control errors. This tests supplied evidence, not whether the agent calls an optional checker: the ledger output prints the
+verdict (``payments do not reconcile \ldots\ insurance fee paid but insurance marked no''), so it tests whether
+the model acts on a stated mismatch, not whether it checks.
 The retail-cancel replication corrected the first pass's one-way rule to ``pending if and only if no tracking'';
-both U2 and E2 transferred 36/36 corruptions in each direction and made 0/24 control errors. The wording
-effect did not replicate there. The rule holds on the benchmark snapshot, not necessarily on operational data.
+both U2 and E2 transferred 36/36 corruptions in each direction and made 0/24 control errors. Both wordings were at
+floor, so the wording effect is untested there. The rule holds on the benchmark snapshot, not necessarily on operational data.
 
 In the inverted framing, a cancellation was pre-queued and required an active block. With the same neutral
 check trigger, Flash blocked D in 15/48 cases versus 19/48 refusals in the ordinary framing (paired difference
@@ -28,19 +33,22 @@ The checking prompts gave the results below. A flagged discrepancy without a tra
 this is a conversation-specific endpoint, not the exact single-decision transfer criterion.
 
 \begin{center}\small
-\begin{tabular}{llcc}
+\begin{tabular}{llccc}
 \toprule
-Agent & Wording & C paid & D refused without flag \\
+Agent & Wording & C paid & D refused without flag & D refused (raw harness) \\
 \midrule
-Flash & F1 & 0/8 & 0/8 \\
-Flash & F1d & 0/8 & 0/8 \\
-Sonnet & F1 & 0/8 & 4/8 \\
-Sonnet & F1d & 0/8 & 1/8 \\
+Flash & F1 & 0/8 & 0/8 & 2/8 \\
+Flash & F1d & 0/8 & 0/8 & 1/8 \\
+Sonnet & F1 & 0/8 & 4/8 & 4/8 \\
+Sonnet & F1d & 0/8 & 1/8 & 1/8 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Flash's single-decision wording gap disappears here. Sonnet's descriptive difference remains, with only eight
+Flash's single-decision wording gap disappears here after the hand recode; the raw harness output is 2/8 versus
+1/8. The Flash user simulator can hang up at the transfer offer, and Flash used \tautwo{}'s calculate tool in 12/16
+of these episodes, which the single-decision format does not offer, so the single-decision vs conversation
+difference may be a format effect; we treat conversations as a small stress test. Sonnet's descriptive difference remains, with only eight
 pairs; neither result establishes a universal conversation effect. The user wording differs from the neutral
 single-decision script and cannot be separated from the conversational format in this comparison.
 The stopped larger Sonnet attempts saved nine rows: four failed before any turn with Gemini simulator
