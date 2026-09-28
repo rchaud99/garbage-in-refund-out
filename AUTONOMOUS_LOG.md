@@ -30,3 +30,21 @@ Agent: Claude Opus 5.5 (autonomous research assistant). Started 2026-09-28. Time
   - Anthropic direct: HTTP 400, credit balance too low (unbilled). No Claude without an OpenRouter key.
 - Found that rejected (4xx) calls were counted against the budget as reserves; fixed, since they are unbilled.
 - Froze LADDER_PREREGISTRATION.md and the stage plans (reports/ladder-plans/*.json) before any confirmatory call.
+
+## 2026-09-28 ~19:35 — first confirmatory results; OpenRouter live
+- OPENROUTER_API_KEY appeared in the project .env. Pilot: gpt-6-luna works. It is rate-limited (new account, 20
+  rpm per model), so I added `--pace` and `--resume`. Amendment 1 made the parser take the lone decision object.
+- **Flash scope, cancel** (62 bases, 1 rerun): D wrongful refusals SA 41/62, SN 5/62, W6 29/62.
+  - C payouts 0/62 under each wording.
+  - Clean A 20/20 refused and B 20/20 refunded under each.
+  - SA vs SN: McNemar 36 vs 0 discordant, Holm p = 8.7e-11. This **confirms** the existing Flash finding on a
+    third base set.
+- **Flash scope, comp** (23 bases, 2 reruns): SA D 8/23 in each rerun, SN 3/23 and 1/23, W6 22/23 and 22/23.
+  - C payouts 1/46 under W6, 0 otherwise. Clean cells 0 errors.
+  - SA vs SN: rerun 1 Holm p = 0.031, rerun 0 p = 0.12. So Flash does not yet meet the "every rerun" rule on comp
+    (SA leaked less than in the pilot, 35% vs 7/8).
+- **Surprise:** lookup-scoped W6 protects D worse than SA on comp (96% vs 35% refusals), yet still catches C.
+  Reasoning summaries mention arithmetic in 45/45 W6 C transfers vs 6/44 W6 D refusals. This contradicts "literal
+  scope" and my W6 prediction. I preregistered H-asym (Amendment 2) as a new family with fresh models before
+  seeing their cell-level data.
+- Messages sent to main per the standing rule (CONFIRMED plus NEW).
