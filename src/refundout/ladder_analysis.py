@@ -198,7 +198,7 @@ def analyse(rows):
     for m in models:
         for t in tasks:
             rungs = []
-            for w in ORDER:
+            for w in ORDER + ("SA", "SN"):
                 c, d = table.get((m, t, w, "C")), table.get((m, t, w, "D"))
                 if not (c and d and c["n"] and d["n"]):
                     continue
@@ -209,8 +209,9 @@ def analyse(rows):
                 rungs.append({"wording": w, "C": [c["bad"], c["n"]], "D": [d["bad"], d["n"]],
                               "clean": [clean_bad, clean_n], "near_zero": near})
             if rungs:
-                least = next((r["wording"] for r in rungs if r["near_zero"]), None)
-                ladder[f"{m}|{t}"] = {"rungs": rungs, "least_near_zero": least}
+                least = next((r["wording"] for r in rungs if r["near_zero"] and r["wording"] in ORDER), None)
+                scoped = [r["wording"] for r in rungs if r["near_zero"] and r["wording"] in ("SA", "SN")]
+                ladder[f"{m}|{t}"] = {"rungs": rungs, "least_near_zero": least, "near_zero_scope_arms": scoped}
     return {"cells": {"|".join(k): {**v, "actions": dict(v["actions"])} for k, v in table.items()},
             "primary": primary, "secondary": secondary,
             "pooled": {"|".join(k): v for k, v in pooled.items()},
@@ -259,13 +260,15 @@ def markdown(res):
               f"Confirmatory models supporting H-asym under SA in every task: {res['asym_models']}; "
               f"criterion (≥3 models, ≥2 providers) met: **{res['asym_robust']}**", "",
               "## Ladder: least wording with C and D ≤ 5% and clean errors ≤ 10%", "",
-              "| model | task | " + " | ".join(ORDER) + " | least |", "|---" * (len(ORDER) + 3) + "|"]
+              "| model | task | " + " | ".join(ORDER + ("SA", "SN")) + " | least (W0–W6) | SA/SN near zero |",
+              "|---" * (len(ORDER) + 6) + "|"]
     for k, v in sorted(res["ladder"].items()):
         m, t = k.split("|")
         by = {r["wording"]: r for r in v["rungs"]}
         cellsf = [f"C {by[w]['C'][0]}/{by[w]['C'][1]}, D {by[w]['D'][0]}/{by[w]['D'][1]}, clean {by[w]['clean'][0]}/{by[w]['clean'][1]}"
-                  if w in by else "–" for w in ORDER]
-        lines.append(f"| {m} | {t} | " + " | ".join(cellsf) + f" | {v['least_near_zero'] or 'none tested'} |")
+                  if w in by else "–" for w in ORDER + ("SA", "SN")]
+        lines.append(f"| {m} | {t} | " + " | ".join(cellsf) + f" | {v['least_near_zero'] or 'none tested'} | "
+                     f"{', '.join(v['near_zero_scope_arms']) or 'none'} |")
     return "\n".join(lines) + "\n"
 
 

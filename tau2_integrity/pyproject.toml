@@ -1,0 +1,20 @@
+[project]
+name = "tau2-integrity"
+version = "0.1.0"
+description = "Paired corrupt/clean τ²-bench tasks: does the agent check that a record adds up before answering?"
+requires-python = ">=3.10"
+dependencies = []  # τ²-bench itself is needed only to validate and run (pip install -e path/to/tau2-bench)
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tau2_integrity"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
