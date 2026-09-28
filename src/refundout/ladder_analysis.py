@@ -111,6 +111,19 @@ def asymmetry(rows, model, task, wording, repeat):
             "D_only": b, "C_only": e, "p": min(1.0, p), "exploratory": model in ASYM_EXPLORATORY}
 
 
+def cross(rows, model, task, wording, first, second, repeat):
+    """Paired by base: error in cell `first` vs error in cell `second` (Amendment 3's path × direction tests)."""
+    x, y = by_base(rows, model, task, wording, first, repeat), by_base(rows, model, task, wording, second, repeat)
+    both = sorted(x.keys() & y.keys())
+    b = sum(x[k][0] == 1 and y[k][0] == 0 for k in both)
+    e = sum(x[k][0] == 0 and y[k][0] == 1 for k in both)
+    p = binomtest(min(b, e), b + e, 0.5).pvalue if b + e else 1.0
+    return {"model": model, "task": task, "wording": wording, "repeat": repeat, "first": first, "second": second,
+            "pairs": len(both), "first_rate": sum(x[k][0] for k in both) / len(both) if both else None,
+            "second_rate": sum(y[k][0] for k in both) / len(both) if both else None,
+            "first_only": b, "second_only": e, "p": min(1.0, p)}
+
+
 def boot_diff(rows, model, task, first, second, cell):
     """Mean over bases of (first − second) error rate, repeats averaged within base; percentile bootstrap."""
     x, y = by_base(rows, model, task, first, cell), by_base(rows, model, task, second, cell)
@@ -179,6 +192,29 @@ def analyse(rows):
                 if x["model"] == m and x["task"] == t and x["wording"] == "SA") for t in tasks)]
     asym_robust = len(asym_models) >= 3 and len({provider(m) for m in asym_models}) >= 2
 
+    path = []
+    for m in models:
+        for t in tasks:
+            if (m, t, "SA", "E") in table and (m, t, "SA", "F") in table:
+                for rep in repeats:
+                    for first, second in (("F", "E"), ("E", "C"), ("D", "F")):
+                        x = cross(rows, m, t, "SA", first, second, rep)
+                        if x["pairs"]:
+                            path.append(x)
+    holm(path)
+    path_verdict = {}
+    for m, t in sorted({(x["model"], x["task"]) for x in path}):
+        xs = [x for x in path if (x["model"], x["task"]) == (m, t)]
+        fe = [x for x in xs if (x["first"], x["second"]) == ("F", "E")]
+        ec = [x for x in xs if (x["first"], x["second"]) == ("E", "C")]
+        blind = any(x["p_holm"] < 0.05 and x["first_only"] > x["second_only"] for x in ec)
+        if all(x["p_holm"] < 0.05 and x["first_only"] > x["second_only"] for x in fe) and fe and not blind:
+            path_verdict[f"{m}|{t}"] = "path"
+        elif blind:
+            path_verdict[f"{m}|{t}"] = "direction"
+        else:
+            path_verdict[f"{m}|{t}"] = "mixed / inconclusive"
+
     verdicts = {}
     for m in models:
         per_task = {}
@@ -218,7 +254,8 @@ def analyse(rows):
             "pooled": {"|".join(k): v for k, v in pooled.items()},
             "testable": {"|".join(k): v for k, v in testable.items()}, "verdicts": verdicts,
             "robust_models": robust_models, "robust": robust, "ladder": ladder,
-            "asymmetry": asym, "asym_models": asym_models, "asym_robust": asym_robust}
+            "asymmetry": asym, "asym_models": asym_models, "asym_robust": asym_robust,
+            "path": path, "path_verdict": path_verdict}
 
 
 def markdown(res):
@@ -260,6 +297,14 @@ def markdown(res):
                 f"{'exploratory' if x['exploratory'] else 'confirmatory'} |" for x in res["asymmetry"]], "",
               f"Confirmatory models supporting H-asym under SA in every task: {res['asym_models']}; "
               f"criterion (≥3 models, ≥2 providers) met: **{res['asym_robust']}**", "",
+              "## Amendment 3: path × direction (SA). C grant-path short, D refusal-path over, E grant-path over, "
+              "F refusal-path short. Exact McNemar per rerun, Holm across the family", "",
+              "| model | task | rerun | test | pairs | first rate | second rate | first-only | second-only | p (Holm) |",
+              "|---|---|---|---|---|---|---|---|---|---|",
+              *[f"| {x['model']} | {x['task']} | {x['repeat']} | {x['first']} vs {x['second']} | {x['pairs']} | "
+                f"{x['first_rate']:.2f} | {x['second_rate']:.2f} | {x['first_only']} | {x['second_only']} | "
+                f"{x['p_holm']:.2g} |" for x in res["path"]], "",
+              "Verdicts: " + json.dumps(res["path_verdict"]), "",
               "## Ladder: least wording with C and D ≤ 5% and clean errors ≤ 10%", "",
               "| model | task | " + " | ".join(ORDER + ("SA", "SN")) + " | least (W0–W6) | SA/SN near zero |",
               "|---" * (len(ORDER) + 6) + "|"]

@@ -110,7 +110,7 @@ class GoogleModel:
                 raise TransientError(f"HTTP {error.code}: {error.message}") from error
             raise
         except Exception as error:  # transport failures from httpx
-            if "Timeout" in type(error).__name__ or "Connect" in type(error).__name__:
+            if any(k in type(error).__name__ for k in ("Timeout", "Connect", "Protocol", "ReadError", "WriteError")):
                 raise TransientError(f"{type(error).__name__}: {error}") from error
             raise
         return Reply(
