@@ -13,12 +13,18 @@ case $S in
   pro-scope-comp)     $R --stage $S --model gemini-3.1-pro-preview --tasks comp --wordings SA SN --clean 10 --repeats 2 --estimate-per-call 0.0125 "$@";;
   gemma31-scope-cancel) $R --stage $S --model gemma-4-31b-it --tasks cancel --wordings SA SN W6 --clean 20 --repeats 1 --workers 2 --pace 14 "$@";;
   gemma31-scope-comp)   $R --stage $S --model gemma-4-31b-it --tasks comp --wordings SA SN W6 --clean 23 --repeats 2 --workers 2 --pace 14 "$@";;
-  sonnet-scope-cancel) $R --stage $S --model openrouter/anthropic/claude-sonnet-5 --tasks cancel --wordings SA SN --clean 10 --repeats 1 --estimate-per-call 0.011 "$@";;
-  sonnet-scope-comp)   $R --stage $S --model openrouter/anthropic/claude-sonnet-5 --tasks comp --wordings SA SN --clean 10 --repeats 2 --estimate-per-call 0.011 "$@";;
-  gpt-scope-cancel)  $R --stage $S --model openrouter/openai/gpt-6-sol --tasks cancel --wordings SA SN --clean 10 --repeats 1 --estimate-per-call 0.01 "$@";;
-  gpt-scope-comp)    $R --stage $S --model openrouter/openai/gpt-6-sol --tasks comp --wordings SA SN --clean 10 --repeats 2 --estimate-per-call 0.01 "$@";;
-  gptluna-scope-cancel) $R --stage $S --model openrouter/openai/gpt-6-luna --tasks cancel --wordings SA SN --clean 10 --repeats 1 --estimate-per-call 0.001 "$@";;
-  gptluna-scope-comp)   $R --stage $S --model openrouter/openai/gpt-6-luna --tasks comp --wordings SA SN --clean 10 --repeats 2 --estimate-per-call 0.001 "$@";;
-  opus-comp)         $R --stage $S --model openrouter/anthropic/claude-opus-5.5 --tasks comp --wordings W1 W3 SA SN --clean 0 --repeats 1 --estimate-per-call 0.027 "$@";;
+  sonnet-scope-cancel) $R --stage $S --model openrouter/anthropic/claude-sonnet-5 --tasks cancel --wordings SA SN --clean 10 --repeats 1 --estimate-per-call 0.011 --workers 4 --pace 3.3 "$@";;
+  sonnet-scope-comp)   $R --stage $S --model openrouter/anthropic/claude-sonnet-5 --tasks comp --wordings SA SN --clean 10 --repeats 2 --estimate-per-call 0.011 --workers 4 --pace 3.3 "$@";;
+  gpt-scope-cancel)  $R --stage $S --model openrouter/openai/gpt-6-sol --tasks cancel --wordings SA SN --clean 10 --repeats 1 --estimate-per-call 0.01 --workers 4 --pace 3.3 "$@";;
+  gpt-scope-comp)    $R --stage $S --model openrouter/openai/gpt-6-sol --tasks comp --wordings SA SN --clean 10 --repeats 2 --estimate-per-call 0.01 --workers 4 --pace 3.3 "$@";;
+  gptluna-scope-cancel) $R --stage $S --model openrouter/openai/gpt-6-luna --tasks cancel --wordings SA SN --clean 10 --repeats 1 --estimate-per-call 0.001 --workers 4 --pace 3.3 "$@";;
+  gptluna-scope-comp)   $R --stage $S --model openrouter/openai/gpt-6-luna --tasks comp --wordings SA SN --clean 10 --repeats 2 --estimate-per-call 0.001 --workers 4 --pace 3.3 "$@";;
+  opus-comp)         $R --stage $S --model openrouter/anthropic/claude-opus-5.5 --tasks comp --wordings W1 W3 SA SN --clean 0 --repeats 1 --estimate-per-call 0.027 --workers 4 --pace 3.3 "$@";;
+  w6-sonnet-cancel) $R --stage $S --model openrouter/anthropic/claude-sonnet-5 --tasks cancel --wordings W6 --clean 0 --repeats 1 --estimate-per-call 0.013 --workers 4 --pace 3.3 "$@";;
+  w6-sonnet-comp)   $R --stage $S --model openrouter/anthropic/claude-sonnet-5 --tasks comp --wordings W6 --clean 0 --repeats 2 --estimate-per-call 0.013 --workers 4 --pace 3.3 "$@";;
+  w6-gpt-cancel)    $R --stage $S --model openrouter/openai/gpt-6-sol --tasks cancel --wordings W6 --clean 0 --repeats 1 --estimate-per-call 0.005 --workers 4 --pace 3.3 "$@";;
+  w6-gpt-comp)      $R --stage $S --model openrouter/openai/gpt-6-sol --tasks comp --wordings W6 --clean 0 --repeats 2 --estimate-per-call 0.005 --workers 4 --pace 3.3 "$@";;
+  w6-gptluna-cancel) $R --stage $S --model openrouter/openai/gpt-6-luna --tasks cancel --wordings W6 --clean 0 --repeats 1 --estimate-per-call 0.0005 --workers 4 --pace 3.3 "$@";;
+  w6-gptluna-comp)  $R --stage $S --model openrouter/openai/gpt-6-luna --tasks comp --wordings W6 --clean 0 --repeats 2 --estimate-per-call 0.0005 --workers 4 --pace 3.3 "$@";;
   *) echo "unknown stage $S"; exit 1;;
 esac

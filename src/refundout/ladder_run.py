@@ -81,6 +81,8 @@ def main(argv=None):
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--pace", type=float, default=0.0, help="minimum seconds between call starts (rate-limited APIs)")
     p.add_argument("--pilot", action="store_true")
+    p.add_argument("--resume", nargs="*", default=[],
+                   help="earlier (stopped) run folders of this stage: items they answered are not asked again")
     p.add_argument("--estimate", action="store_true")
     a = p.parse_args(argv)
 
@@ -88,6 +90,7 @@ def main(argv=None):
     queue = build(a, airline)
     rows, digest = ladder.manifest(queue)
     bound = max(providers.bound(a.model, i.request) for i in queue)
+    manifest_rows = rows
     prior = campaign_spend()
     typical = a.estimate_per_call
     print(f"{len(queue)} calls for {a.model}; worst-case reserve ${bound:.4f}/call; campaign spend so far ${prior:.4f}")
@@ -111,6 +114,17 @@ def main(argv=None):
         if not PREREG.exists():
             raise SystemExit("write LADDER_PREREGISTRATION.md before a non-pilot stage")
         config["preregistration_sha256"] = hashlib.sha256(PREREG.read_bytes()).hexdigest()
+    done_ids = set()
+    for d in a.resume:
+        meta = json.loads((ROOT / d / "run.json").read_text() if not d.startswith("/") else open(d + "/run.json").read())
+        if meta["config"].get("manifest_sha256") != digest:
+            raise SystemExit(f"{d} is not this stage")
+        path = (ROOT / d if not d.startswith("/") else __import__("pathlib").Path(d)) / "decisions.jsonl"
+        done_ids |= {r["id"] for r in map(json.loads, path.read_text().splitlines()) if r.get("reply")}
+    if done_ids:
+        queue = [i for i in queue if i.key not in done_ids]
+        config["resumes"] = a.resume
+        print(f"resuming: {len(done_ids)} answered earlier, {len(queue)} to ask")
     limit = min(a.max_dollars, CAMPAIGN_CAP - prior)
     if limit <= 0:
         raise SystemExit(f"no budget: stage cap ${a.max_dollars}, campaign left ${CAMPAIGN_CAP - prior:.2f}")

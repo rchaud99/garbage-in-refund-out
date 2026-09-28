@@ -29,6 +29,8 @@ NEAR_ZERO = 0.05
 CLEAN_OK = 0.10
 PROVIDER = {"gemini": "Google", "gemma": "Google", "claude": "Anthropic", "anthropic": "Anthropic",
             "openai": "OpenAI", "gpt": "OpenAI"}
+ASYM_EXPLORATORY = {"gemini-3.8-flash"}
+"""H-asym (Amendment 2) was written after seeing Flash's results: Flash is exploratory for it."""
 ORDER = ("W0", "W1", "W2", "W3", "W4", "W5", "W6")
 
 
@@ -95,6 +97,19 @@ def mcnemar(rows, model, task, first, second, cell, repeat):
             "second_rate": sum(y[k][0] for k in both) / len(both) if both else None, "p": min(1.0, p)}
 
 
+def asymmetry(rows, model, task, wording, repeat):
+    """Paired by base: D wrongful refusal vs C payout under one wording (H-asym)."""
+    d, c = by_base(rows, model, task, wording, "D", repeat), by_base(rows, model, task, wording, "C", repeat)
+    both = sorted(d.keys() & c.keys())
+    b = sum(d[k][0] == 1 and c[k][0] == 0 for k in both)
+    e = sum(d[k][0] == 0 and c[k][0] == 1 for k in both)
+    p = binomtest(min(b, e), b + e, 0.5).pvalue if b + e else 1.0
+    return {"model": model, "task": task, "wording": wording, "repeat": repeat, "pairs": len(both),
+            "D_rate": sum(d[k][0] for k in both) / len(both) if both else None,
+            "C_rate": sum(c[k][0] for k in both) / len(both) if both else None,
+            "D_only": b, "C_only": e, "p": min(1.0, p), "exploratory": model in ASYM_EXPLORATORY}
+
+
 def boot_diff(rows, model, task, first, second, cell):
     """Mean over bases of (first − second) error rate, repeats averaged within base; percentile bootstrap."""
     x, y = by_base(rows, model, task, first, cell), by_base(rows, model, task, second, cell)
@@ -152,6 +167,16 @@ def analyse(rows):
                 pooled[(m, t, "SN-SA", cell)] = boot_diff(rows, m, t, "SN", "SA", cell)
     holm(primary)
     holm(secondary)
+    asym = [asymmetry(rows, m, t, w, rep) for m in models for t in tasks for w in ("SA", "W6", "SN")
+            for rep in repeats if (m, t, w) in have]
+    asym = [x for x in asym if x["pairs"]]
+    confirm = holm([x for x in asym if not x["exploratory"]])
+    holm([x for x in asym if x["exploratory"]])
+    asym_models = [m for m in models if m not in ASYM_EXPLORATORY and all(
+        any(x["model"] == m and x["task"] == t and x["wording"] == "SA" for x in confirm)
+        and all(x["p_holm"] < 0.05 and x["D_only"] > x["C_only"] for x in confirm
+                if x["model"] == m and x["task"] == t and x["wording"] == "SA") for t in tasks)]
+    asym_robust = len(asym_models) >= 3 and len({provider(m) for m in asym_models}) >= 2
 
     verdicts = {}
     for m in models:
@@ -190,7 +215,8 @@ def analyse(rows):
             "primary": primary, "secondary": secondary,
             "pooled": {"|".join(k): v for k, v in pooled.items()},
             "testable": {"|".join(k): v for k, v in testable.items()}, "verdicts": verdicts,
-            "robust_models": robust_models, "robust": robust, "ladder": ladder}
+            "robust_models": robust_models, "robust": robust, "ladder": ladder,
+            "asymmetry": asym, "asym_models": asym_models, "asym_robust": asym_robust}
 
 
 def markdown(res):
@@ -223,6 +249,15 @@ def markdown(res):
               + json.dumps(res["testable"]), "", "Per model/task supported: " + json.dumps(res["verdicts"]), "",
               f"Models supporting the scope finding in every task: {res['robust_models']}; "
               f"preregistered robustness criterion (≥3 models, ≥2 providers) met: **{res['robust']}**", "",
+              "## H-asym (Amendment 2): D wrongful refusal vs C payout, same base, exact McNemar; Holm within "
+              "confirmatory (and separately within exploratory) tests", "",
+              "| model | task | wording | rerun | pairs | D rate | C rate | D-only | C-only | p (Holm) | set |",
+              "|---|---|---|---|---|---|---|---|---|---|---|",
+              *[f"| {x['model']} | {x['task']} | {x['wording']} | {x['repeat']} | {x['pairs']} | {x['D_rate']:.2f} | "
+                f"{x['C_rate']:.2f} | {x['D_only']} | {x['C_only']} | {x['p_holm']:.2g} | "
+                f"{'exploratory' if x['exploratory'] else 'confirmatory'} |" for x in res["asymmetry"]], "",
+              f"Confirmatory models supporting H-asym under SA in every task: {res['asym_models']}; "
+              f"criterion (≥3 models, ≥2 providers) met: **{res['asym_robust']}**", "",
               "## Ladder: least wording with C and D ≤ 5% and clean errors ≤ 10%", "",
               "| model | task | " + " | ".join(ORDER) + " | least |", "|---" * (len(ORDER) + 3) + "|"]
     for k, v in sorted(res["ladder"].items()):

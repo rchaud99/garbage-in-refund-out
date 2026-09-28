@@ -179,3 +179,39 @@ the decision object. The frozen parser marked it unreadable. The parser now take
 reply contains extra text or extra JSON objects. It stays unreadable if objects with different valid actions appear.
 The analysis re-parses every stored reply with this one rule, for every model. No Flash reply in the completed
 stage was unreadable under either rule, so the amendment changes no existing outcome.
+
+## Amendment 2 (2026-09-28 19:30): a new confirmatory family, "asymmetry", written after the Flash scope results
+
+**What motivated it (exploratory, Flash only):**
+- Under W6 (lookup-scoped), Flash on comp made 1/46 C payouts but 44/46 D wrongful refusals. Its reasoning shows
+  arithmetic in 45/45 C transfers but in only 6/44 D refusals (keyword count).
+- Under SA on cancel: 0/62 C payouts vs 41/62 D refusals.
+- W6's literal scope covers both answers, so "literal scope" does not predict this. "The check runs before a yes and
+  is skipped before a no, unless the no is named" does.
+
+**Hypothesis H-asym.** Under a reconciliation instruction that does not name the refusal (SA, W6), wrongful
+refusals on D exceed payouts on C for the same base.
+
+**Test.**
+- Per model × task × rerun × wording ∈ {SA, W6}: an exact two-sided McNemar test, paired by base, of the D outcome
+  (wrongful refusal 1/0) against the C outcome (payout 1/0).
+- Holm across this whole family.
+- Control: the same test under SN (predicted: no asymmetry, or a much smaller one).
+
+**Confirmatory set.** Every model whose cell-level results I had not seen when writing this: Sonnet 5, GPT-6 Sol,
+GPT-6 Luna, Gemma 4 31B (runs in progress, only aggregate action counts viewed), Gemini 3.1 Pro, and Opus 5.5.
+Flash is exploratory for H-asym and will be labelled so.
+
+**Robust criterion (H-asym).** Holm-significant in the predicted direction for SA, in both tasks, in ≥ 3
+confirmatory models spanning ≥ 2 providers.
+
+**New W6 stages** (frozen plans, C/D only, no clean cells), `scripts/ladder_stages.sh w6-*`:
+
+| stage | model | tasks | calls | estimate |
+|---|---|---|---:|---:|
+| w6-sonnet-cancel / -comp | claude-sonnet-5 | cancel 62 ×1; comp 23 ×2 | 124 + 92 | $2.8 |
+| w6-gpt-cancel / -comp | gpt-6-sol | cancel 62 ×1; comp 23 ×2 | 124 + 92 | $1.1 |
+| w6-gptluna-cancel / -comp | gpt-6-luna | same | 216 | $0.1 |
+
+These run after their scope stages. The Pro stages proceed as planned. Opus runs only if budget remains after
+these; the priority is set before seeing results.
