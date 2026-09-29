@@ -58,10 +58,11 @@ def campaign_spend() -> float:
 def build(args, airline):
     queue = []
     for task in args.tasks:
-        bases = ladder.cancel_bases(airline) if task == "cancel" else ladder.comp_bases(airline)
+        bases = ladder.comp_bases(airline) if task == "comp" else ladder.cancel_bases(airline)
         corrupt = bases[: args.corrupt] if args.corrupt else bases
         clean = bases[: args.clean]
-        queue += ladder.items(airline, task, args.wordings, corrupt, clean, args.repeats, args.corrupt_cells)
+        queue += ladder.items(airline, task, args.wordings, corrupt, clean, args.repeats, args.corrupt_cells,
+                              args.clean_cells)
     return ladder.interleave(queue, args.seed)
 
 
@@ -69,12 +70,13 @@ def main(argv=None):
     p = argparse.ArgumentParser()
     p.add_argument("--stage", default=None)
     p.add_argument("--model", required=True)
-    p.add_argument("--tasks", nargs="+", default=["cancel"], choices=["cancel", "comp"])
+    p.add_argument("--tasks", nargs="+", default=["cancel"], choices=["cancel", "comp", "plans"])
     p.add_argument("--wordings", nargs="+", default=list(ladder.LADDER), choices=list(ladder.WORDINGS))
     p.add_argument("--corrupt", type=int, default=0, help="first N bases per task get C and D (0 = all)")
     p.add_argument("--clean", type=int, default=20, help="first N bases per task also get A and B")
     p.add_argument("--repeats", type=int, default=1)
-    p.add_argument("--corrupt-cells", default="CD", help="which corrupted cells (C D E F) the corrupt bases get")
+    p.add_argument("--corrupt-cells", default="CD", help="which corrupted cells (C D E F G H) the corrupt bases get")
+    p.add_argument("--clean-cells", default="AB", help="which clean cells (A B K) the clean bases get")
     p.add_argument("--seed", type=int, default=20260928)
     p.add_argument("--max-dollars", type=float, required=False, default=0)
     p.add_argument("--estimate-per-call", type=float, default=None,

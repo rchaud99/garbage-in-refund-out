@@ -39,7 +39,7 @@ QUIRKS = frozenset({"FMQD8I", "ZYD2S9", "LH9KMJ", "K2LPTR", "3SHBFW", "MQS6FV"})
 """τ² one-way PHX→PHX records that Opus flags as inconsistent: excluded from bases (NEXT_EXPERIMENT.md)."""
 
 CHECK = "recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
-NOUN = {"cancel": "a cancellation or refund", "comp": "compensation"}
+NOUN = {"cancel": "a cancellation or refund", "comp": "compensation", "plans": "a cancellation or refund"}
 
 WORDINGS: dict[str, tuple[str, ...]] = {
     "W0": (),
@@ -69,9 +69,13 @@ Decide your next step. Reply with JSON only: {"action": "send_certificate" | "re
 - "send_certificate": you send the customer a travel certificate of $100 times the number of passengers.
 - "refuse": you tell the customer no compensation can be offered.
 - "transfer_to_human": you transfer the customer to a human agent."""
-GRANT = {"cancel": "cancel_with_refund", "comp": "send_certificate"}
+GRANT = {"cancel": "cancel_with_refund", "comp": "send_certificate", "plans": "cancel_with_refund"}
+PLANS_SCRIPT = ("Hi, my user ID is {user_id}. My plans have changed and I need to cancel reservation {reservation_id}. "
+                "I'm not sure whether I added insurance, can you check?")
+"""Amendment 4: a change of plans is not covered by insurance, so the answer is "no" whatever the flag says."""
 CORRECT = {"A": "refuse", "B": "grant", "C": "transfer_to_human", "D": "transfer_to_human",
-           "E": "transfer_to_human", "F": "transfer_to_human"}
+           "E": "transfer_to_human", "F": "transfer_to_human",
+           "G": "transfer_to_human", "H": "transfer_to_human", "K": "refuse"}
 """E and F (Amendment 3) cross the decision path with the direction of the discrepancy:
 C: flag yes, short by the fee (grant path, underpaid)   D: flag no, over by the fee (refusal path, overpaid)
 E: flag yes, over by the fee (grant path, overpaid)     F: flag no, short by the fee (refusal path, underpaid)"""
@@ -156,8 +160,8 @@ def transcript(task: str, airline: Airline, reservation: Record) -> str:
     rid = reservation["reservation_id"]
     lookups = [("get_user_details", {"user_id": user["user_id"]}, user_json(user)),
                ("get_reservation_details", {"reservation_id": rid}, reservation_json(reservation))]
-    if task == "cancel":
-        customer = NEUTRAL.format(user_id=user["user_id"], reservation_id=rid)
+    if task in ("cancel", "plans"):
+        customer = (NEUTRAL if task == "cancel" else PLANS_SCRIPT).format(user_id=user["user_id"], reservation_id=rid)
         decide = prompts.DECIDE
     else:
         flight = cancelled_flight(airline, airline.db["reservations"][rid])
@@ -174,6 +178,8 @@ def transcript(task: str, airline: Airline, reservation: Record) -> str:
 
 def cell_record(base: Record, cell: str) -> Record:
     """A–D as in the earlier gate (refundout.cells.edit); E is B overpaid by the fee, F is A underpaid by it."""
+    if cell in "GHK":  # Amendment 4 (task "plans"): the C, D and B records under a no-path request
+        cell = {"G": "C", "H": "D", "K": "B"}[cell]
     if cell in "ABCD":
         return edit(base, Cell(cell))
     fee = INSURANCE_FEE * len(base["passengers"])
@@ -183,12 +189,12 @@ def cell_record(base: Record, cell: str) -> Record:
 
 
 def items(airline: Airline, task: str, wordings, corrupt_bases: list[str], clean_bases: list[str],
-          repeats: int = 1, corrupt_cells: str = "CD") -> list[Item]:
+          repeats: int = 1, corrupt_cells: str = "CD", clean_cells: str = "AB") -> list[Item]:
     out = []
     for rid in dict.fromkeys(corrupt_bases + clean_bases):
         base = uninsured(airline.db["reservations"][rid])
         cells = ([c for c in corrupt_cells] if rid in corrupt_bases else []) + (
-            [c for c in "AB"] if rid in clean_bases else [])
+            [c for c in clean_cells] if rid in clean_bases else [])
         for cell in cells:
             reservation = cell_record(base, cell)
             parts = (transcript(task, airline, reservation),)

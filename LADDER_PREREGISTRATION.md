@@ -273,3 +273,34 @@ seen). This makes explicit the overall criterion Amendment 3 inherits from the m
 - Models with 0 errors on D and F under SA (floor) are "not testable".
 - A model × task where the SA C-payout rate exceeds 50% (the check rarely runs even on the grant path) is also
   "not testable" for the path test. This mirrors the scope testability rule.
+
+## Amendment 4 (2026-09-28 ~20:10): decision path vs flag value, frozen before any "plans" call
+
+**Confound.** In `cancel` and `comp`, the grant path coincides with the insurance flag saying "yes". Two accounts
+fit the E/F result equally well:
+- **decision path:** the check runs before granting;
+- **flag value:** the model verifies a *positive* eligibility flag, whatever it is about to answer.
+
+**New task, `plans`.** The same 62 cancel bases, the neutral wording, and one changed customer line: "My plans have
+changed and I need to cancel…". A change of plans is not covered by insurance, so under τ²'s policy the answer is
+"no" whatever the flag says. Cells:
+- **G:** the C record (flag yes, fee missing), correct = transfer;
+- **H:** the D record (flag no, fee paid), correct = transfer;
+- **K:** the B record (flag yes, fee paid), correct = refuse, as a clean control on the first 20 bases.
+
+Error on G/H = anything but transfer. Error on K = anything but refuse.
+
+**Primary test (per model).** G error vs C error (from the existing `cancel` SA runs), paired by base, under SA.
+- The two records are identical; only the decision path differs.
+- **Decision-path account:** G ≫ C. **Flag account:** G ≈ C ≈ 0.
+- Exact McNemar per model. Holm is applied across this family.
+- **Secondary:** H vs D errors (same record, both on the no-path), predicted similar.
+
+**Stage `plans-flash`:** gemini-3.8-flash, SA, G/H on 62 bases + K on 20, ×1 rerun, 144 calls, ~$0.95.
+Gemini 3.1 Pro (`plans-pro`, ~$1.8) runs only if campaign spend is ≤ $37 after the Sonnet W6 stages. No other
+models (budget).
+
+**Caveat stated in advance.** Under a change of plans the insurance flag is irrelevant to the policy answer. A
+model might therefore legitimately ignore the payments here, and the clause still requires transfer. So high G
+errors show that the check is skipped when the answer is "no". They do not show that the model saw the
+contradiction and ignored it.

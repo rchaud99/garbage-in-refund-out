@@ -60,7 +60,8 @@ def bad(r, cell):
     a = r["action"]
     return {"C": a not in ("refuse", "transfer_to_human"), "D": a == "refuse", "A": a != "refuse",
             "B": a in ("refuse", "transfer_to_human"),
-            "E": a not in ("refuse", "transfer_to_human"), "F": a == "refuse"}[cell]
+            "E": a not in ("refuse", "transfer_to_human"), "F": a == "refuse",
+            "G": a != "transfer_to_human", "H": a != "transfer_to_human", "K": a != "refuse"}[cell]
 
 
 def cells(rows):
@@ -254,7 +255,24 @@ def analyse(rows):
                 least = next((r["wording"] for r in rungs if r["near_zero"] and r["wording"] in ORDER), None)
                 scoped = [r["wording"] for r in rungs if r["near_zero"] and r["wording"] in ("SA", "SN")]
                 ladder[f"{m}|{t}"] = {"rungs": rungs, "least_near_zero": least, "near_zero_scope_arms": scoped}
-    return {"cells": {"|".join(k): {**v, "actions": dict(v["actions"])} for k, v in table.items()},
+    flag = []
+    for m in models:
+        if (m, "plans", "SA", "G") not in table:
+            continue
+        for plan_cell, cancel_cell in (("G", "C"), ("H", "D")):
+            x = by_base(rows, m, "plans", "SA", plan_cell, 0)
+            y = by_base(rows, m, "cancel", "SA", cancel_cell, 0)
+            both = sorted(x.keys() & y.keys())
+            b = sum(x[k][0] == 1 and y[k][0] == 0 for k in both)
+            e = sum(x[k][0] == 0 and y[k][0] == 1 for k in both)
+            p = binomtest(min(b, e), b + e, 0.5).pvalue if b + e else 1.0
+            flag.append({"model": m, "first": f"plans:{plan_cell}", "second": f"cancel:{cancel_cell}", "pairs": len(both),
+                         "first_rate": sum(x[k][0] for k in both) / len(both) if both else None,
+                         "second_rate": sum(y[k][0] for k in both) / len(both) if both else None,
+                         "first_only": b, "second_only": e, "p": min(1.0, p)})
+    holm(flag)
+
+    return {"flag_vs_path": flag, "cells": {"|".join(k): {**v, "actions": dict(v["actions"])} for k, v in table.items()},
             "primary": primary, "secondary": secondary,
             "pooled": {"|".join(k): v for k, v in pooled.items()},
             "testable": {"|".join(k): v for k, v in testable.items()}, "verdicts": verdicts,
@@ -316,6 +334,12 @@ def markdown(res):
               f"{res['path_models_any_task']}. Criterion (Amendment 3b: ≥3 models, ≥2 providers, every task) met: "
               f"**{len(res['path_models_all_tasks']) >= 3 and len({provider(m) for m in res['path_models_all_tasks']}) >= 2}**",
               "",
+              "## Amendment 4: decision path vs flag value (same record; 'plans' = no-path request vs 'cancel')", "",
+              "| model | first | second | pairs | first error rate | second error rate | first-only | second-only | p (Holm) |",
+              "|---|---|---|---|---|---|---|---|---|",
+              *[f"| {x['model']} | {x['first']} | {x['second']} | {x['pairs']} | {x['first_rate']:.2f} | "
+                f"{x['second_rate']:.2f} | {x['first_only']} | {x['second_only']} | {x['p_holm']:.2g} |"
+                for x in res["flag_vs_path"] if x["pairs"]], "",
               "## Ladder: least wording with C and D ≤ 5% and clean errors ≤ 10%", "",
               "| model | task | " + " | ".join(ORDER + ("SA", "SN")) + " | least (W0–W6) | SA/SN near zero |",
               "|---" * (len(ORDER) + 6) + "|"]
