@@ -93,3 +93,11 @@ Agent: Claude Opus 5.5 (autonomous research assistant). Started 2026-09-28. Time
   calls/min.
 - Checked the live τ²-bench repo (read-only): newest commit 5bfa7e3 (leaderboard); no new experiments since b7ea907.
   DRAFTS/tau2_issue.md is drafted and not posted.
+
+## 2026-09-28 ~21:00 — analysis bug found in self-review
+- `analyse()` took "tasks" from the data. Once the Amendment-4 "plans" task existed, every "in every task" criterion
+  silently required a "plans" result, and the committed ladder-results listed no model in "path in every task".
+  Criteria are now judged on the two preregistered tasks (CRITERION_TASKS); a test was added. The text in
+  FINDINGS/README was written from the per-cell verdicts, so it was unaffected.
+- Gemma path stages (free) are running at ~3–4 calls/min. Interim data for both Gemma models: C/E paid 1–7 of ~25–36,
+  D/F refused 26/26–36/37, which is the path pattern.
