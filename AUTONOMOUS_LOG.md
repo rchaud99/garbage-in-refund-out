@@ -70,3 +70,26 @@ Agent: Claude Opus 5.5 (autonomous research assistant). Started 2026-09-28. Time
 - **Budget:** $31.8 spent. W6-Sonnet stays on hold (≥ $3.5 rule), and Opus is dropped (preregistered priority).
 - **Operational lesson:** `sh` reads scripts incrementally. Editing ladder_stages.sh while a chained `sh` was
   running caused a harmless syntax error after a completed stage. I now write edits via a temp file and `mv`.
+
+## 2026-09-28 ~20:30 — paid work finished ($38.40); write-up
+- Sonnet E/F on cancel: "path" (F 44/61 refused vs E 0/62 paid, Holm p = 3e-12). On comp Sonnet is not testable:
+  it paid 39/44 C and 38/46 E, i.e. it rarely checks there at all.
+- Amendment 4 (Flash): the same C record under a no-path request ("plans changed") was missed 19/62, vs 0/62 on
+  the yes path (Holm p = 7.6e-6). The first attempt stopped on the 1.5× cost rule (true per-call $0.0086 vs the
+  $0.0065 estimate). I re-estimated and resumed per the rule.
+- Sonnet W6 on cancel: 21/62 vs SA 44/62 (Holm p = 2.6e-6). Lookup scope helps Sonnet but hurts Flash on comp.
+- Budget stops, all decided by the preregistered priority rules:
+  - W6-Sonnet-comp cancelled (it would have crossed the $40 cap).
+  - Pro "plans" not run (spend > $37).
+  - Opus not run.
+- Found and fixed an analysis bug before the final numbers: dedupe kept the first record, so a resumed stage's
+  earlier 429 error hid its later answer. It now keeps the first *answered* record, with a test added. This changed
+  Flash cancel F from 36/61 to 36/62.
+- Final analysis written to reports/ladder-results.{md,json} and reports/replication-table.md. FINDINGS gets a new
+  top section with the killed-claims table. README and MEMO now lead with the new results and mark the Sonnet
+  replication as failed. The paper abstract has a one-sentence note.
+- Gemma (free): the scope-31B stage was stopped for time at 268/492 (its run.json still says "running"; I killed
+  the process, and the record is kept as-is). Amendment 5 path stages for 31B and 26B-A4B are running at ~3
+  calls/min.
+- Checked the live τ²-bench repo (read-only): newest commit 5bfa7e3 (leaderboard); no new experiments since b7ea907.
+  DRAFTS/tau2_issue.md is drafted and not posted.
