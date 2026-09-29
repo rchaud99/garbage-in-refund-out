@@ -1,6 +1,54 @@
 # Garbage In, Refund Out
 
-![Wrongful refusals by wording type across four tasks](figures/effort_tasks.png)
+*Do AI support agents check that a record adds up, or do they just apply policy to whatever the database says?*
+
+![Errors on corrupted records by decision path](figures/path_2026-09-28.png)
+
+**Latest result (2026-09-28): the check runs before "yes" and is skipped before "no".**
+- **Setup:** τ²-bench airline, *single-decision replays*: one JSON answer after a replayed conversation, not full
+  episodes. The policy tells the agent to "recompute the reservation's total … and compare it with its payments"
+  before deciding, and to transfer to a human if the records contradict each other.
+- **Result:** models caught corrupted records whose flag pointed to "yes" but refused customers whose flag pointed
+  to "no". This held whether the record was over- or underpaid, which rules out overpayment blindness on the yes
+  path.
+- **On cancellation**, yes-path vs no-path errors were:
+
+  | Model | yes-path errors | no-path errors |
+  |---|---|---|
+  | Gemini 3.8 Flash | 0/124 | 77/124 |
+  | Gemini 3.1 Pro | 0/124 | 69/124 |
+  | Claude Sonnet 5 | 18/124 | 88/123 |
+
+  The primary test compares F (no-path, underpaid) refusals with E (yes-path, overpaid) payouts, paired by base:
+  exact McNemar, Holm-corrected, p ≤ 2e-4 for each model.
+- **Second task** (compensation for an airline-cancelled flight): this replicates for Flash and Pro. Sonnet rarely
+  checked at all there, so it is untestable.
+- **Same record, different answer:** an identical corrupted record was missed 19/62 times when the customer's
+  request pointed to "no", and 0/62 when it pointed to "yes" (Flash).
+- **Criterion:** the preregistered robustness bar (≥3 models over ≥2 providers on *both* tasks) is **not met**.
+  Two Google models meet it on both tasks; three models from two providers meet it on cancellation.
+- **Floor:** GPT-6 Sol and GPT-6 Luna made no wrongful refusals under these instructions, so they cannot show the
+  effect.
+
+**The earlier headline fix is model-specific.** Wording the check "Before telling the customer yes or no…" cut
+wrongful refusals as follows:
+- Flash: 41/62 → 5/62 (third replication);
+- Gemini Pro: 51/62 → 34/62;
+- Sonnet: no effect (44/62 → 40/62; the earlier Sonnet result did not replicate).
+
+Vague instructions ("If a record looks wrong, transfer to a human", "If anything seems off…", the bare
+contradiction clause) left Flash at 100% errors in both directions.
+
+Everything is in [FINDINGS.md](FINDINGS.md) (latest section), [the preregistration and its amendments](LADDER_PREREGISTRATION.md),
+[the replication table](reports/replication-table.md) and [full tables](reports/ladder-results.md).
+That covers 5,630 decisions and $38.40 of API spend. A τ²-native task generator is in [`tau2_integrity/`](tau2_integrity/README.md).
+
+**Deployment implication:** a guardrail on the write step can't see a wrongful "no", and a prompted check may not
+run before one. Compute the reconciliation in code, show it to the agent before *any* answer, and test both
+directions plus clean records per model.
+
+## Earlier study (2026-09-25, Gemini 3.8 Flash only)
+
 
 **The airline wording effect is large; the retail follow-ups were at floor, so they could not test whether the effect generalises.** A support agent may trust an eligibility field and skip a consistency check before saying no. We test whether naming both answers changes that behavior.
 
@@ -20,7 +68,7 @@ The retail arithmetic analogue had 0 events under either wording (21 orders), so
 
 **Why this is an analogue:** Cancellation/return eligibility is status-based, so a payment-only corruption cannot faithfully flip it. The closest native analogue switches a pending order to an existing gift card: τ²'s tool compares its balance with the first payment. We use real orders and item prices but explicitly synthetic balance scenarios. Only first-payment amount changes within a clean/corrupt pair. The arithmetic invariant holds on all 1,000 source orders. This changes the action, numeric eligibility and profile lookup as well as the check, so it cannot identify effort as the sole causal moderator.
 
-The airline result replicated across six Flash paraphrases and, for the original wording pair, Flash and Sonnet. Claude Opus 5.5 made 0/24 wrongful refusals and 0/24 corrupted payouts under every one of the four wordings F1, F1n, F1d, F1dp (24 fresh bases, neutral script, run `runs/2026-09-25_151002_gate-24-bases-skip-12-cells-CD-neutral-script-claude-opus-5-5`, $5.10): no wording effect is measurable at floor. The new six-wording and retail arithmetic studies are **Flash-only**. In the prior study the airline paired refusal difference was +71.3 points [64.6, 77.4]. The preregistration says to report the primary criterion as "not established" when the pooled model is unidentifiable; the pooled mixed model is quasi-separated (both retail tasks had zero events), so the pooled odds ratio is not reported. Per-task counts are the result.
+The airline result replicated across six Flash paraphrases and, for the original wording pair, Flash and Sonnet. *(2026-09-28: the Sonnet replication did not hold on 62 new bases, 44/62 vs 40/62; see the latest section.)* Claude Opus 5.5 made 0/24 wrongful refusals and 0/24 corrupted payouts under every one of the four wordings F1, F1n, F1d, F1dp (24 fresh bases, neutral script, run `runs/2026-09-25_151002_gate-24-bases-skip-12-cells-CD-neutral-script-claude-opus-5-5`, $5.10): no wording effect is measurable at floor. The new six-wording and retail arithmetic studies are **Flash-only**. In the prior study the airline paired refusal difference was +71.3 points [64.6, 77.4]. The preregistration says to report the primary criterion as "not established" when the pooled model is unidentifiable; the pooled mixed model is quasi-separated (both retail tasks had zero events), so the pooled odds ratio is not reported. Per-task counts are the result.
 
 A supplied deterministic airline reconciliation gave **24/24 transfers in each corrupted direction**, with 0/48 clean-control errors. The ledger output prints the verdict ("payments do not reconcile … insurance fee paid but insurance marked no"), so this tests whether the model acts on a stated mismatch, not whether it checks. This small test is promising; it does not prove a code checker removes every failure. In eight-base full conversations, Flash's raw harness output was 2/8 D refusals under F1 versus 1/8 under F1d (`runs/2026-09-24_182105_episodes-8-bases-flash-sonnet/summary.md`); a hand recode that counts "flagged the discrepancy to the customer but didn't call the transfer tool" as held gives 0/8 each. Sonnet's rates were 4/8 versus 1/8. The Flash user simulator can hang up at the transfer offer, and Flash used τ²'s calculate tool in 12/16 of these episodes, which the single-decision format does not offer, so the single-decision vs conversation difference may be a format effect; treat conversations as a small stress test. Prompt fixes must be validated in the actual workflow.
 

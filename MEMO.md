@@ -1,8 +1,10 @@
 # Deployment memo: check before every answer
 
-**Decision.** Require deterministic reconciliation before granting or refusing a request. If checks rely on prompts, explicitly name both answers. Validate each model, task and conversation flow; a guard only on a refund write cannot catch a wrongful “no.”
+**Decision.** Require deterministic reconciliation before granting *or* refusing a request, and show its result to the agent before any answer. Do not rely on a prompted check to protect refusals: in 2026-09-28 single-decision replays, agents told to "recompute before deciding" ran the check before a "yes" and skipped it before a "no" (cancellation, no-path vs yes-path errors: Flash 77/124 vs 0/124, Gemini Pro 69/124 vs 0/124, Claude Sonnet 5 88/123 vs 18/124). Naming both answers in the prompt ("before telling the customer yes or no") fixed this for Flash only (41/62 → 5/62), partly for Gemini Pro (51/62 → 34/62), and not for Sonnet (44/62 → 40/62). GPT-6 Sol made no errors either way. Validate every model, task and conversation flow; a guard only on a refund write cannot catch a wrongful "no." See FINDINGS.md (latest section).
 
-**Evidence.** The airline wording effect is large; the retail follow-ups were at floor, so they could not test whether the effect generalises. Wrongful refusals under Gemini 3.8 Flash, six-wording study (airline: 65 bases, two calls per item) and retail follow-ups:
+**Earlier evidence (2026-09-25, Flash only).**
+
+The airline wording effect is large; the retail follow-ups were at floor, so they could not test whether the effect generalises. Wrongful refusals under Gemini 3.8 Flash, six-wording study (airline: 65 bases, two calls per item) and retail follow-ups:
 
 | Task | Action-tied refusals | Answer-tied refusals | Orders/bases |
 |---|---|---|---:|
