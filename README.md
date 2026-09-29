@@ -4,44 +4,41 @@
 
 ![Errors on corrupted records by decision path](figures/path_2026-09-28.png)
 
-**Latest result (2026-09-28): the check runs before "yes" and is skipped before "no".**
-- **Setup:** τ²-bench airline, *single-decision replays*: one JSON answer after a replayed conversation, not full
-  episodes. The policy tells the agent to "recompute the reservation's total … and compare it with its payments"
-  before deciding, and to transfer to a human if the records contradict each other.
-- **Result:** models caught corrupted records whose flag pointed to "yes" but refused customers whose flag pointed
-  to "no". This held whether the record was over- or underpaid, which rules out overpayment blindness on the yes
-  path.
-- **On cancellation**, yes-path vs no-path errors were:
+**Latest results (2026-09-28).**
 
-  | Model | yes-path errors | no-path errors |
-  |---|---|---|
-  | Gemini 3.8 Flash | 0/124 | 77/124 |
-  | Gemini 3.1 Pro | 0/124 | 69/124 |
-  | Claude Sonnet 5 | 18/124 | 88/123 |
+*Format:* τ²-bench airline, single-decision replays. The agent gives one JSON answer after a replayed
+conversation; these are not full episodes. Every test was preregistered, and every model is reported.
 
-  The primary test compares F (no-path, underpaid) refusals with E (yes-path, overpaid) payouts, paired by base:
-  exact McNemar, Holm-corrected, p ≤ 2e-4 for each model.
-- **Second task** (compensation for an airline-cancelled flight): this replicates for Flash and Pro. Sonnet rarely
-  checked at all there, so it is untestable.
-- **Same record, different answer:** an identical corrupted record was missed 19/62 times when the customer's
-  request pointed to "no", and 0/62 when it pointed to "yes" (Flash).
-- **Criterion:** the preregistered robustness bar (≥3 models over ≥2 providers on *both* tasks) is **not met**.
-  Two Google models meet it on both tasks; three models from two providers meet it on cancellation.
-- **Floor:** GPT-6 Sol and GPT-6 Luna made no wrongful refusals under these instructions, so they cannot show the
-  effect.
+1. **The check runs before "yes" and is skipped before "no".**
+   - The instruction: "recompute the reservation's total … and compare it with its payments" before deciding.
+   - Models caught corrupted records whose insurance flag pointed to "yes", but refused customers whose flag
+     pointed to "no", whether those records were over- or underpaid.
+   - On cancellation (yes-path missed vs no-path refused):
 
-**The earlier headline fix is model-specific.** Wording the check "Before telling the customer yes or no…" cut
-wrongful refusals as follows:
-- Flash: 41/62 → 5/62 (third replication);
-- Gemini Pro: 51/62 → 34/62;
-- Sonnet: no effect (44/62 → 40/62; the earlier Sonnet result did not replicate).
+     | Model | yes-path missed | no-path refused |
+     |---|---|---|
+     | Gemini 3.8 Flash | 0/124 | 77/124 |
+     | Gemini 3.1 Pro | 0/124 | 69/124 |
+     | Claude Sonnet 5 | 18/124 | 88/123 |
 
-Vague instructions ("If a record looks wrong, transfer to a human", "If anything seems off…", the bare
-contradiction clause) left Flash at 100% errors in both directions.
+     Test: F (no path, underpaid) vs E (yes path, overpaid), exact McNemar, Holm p ≤ 3e-4 per model.
+   - Flash and Pro show this on both tasks. Sonnet shows it on cancellation only; it rarely checked on the
+     compensation task. Both Gemma 4 models show it on cancellation (partial runs).
+   - The preregistered bar (≥3 models from ≥2 providers on both tasks) is **not met**.
+2. **Guardrail wording effects are model-specific.** Compared with "Before deciding on…":
+   - "Before telling the customer yes or no…" cut wrongful refusals for Flash (41/62 → 5/62) and partly for Pro
+     (51/62 → 34/62), but not for Sonnet (44/62 → 40/62). The earlier Sonnet result did not replicate.
+   - A lookup-scoped check ("Every time you look up a reservation…") halved Sonnet's refusals (44/62 → 21/62), but
+     raised Flash's on the compensation task (16/46 → 44/46) and raised Gemma's payouts.
+   - Vague instructions ("If a record looks wrong, transfer to a human") left Flash wrong 100% of the time in both
+     directions.
+3. **GPT-6 Sol and GPT-6 Luna check both ways.** They made no wrongful refusals and no payouts on corrupted
+   cancellation records, under either check.
 
-Everything is in [FINDINGS.md](FINDINGS.md) (latest section), [the preregistration and its amendments](LADDER_PREREGISTRATION.md),
-[the replication table](reports/replication-table.md) and [full tables](reports/ladder-results.md).
-That covers 5,630 decisions and $38.40 of API spend. A τ²-native task generator is in [`tau2_integrity/`](tau2_integrity/README.md).
+See [FINDINGS.md](FINDINGS.md) (latest section: per-model × per-wording tables and killed claims),
+[the preregistration and its amendments](LADDER_PREREGISTRATION.md), [the replication table](reports/replication-table.md),
+[full tables](reports/ladder-results.md) and [the website draft](WEBSITE_DRAFT.md).
+The campaign covered 6,159 decisions and cost $38.40 of API spend. A τ²-native task generator is in [`tau2_integrity/`](tau2_integrity/README.md).
 
 **Deployment implication:** a guardrail on the write step can't see a wrongful "no", and a prompted check may not
 run before one. Compute the reconciliation in code, show it to the agent before *any* answer, and test both

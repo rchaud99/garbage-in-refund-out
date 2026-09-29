@@ -19,7 +19,7 @@ SERIES = [("SA", "Before deciding on … (action)", "#2a78d6"),
           ("SN", "Before telling the customer yes or no … (answer)", "#1baf7a")]
 TASKS = [("cancel", "Cancellation (62 bases)"), ("comp", "Compensation (23 bases)")]
 NAMES = {"gemini-3.8-flash": "Gemini 3.8 Flash", "gemini-3.1-pro-preview": "Gemini 3.1 Pro",
-         "gemma-4-31b-it": "Gemma 4 31B", "openrouter/anthropic/claude-sonnet-5": "Claude Sonnet 5",
+         "gemma-4-31b-it": "Gemma 4 31B", "gemma-4-26b-a4b-it": "Gemma 4 26B-A4B", "openrouter/anthropic/claude-sonnet-5": "Claude Sonnet 5",
          "openrouter/anthropic/claude-opus-5.5": "Claude Opus 5.5", "openrouter/openai/gpt-6-sol": "GPT-6 Sol",
          "openrouter/openai/gpt-6-luna": "GPT-6 Luna"}
 

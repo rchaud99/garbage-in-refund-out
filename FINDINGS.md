@@ -9,7 +9,7 @@
   Each amendment was committed before the data it governs.
 - **Analysis:** `src/refundout/ladder_analysis.py`, which writes `reports/ladder-results.{md,json}` and
   `reports/replication-table.md`.
-- **Scale and cost:** about 6,400 calls in campaign `ladder-2026-09-28`. API spend was $38.40, plus $0.12 for a
+- **Scale and cost:** 6,159 calls in campaign `ladder-2026-09-28`. API spend was $38.40, plus $0.12 for a
   τ²-native verification run. Gemma calls were free.
 - **Missing data:** 9 answers from the paid models remain missing (API failure or unreadable reply). They are
   reported per cell and never scored.
@@ -84,7 +84,7 @@ On **compensation** (23 bases × 2 reruns; Gemma partial):
   - In the full 44-test W6 family: −37 pp [−50, −26], Holm p = 1.0e-5. Against SN: −31 pp [−44, −18], Holm
     p = 0.0026.
 - Flash, comp: refusals **rose** from 16/46 to 44/46 vs SA (Holm p = 0.0012 in each rerun).
-- Gemma 31B, cancel: W6 **raised payouts**, 18/39 vs 1/62 under SA. In the W6 family, the paired test on 38 bases
+- Gemma 31B, cancel: W6 **raised payouts**, 18/39 vs 1/62 under SA. In the W6 family, the paired test on 39 bases
   gives Holm p = 0.003.
 - GPT: no meaningful change.
 
@@ -120,7 +120,7 @@ see", Amendment 3 crossed decision path × direction.
 | Sonnet · cancel | 18/124 | 88/123 | 44/61 vs 0/62 | 3.9e-12 | path |
 | Sonnet · comp | 77/92 | 88/92 | 43/46 vs 38/46 | 1; 1 | not testable: it rarely checks at all |
 | Gemma 31B · cancel | 2/124 | 120/124 | 59/62 vs 1/62 | 2.4e-16 | path |
-| Gemma 26B · cancel (partial) | 11/53 C, 12/45 E | 62/62 D, 52/52 F | 37 vs 0 discordant | 4.8e-10 | path |
+| Gemma 26B · cancel (partial) | 26/106 | 122/122 | 60/60 vs 15/53 (37 vs 0 discordant) | 4.8e-10 | path |
 | GPT-6 Sol / Luna | 0 D errors under SA on cancel | | | | floor, not testable |
 
 **Robustness.** "Path" holds in Flash and Pro on **both** tasks, and in Sonnet and both Gemma models on

@@ -101,3 +101,19 @@ Agent: Claude Opus 5.5 (autonomous research assistant). Started 2026-09-28. Time
   FINDINGS/README was written from the per-cell verdicts, so it was unaffected.
 - Gemma path stages (free) are running at ~3–4 calls/min. Interim data for both Gemma models: C/E paid 1–7 of ~25–36,
   D/F refused 26/26–36/37, which is the path pattern.
+
+## 2026-09-28 ~21:40 — wrap-up (user decision: no more API calls)
+- All Gemma runs stopped at 21:25 on request.
+  - 31B: cancel path complete; comp stopped at 36/184 calls.
+  - 26B: cancel 246/248 calls; comp not run.
+  - Gemma is reported as partial.
+- On request, ran the W6 family analysis (W6 vs SA/SN on D and C, Holm across 44 tests): W6 helps Sonnet (−37 pp,
+  Holm p = 1e-5), hurts Flash on comp (+61 pp), and raises Gemma's payouts. Sent to main.
+- Final deliverables:
+  - FINDINGS (latest section, with per-model × per-wording tables and killed claims);
+  - WEBSITE_DRAFT.md;
+  - DIGEST.md;
+  - reports/progress/progress_02_2026-09-28_2135.pdf (4 pages; numbers are generated from
+    reports/ladder-results.json by scripts/final_report.py);
+  - README and MEMO updated.
+- Final spend: $38.40 (campaign) + $0.12 (τ² verification) = $38.52 of the $40 cap.

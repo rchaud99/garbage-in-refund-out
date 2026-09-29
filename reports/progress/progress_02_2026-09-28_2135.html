@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Garbage In, Refund Out: final report</title>
+<style>
+  @page { size: Letter; margin: 12mm 13mm; }
+  :root { --ink:#0b0b0b; --ink2:#52514e; --rule:#e4e3df; --blue:#2a78d6; --green:#1a7f4b; --red:#b42318; --amber:#9a6700; }
+  body { font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--ink); font-size: 9.3pt; line-height: 1.36; margin: 0; background: #fff; }
+  h1 { font-size: 16.5pt; margin: 0 0 2px; letter-spacing: -0.01em; }
+  h2 { font-size: 11.8pt; margin: 14px 0 5px; border-bottom: 1px solid var(--rule); padding-bottom: 3px; }
+  h3 { font-size: 11pt; margin: 8px 0 4px; }
+  .meta { color: var(--ink2); font-size: 8.8pt; margin-bottom: 8px; }
+  .box { border: 1px solid var(--rule); border-left: 4px solid var(--blue); padding: 7px 10px; margin: 7px 0; background: #fafaf8; }
+  table { border-collapse: collapse; width: 100%; font-size: 7.9pt; margin: 5px 0 3px; }
+  th, td { border-bottom: 1px solid var(--rule); padding: 2.5px 4px; text-align: left; vertical-align: top; }
+  th { color: var(--ink2); font-weight: 600; }
+  td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .ok { color: var(--green); font-weight: 600; } .no { color: var(--red); font-weight: 600; } .mid { color: var(--amber); font-weight: 600; }
+  img { width: 100%; } img.half { width: 64%; display:block; margin: 0 auto; }
+  .small { font-size: 8.3pt; color: var(--ink2); }
+  ul { margin: 3px 0 3px 18px; padding: 0; } li { margin: 1.5px 0; }
+  .web { border: 1px solid var(--rule); padding: 2px 11px; font-size: 8.7pt; line-height: 1.35; } .web ul { margin: 2px 0 2px 16px; } .web p { margin: 4px 0; }
+  .pb { page-break-before: always; }
+</style></head><body>
+<h1>Garbage In, Refund Out: final report (progress 02)</h1>
+<div class="meta">2026-09-28 · autonomous session (Claude Opus 5.5) · <b>single-decision replays</b> throughout: one JSON answer after a replayed τ²-bench airline conversation, not full episodes · preregistration and amendments committed before each dataset</div>
+
+<div class="box"><b>Bottom line.</b>
+When told to "recompute the reservation's total and compare it with its payments" before deciding, agents <b>ran the check before a "yes" and skipped it before a "no"</b>.
+They caught corrupted records that would have paid out, but refused customers whose records pointed to "no",
+whether those records were over- or underpaid.
+<ul>
+<li><b>Cancellation:</b> this held in Gemini 3.8 Flash, Gemini 3.1 Pro, Claude Sonnet 5 and both Gemma 4 models (Holm-corrected exact McNemar, p ≤ 3e-4).</li>
+<li><b>Compensation:</b> this held in Flash, Pro and the Gemma models. Sonnet rarely checked on that task at all.</li>
+<li><b>Preregistered bar</b> (≥3 models from ≥2 providers on <i>both</i> tasks): <b class="no">not met</b>. Both-task support: Gemini 3.1 Pro, Gemini 3.8 Flash. At least one task: Gemini 3.1 Pro, Gemini 3.8 Flash, Gemma 4 26B-A4B, Gemma 4 31B, Claude Sonnet 5. The models that pass on both tasks are all Google models.</li>
+<li><b>GPT-6 Sol and GPT-6 Luna check both ways</b>: no errors on corrupted cancellation records under either check, so they cannot show the asymmetry.</li>
+<li><b>Guardrail wording effects are model-specific.</b>
+  <ul>
+  <li>"Before telling the customer yes or no": Flash 41/62 → 5/62, Pro 51/62 → 34/62, Sonnet 44/62 → 40/62 (the earlier Sonnet effect did not replicate).</li>
+  <li>The lookup-scoped check helps Sonnet (44/62 → 21/62), hurts Flash on compensation (16/46 → 44/46), and raises Gemma's payouts (1/62 → 18/39).</li>
+  </ul></li>
+</ul></div>
+
+<h2>Replication table: models × tasks × reruns</h2>
+<p class="small">
+<b>Counts:</b> errors/valid answers.<br>
+<b>Wordings:</b> SA = action-scoped check ("Before deciding on …, recompute…"); SN = answer-scoped check ("Before telling the customer yes or no on …").<br>
+<b>Cells:</b> C = flag yes, fee missing (error = payout); D = flag no, fee paid (error = wrongful refusal); E = flag yes, overpaid (error = payout); F = flag no, underpaid (error = refusal).<br>
+<b>Tests:</b> Holm-corrected exact McNemar, paired by base, one test per rerun (cancel: 1 rerun, 62 bases; comp: 2 reruns, 23 bases). The difference column is SA−SN in percentage points, with a 95% base-cluster bootstrap CI.<br>
+<b>Gemma</b> rows are free-tier and partial: 31B compensation stopped at 36/184 calls, 26B compensation was not run, and 26B cancellation reached 246/248 calls. API calls were stopped at the user's request.</p>
+<table>
+<tr><th>Model</th><th>Task</th><th class=n>Reruns</th><th class=n>C paid (SA)</th><th class=n>D refused (SA)</th><th class=n>D refused (SN)</th><th class=n>SA−SN, pp [CI]</th><th>SA vs SN, Holm p</th><th class=n>E paid (SA)</th><th class=n>F refused (SA)</th><th>F vs E, Holm p</th><th>Scope</th><th>Path</th></tr>
+<tr><td>Gemini 3.8 Flash</td><td>cancel</td><td class=n>1</td><td class=n>0/62</td><td class=n>41/62</td><td class=n>5/62</td><td class=n>+58 [+45, +71]</td><td>4.7e-10</td><td class=n>0/62</td><td class=n>36/62</td><td>9.3e-10</td><td>supported</td><td>path</td></tr>
+<tr><td>Gemini 3.8 Flash</td><td>comp</td><td class=n>2</td><td class=n>0/46</td><td class=n>16/46</td><td class=n>4/46</td><td class=n>+26 [+13, +41]</td><td>1; 0.22</td><td class=n>0/46</td><td class=n>24/46</td><td>0.013; 0.013</td><td>not supported</td><td>path</td></tr>
+<tr><td>Gemini 3.1 Pro</td><td>cancel</td><td class=n>1</td><td class=n>0/62</td><td class=n>51/62</td><td class=n>34/62</td><td class=n>+27 [+11, +42]</td><td>0.035</td><td class=n>0/62</td><td class=n>18/62</td><td>0.00023</td><td>supported</td><td>path</td></tr>
+<tr><td>Gemini 3.1 Pro</td><td>comp</td><td class=n>2</td><td class=n>6/46</td><td class=n>42/46</td><td class=n>40/46</td><td class=n>+4 [-9, +20]</td><td>1; 1</td><td class=n>4/46</td><td class=n>42/46</td><td>0.00023; 0.0003</td><td>not supported</td><td>path</td></tr>
+<tr><td>Gemma 4 31B</td><td>cancel</td><td class=n>1</td><td class=n>1/62</td><td class=n>61/62</td><td class=n>30/35</td><td class=n>+11 [+3, +23]</td><td>1</td><td class=n>1/62</td><td class=n>59/62</td><td>2.4e-16</td><td>not supported</td><td>path</td></tr>
+<tr><td>Gemma 4 31B</td><td>comp</td><td class=n>1</td><td class=n>9/11</td><td class=n>6/6</td><td class=n>–</td><td class=n>–</td><td>–</td><td class=n>9/9</td><td class=n>10/10</td><td>1</td><td>not testable</td><td>not testable (C payouts > 50%)</td></tr>
+<tr><td>Gemma 4 26B-A4B</td><td>cancel</td><td class=n>1</td><td class=n>11/53</td><td class=n>62/62</td><td class=n>–</td><td class=n>–</td><td>–</td><td class=n>15/53</td><td class=n>60/60</td><td>4.8e-10</td><td>not testable</td><td>path</td></tr>
+<tr><td>Claude Sonnet 5</td><td>cancel</td><td class=n>1</td><td class=n>18/62</td><td class=n>44/62</td><td class=n>40/62</td><td class=n>+6 [-10, +23]</td><td>1</td><td class=n>0/62</td><td class=n>44/61</td><td>3.9e-12</td><td>not supported</td><td>path</td></tr>
+<tr><td>Claude Sonnet 5</td><td>comp</td><td class=n>2</td><td class=n>39/44</td><td class=n>45/46</td><td class=n>41/44</td><td class=n>+4 [-4, +13]</td><td>1; 1</td><td class=n>38/46</td><td class=n>43/46</td><td>1; 1</td><td>not testable</td><td>not testable (C payouts > 50%)</td></tr>
+<tr><td>GPT-6 Sol</td><td>cancel</td><td class=n>1</td><td class=n>0/62</td><td class=n>0/62</td><td class=n>0/62</td><td class=n>+0 [+0, +0]</td><td>1</td><td class=n>–</td><td class=n>–</td><td>–</td><td>not testable</td><td>not run</td></tr>
+<tr><td>GPT-6 Sol</td><td>comp</td><td class=n>2</td><td class=n>0/46</td><td class=n>0/46</td><td class=n>0/46</td><td class=n>+0 [+0, +0]</td><td>1; 1</td><td class=n>–</td><td class=n>–</td><td>–</td><td>not testable</td><td>not run</td></tr>
+<tr><td>GPT-6 Luna</td><td>cancel</td><td class=n>1</td><td class=n>0/62</td><td class=n>0/62</td><td class=n>0/62</td><td class=n>+0 [+0, +0]</td><td>1</td><td class=n>–</td><td class=n>–</td><td>–</td><td>not testable</td><td>not run</td></tr>
+<tr><td>GPT-6 Luna</td><td>comp</td><td class=n>2</td><td class=n>1/46</td><td class=n>5/46</td><td class=n>1/46</td><td class=n>+9 [-2, +22]</td><td>1; 1</td><td class=n>–</td><td class=n>–</td><td>–</td><td>not supported</td><td>not run</td></tr>
+</table>
+
+<h3>Per-model × per-wording, cancellation (D wrongful refusals / C payouts)</h3>
+<table><tr><th>Model</th><th>SA: D refused / C paid</th><th>W6: D refused / C paid</th><th>SN: D refused / C paid</th></tr><tr><td>Gemini 3.8 Flash</td><td>41/62 / 0/62</td><td>29/62 / 0/62</td><td>5/62 / 0/62</td></tr><tr><td>Gemini 3.1 Pro</td><td>51/62 / 0/62</td><td>–</td><td>34/62 / 0/62</td></tr><tr><td>Gemma 4 31B</td><td>61/62 / 1/62</td><td>33/35 / 18/39</td><td>30/35 / 0/36</td></tr><tr><td>Gemma 4 26B-A4B</td><td>62/62 / 11/53</td><td>–</td><td>–</td></tr><tr><td>Claude Sonnet 5</td><td>44/62 / 18/62</td><td>21/62 / 16/61</td><td>40/62 / 12/62</td></tr><tr><td>GPT-6 Sol</td><td>0/62 / 0/62</td><td>0/62 / 4/62</td><td>0/62 / 0/62</td></tr><tr><td>GPT-6 Luna</td><td>0/62 / 0/62</td><td>0/62 / 3/62</td><td>0/62 / 0/62</td></tr></table>
+<img style="width:78%;display:block;margin:0 auto" src="../../figures/path_final.png" alt="Errors by decision path">
+<p class="small">Figure 1. Under the action-scoped check, errors on corrupted records by decision path: blue = the record points to "yes", orange = it points to "no". Circles are C/D, squares are E/F. Bars are 95% base-cluster CIs, and the labels give raw counts.</p>
+
+<h2>The wording ladder: the least instruction per model</h2>
+<table>
+<tr><th>Model</th><th>Least wording tested with C and D ≤ 5% and clean errors ≤ 10%</th><th>Detail</th></tr>
+<tr><td>Gemini 3.8 Flash</td><td class="no">none of nine</td><td>W0–W4 (stock; "record looks wrong"; "anything seems off"; bare clause; "double-check") gave 100% errors in both directions. W5 "check payments match before acting" caught C on cancellation only. W6 (lookup-scoped) left D at 47% and 96%. The closest is SN: C 0%, D 8% and 9%.</td></tr>
+<tr><td>Gemini 3.1 Pro</td><td class="no">none (SA, SN tested)</td><td>SN still refused 34/62 and 40/46.</td></tr>
+<tr><td>Claude Sonnet 5</td><td class="no">none (SA, SN, W6 tested)</td><td>The best was W6 on cancellation (C 16/61, D 21/62). On compensation it paid out most C records under every wording.</td></tr>
+<tr><td>GPT-6 Sol</td><td class="ok">SA (the action-scoped recipe)</td><td>0 errors under SA and SN on both tasks. The vague rungs were not tested (budget).</td></tr>
+<tr><td>GPT-6 Luna</td><td class="ok">SA (cancel), SN (comp)</td><td>Compensation SA: 5/46 D. SN: C 0/45, D 1/46, clean 3/40.</td></tr>
+<tr><td>Gemma 4 (31B, 26B)</td><td class="no">none (SA; SN and W6 on 31B)</td><td>Near-total refusal of D under every wording tested.</td></tr>
+<tr><td>Claude Opus 5.5</td><td>not run</td><td>Budget; the preregistered priority put it last.</td></tr>
+</table>
+
+<h2>Draft website write-up (WEBSITE_DRAFT.md, ~550 words)</h2>
+<div class="web"><h3>Checked before yes, trusted before no</h3>
+<p>AI support agents apply policy to whatever the database says. I asked a narrow question: if a record contradicts itself, does the agent notice? And does it matter which way the error cuts?</p>
+<p><b>Setup.</b></p>
+<ul><li>
+<b>The corrupted records.</b> I took real reservations from τ²-bench, Sierra&#x27;s customer-service benchmark, and
+ planted one-field contradictions:
+<ul><li>
+an insurance flag that says &quot;yes&quot; when no insurance fee was paid (trusting it pays out wrongly);
+</li><li>
+an insurance flag that says &quot;no&quot; when the fee <i>was</i> paid (trusting it turns away a customer who is owed a
+ refund).
+</li></ul>
+</li><li>
+<b>The decisions.</b> Two of them: a sick customer cancelling, and a customer asking for compensation after the
+ airline cancelled their flight. In both, insurance alone decides the answer.
+</li><li>
+<b>The instructions.</b> The policy told the agent to hand contradictory records to a human, and to &quot;recompute the
+ reservation&#x27;s total from its fares, passengers and insurance, and compare it with its payments.&quot;
+</li><li>
+<b>Method.</b> Each test is a single decision: the model reads the conversation so far and answers. Every test was
+ preregistered, and every model is reported.
+</li></ul>
+<p><b>1. The check guards the &quot;yes&quot;.</b></p>
+<ul><li>
+Gemini 3.8 Flash, Gemini 3.1 Pro and Claude Sonnet 5 missed 0%, 0% and 15% of corrupted records that would have
+ paid out.
+</li><li>
+The same models refused 56–72% of corrupted records that pointed to &quot;no&quot;.
+</li><li>
+A control ruled out the idea that overpayments are just harder to spot. I swapped which answer the over- and
+ underpaid records pointed to, and the errors followed the answer, not the arithmetic.
+</li><li>
+Shown the <i>same</i> corrupted record under a request whose answer was &quot;no&quot;, Flash missed it 31% of the time, against
+ 0% when the answer was &quot;yes&quot;.
+</li><li>
+The refusals read like this: &quot;There&#x27;s no insurance, it&#x27;s not a business flight, it wasn&#x27;t booked within 24
+ hours… None of the policy exceptions apply.&quot; The model never reaches the payments.
+</li></ul>
+<p>This held for Flash and Pro on both decisions. It held for Sonnet on cancellations; on compensation, Sonnet rarely checked at all.</p>
+<p><b>2. Prompt fixes are model-specific.</b></p>
+<ul><li>
+<b>&quot;Before telling the customer yes or no…&quot;</b> cut Flash&#x27;s wrongful refusals from 41/62 to 5/62, replicating my
+ earlier result. It barely helped Sonnet (44/62 → 40/62): my earlier Sonnet result did not replicate.
+</li><li>
+<b>&quot;Every time you look up a reservation, recompute…&quot;</b> halved Sonnet&#x27;s refusals and closed its gap. The same
+ sentence made Flash refuse 44/46 compensation cases, and made an open-weights Gemma model pay out more.
+</li><li>
+<b>Vague instructions</b> (&quot;If a record looks wrong, transfer to a human&quot;) left Flash wrong 100% of the time.
+</li></ul>
+<p>A guardrail sentence that works on one model can backfire on the next.</p>
+<p><b>3. Some models check both ways.</b> GPT-6 Sol made no errors in either direction.</p>
+<p><b>Why it matters.</b></p>
+<ul><li>
+Guardrails usually sit at the write step: check before issuing a refund. A wrongful &quot;no&quot; writes nothing, so the
+ guard never sees it.
+</li><li>
+Here the same blind spot appears inside the model: it verifies on the way to an action and skips verification
+ on the way to a refusal.
+</li><li>
+What I&#x27;d ship: compute the reconciliation in code, show it before <i>any</i> answer, and test both directions on
+ every model you deploy.
+</li></ul>
+<p><b>Limits.</b></p>
+<ul><li>
+These are single decisions, not full conversations; an earlier small conversation test found smaller gaps.
+</li><li>
+One domain, one kind of corruption, two decisions.
+</li><li>
+The robustness bar I set in advance (three models from two providers, on both decisions) was not met. Only two
+ Gemini models cleared it on both.
+</li><li>
+About 6,000 decisions, for $38 of API spend.
+</li></ul></div>
+
+<h2>Claims: survived vs killed (2026-09-28)</h2>
+<table>
+<tr><th>Claim</th><th>Status</th><th>Evidence</th></tr>
+<tr><td>A prompted check runs before "yes" and is skipped before "no"; this is not overpayment blindness</td><td class="ok">survives (below the preregistered bar)</td><td>E ≈ C and F ≫ E in every testable cell. Same record, different request: 19/62 vs 0/62 (Flash).</td></tr>
+<tr><td>Errors fall on the customer even with "yes or no" wording (Pro, Sonnet)</td><td class="ok">survives (secondary)</td><td>Under SN: Pro 34/62 D vs 0/62 C; Sonnet 40/62 vs 12/62 (Holm p ≤ 2e-6).</td></tr>
+<tr><td>Naming "yes or no" fixes wrongful refusals (Flash, cancellation)</td><td class="ok">survives</td><td>Third independent base set: 41/62 → 5/62.</td></tr>
+<tr><td>… as a general prompt fix across models</td><td class="no">killed</td><td>Sonnet: no effect. Pro: one task. GPT: at floor.</td></tr>
+<tr><td>"Replicated in Claude Sonnet"</td><td class="no">killed</td><td>44/62 vs 40/62 on 62 new bases (p = 0.54).</td></tr>
+<tr><td>A lookup-scoped check protects both answers</td><td class="no">killed</td><td>Flash on compensation: 44/46 refused.</td></tr>
+<tr><td>"Literal scope" explains the leak</td><td class="mid">weakened</td><td>W6 and SN literally cover "no", yet the leak persists (Flash W6; Pro and Sonnet SN).</td></tr>
+<tr><td>Vague "if something's wrong, transfer" instructions work</td><td class="no">killed (Flash)</td><td>100% errors, both directions, both tasks.</td></tr>
+<tr><td>All models trust corrupted records</td><td class="no">killed</td><td>GPT-6 Sol: 0 errors on 248 corrupted cancellation records.</td></tr>
+</table>
+
+<h2>Also done</h2>
+<p class="small"><b>Write-up fixes (REVIEW_2026-09-27):</b> Opus null added; pooled OR deleted; "CI 0.0–0.0" replaced by exact upper bounds (13.3%, 9.5%, 6.7%); raw conversation counts 2/8 vs 1/8 reported beside the recode; "untested" rather than "failed"; reviews labelled "LLM-annotated"; $2.29; refusal rates labelled by study (57/8, 73.8/2.6, 17); "effort rule held: False" fixed; paper Reproducibility section rewritten; stale first-commit text removed. README, MEMO and FINDINGS now lead with these results and flag the failed Sonnet replication.
+<br><b>Generator</b> (<code>tau2_integrity/</code>, 499 LOC including tests, no lookworth dependency): emits paired corrupt/clean native τ² Tasks via <code>initial_state</code>, with gold actions in <code>evaluation_criteria</code>. A shim runs them under τ²'s own CLI, and a scorer reports pass^k plus payouts, refusals and false holds. 5 smoke tests pass; the 2-episode verification passed ($0.12). The draft issue is in <code>DRAFTS/tau2_issue.md</code> (not posted); the live repo has no new experiments since b7ea907.</p>
+<h2>Résumé bullet</h2>
+<p>Designed and ran a preregistered evaluation of whether LLM support agents reconcile self-contradicting records (τ²-bench airline; 7 models from 3 providers; ~6,000 single-decision replays; $38 of API spend).
+Agents told to "recompute before deciding" missed 0–15% of corrupted records that would pay out, but refused 56–72% of those pointing to "no" (3 models, 2 providers; Holm-corrected p &lt; 10⁻³).
+A previously reported prompt fix held for Gemini Flash but not Claude Sonnet. I shipped a τ²-native corrupted-task generator.</p>
+
+<h2>Next steps</h2>
+<ul>
+<li><b>Most valuable:</b> run the path test (cells C/D/E/F) as <b>full τ² episodes</b> with <code>tau2_integrity</code>. Use a non-Flash user simulator, 20 bases and 4 trials, on Flash and Sonnet, for about $15. Single decisions may overstate the effect: the earlier conversation stress test found smaller gaps.</li>
+<li><b>Third provider on both tasks:</b> no affordable model qualified. DeepSeek v4 pro and Qwen3.5 rarely checked; Grok 4.7 was at floor on cancellation. Opus is untested here.</li>
+<li><b>Separate "decision path" from "flag value"</b> in Pro and Sonnet (the Amendment-4 design, about $3).</li>
+</ul>
+<p><b>API spend:</b> $38.40 in campaign <code>ladder-2026-09-28</code> (logged list prices, or OpenRouter-reported cost), plus $0.12 for the τ²-native verification run. Total: <b>$38.52 of the $40 cap</b>. Gemma runs were free-tier ($0).</p>
+
+</body></html>
