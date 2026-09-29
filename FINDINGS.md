@@ -96,6 +96,27 @@ only 0–5% of refusal summaries:
 - Pro: 1/51, 0/18, 0/42 and 0/42.
 Refusals happen without the check being run. Summaries are not the full reasoning.
 
+### 2b. Errors fall on the customer, even when the instruction names "no" (descriptive, all wordings)
+
+This table covers every model × task × explicit-check wording (SA, SN, W6) for the four models that make
+substantial errors: Flash, Pro, Sonnet, and Gemma (partial). In **18 of 18** cells, the rate of wrongful refusals
+on D exceeds the rate of payouts on C.
+
+The answer-scoped wording does not remove the asymmetry for Pro or Sonnet:
+
+| Model · task | D refused (SN) | C paid (SN) | Holm p (H-asym family) |
+|---|---|---|---|
+| Pro · cancel | 34/62 | 0/62 | 3.8e-9 |
+| Pro · comp | 40/46 | 2/46 | 2.1e-4; 5.7e-5 |
+| Sonnet · cancel | 40/62 | 12/62 | 1.8e-6 |
+| Sonnet · comp | 41/44 | 17/45 | 0.0063; 0.022 |
+
+This is evidence against the "literal scope" account for these two models. The confirmatory H-asym criterion was
+defined on SA, so the SN rows above are secondary.
+
+The GPT models are the exception. Their few errors lean the other way: under W6, GPT-6 Sol paid 4/62 C records on
+cancel and 2/46 on comp, while wrongly refusing no D records.
+
 ### 3. The least instruction (ladder; Flash; preregistered, descriptive)
 
 | Wording added to the policy | cancel: C paid, D refused (24 bases) | comp (23 bases) |
