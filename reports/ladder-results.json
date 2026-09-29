@@ -1,0 +1,4004 @@
+{
+ "flag_vs_path": [
+  {
+   "model": "gemini-3.8-flash",
+   "first": "plans:G",
+   "second": "cancel:C",
+   "pairs": 62,
+   "first_rate": 0.3064516129032258,
+   "second_rate": 0.0,
+   "first_only": 19,
+   "second_only": 0,
+   "p": 3.814697265625e-06,
+   "p_holm": 7.62939453125e-06
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "first": "plans:H",
+   "second": "cancel:D",
+   "pairs": 62,
+   "first_rate": 0.5483870967741935,
+   "second_rate": 0.6612903225806451,
+   "first_only": 5,
+   "second_only": 12,
+   "p": 0.143463134765625,
+   "p_holm": 0.143463134765625
+  }
+ ],
+ "cells": {
+  "gemma-4-31b-it|cancel|SA|A": {
+   "n": 11,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 11
+   }
+  },
+  "gemma-4-31b-it|cancel|SN|C": {
+   "n": 36,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 36
+   }
+  },
+  "gemma-4-31b-it|cancel|W6|C": {
+   "n": 39,
+   "bad": 18,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 21,
+    "cancel_with_refund": 18
+   }
+  },
+  "gemma-4-31b-it|cancel|W6|D": {
+   "n": 35,
+   "bad": 33,
+   "missing": 0,
+   "actions": {
+    "refuse": 33,
+    "transfer_to_human": 2
+   }
+  },
+  "gemma-4-31b-it|cancel|SN|A": {
+   "n": 13,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 13
+   }
+  },
+  "gemma-4-31b-it|cancel|SA|D": {
+   "n": 36,
+   "bad": 35,
+   "missing": 0,
+   "actions": {
+    "refuse": 35,
+    "transfer_to_human": 1
+   }
+  },
+  "gemma-4-31b-it|cancel|SA|B": {
+   "n": 12,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 12
+   }
+  },
+  "gemma-4-31b-it|cancel|W6|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemma-4-31b-it|cancel|SN|D": {
+   "n": 35,
+   "bad": 30,
+   "missing": 0,
+   "actions": {
+    "refuse": 30,
+    "transfer_to_human": 5
+   }
+  },
+  "gemma-4-31b-it|cancel|SA|C": {
+   "n": 23,
+   "bad": 1,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 22,
+    "cancel_with_refund": 1
+   }
+  },
+  "gemma-4-31b-it|cancel|W6|B": {
+   "n": 11,
+   "bad": 1,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10,
+    "transfer_to_human": 1
+   }
+  },
+  "gemma-4-31b-it|cancel|SN|B": {
+   "n": 11,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 11
+   }
+  },
+  "gemini-3.8-flash|cancel|SA|A": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 20
+   }
+  },
+  "gemini-3.8-flash|cancel|W6|D": {
+   "n": 62,
+   "bad": 29,
+   "missing": 0,
+   "actions": {
+    "refuse": 29,
+    "transfer_to_human": 33
+   }
+  },
+  "gemini-3.8-flash|cancel|SN|A": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 20
+   }
+  },
+  "gemini-3.8-flash|cancel|SA|D": {
+   "n": 62,
+   "bad": 41,
+   "missing": 0,
+   "actions": {
+    "refuse": 41,
+    "transfer_to_human": 21
+   }
+  },
+  "gemini-3.8-flash|cancel|SA|B": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 20
+   }
+  },
+  "gemini-3.8-flash|cancel|W6|C": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "gemini-3.8-flash|cancel|SN|C": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "gemini-3.8-flash|cancel|W6|A": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 20
+   }
+  },
+  "gemini-3.8-flash|cancel|SN|D": {
+   "n": 62,
+   "bad": 5,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 57,
+    "refuse": 5
+   }
+  },
+  "gemini-3.8-flash|cancel|SA|C": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "gemini-3.8-flash|cancel|W6|B": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 20
+   }
+  },
+  "gemini-3.8-flash|cancel|SN|B": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 20
+   }
+  },
+  "gemini-3.8-flash|comp|W6|D": {
+   "n": 46,
+   "bad": 44,
+   "missing": 0,
+   "actions": {
+    "refuse": 44,
+    "transfer_to_human": 2
+   }
+  },
+  "gemini-3.8-flash|comp|SA|A": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 46
+   }
+  },
+  "gemini-3.8-flash|comp|W6|A": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 46
+   }
+  },
+  "gemini-3.8-flash|comp|W6|B": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 46
+   }
+  },
+  "gemini-3.8-flash|comp|SA|B": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 46
+   }
+  },
+  "gemini-3.8-flash|comp|SN|C": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 46
+   }
+  },
+  "gemini-3.8-flash|comp|SA|D": {
+   "n": 46,
+   "bad": 16,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 30,
+    "refuse": 16
+   }
+  },
+  "gemini-3.8-flash|comp|SA|C": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 46
+   }
+  },
+  "gemini-3.8-flash|comp|SN|D": {
+   "n": 46,
+   "bad": 4,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 42,
+    "refuse": 4
+   }
+  },
+  "gemini-3.8-flash|comp|SN|A": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 46
+   }
+  },
+  "gemini-3.8-flash|comp|W6|C": {
+   "n": 46,
+   "bad": 1,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 45,
+    "send_certificate": 1
+   }
+  },
+  "gemini-3.8-flash|comp|SN|B": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 46
+   }
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SN|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SN|C": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SA|C": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SN|D": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SA|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SN|B": {
+   "n": 10,
+   "bad": 1,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 9,
+    "refuse": 1
+   }
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SA|D": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SA|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "openrouter/openai/gpt-6-luna|comp|SA|C": {
+   "n": 46,
+   "bad": 1,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 45,
+    "send_certificate": 1
+   }
+  },
+  "openrouter/openai/gpt-6-luna|comp|SN|B": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 20
+   }
+  },
+  "openrouter/openai/gpt-6-luna|comp|SN|A": {
+   "n": 20,
+   "bad": 3,
+   "missing": 0,
+   "actions": {
+    "refuse": 17,
+    "send_certificate": 3
+   }
+  },
+  "openrouter/openai/gpt-6-luna|comp|SA|B": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 20
+   }
+  },
+  "openrouter/openai/gpt-6-luna|comp|SN|C": {
+   "n": 45,
+   "bad": 0,
+   "missing": 1,
+   "actions": {
+    "transfer_to_human": 45
+   }
+  },
+  "openrouter/openai/gpt-6-luna|comp|SA|D": {
+   "n": 46,
+   "bad": 5,
+   "missing": 0,
+   "actions": {
+    "refuse": 5,
+    "transfer_to_human": 41
+   }
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SA|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SN|C": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SA|C": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SN|D": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SN|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SN|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SA|D": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SA|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SA|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SN|C": {
+   "n": 62,
+   "bad": 12,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 50,
+    "cancel_with_refund": 12
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SA|C": {
+   "n": 62,
+   "bad": 18,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 44,
+    "cancel_with_refund": 18
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SN|D": {
+   "n": 62,
+   "bad": 40,
+   "missing": 0,
+   "actions": {
+    "refuse": 40,
+    "transfer_to_human": 22
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SN|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SN|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SA|D": {
+   "n": 62,
+   "bad": 44,
+   "missing": 0,
+   "actions": {
+    "refuse": 44,
+    "transfer_to_human": 18
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SA|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|cancel|W3|D": {
+   "n": 24,
+   "bad": 24,
+   "missing": 0,
+   "actions": {
+    "refuse": 24
+   }
+  },
+  "gemini-3.8-flash|cancel|W3|C": {
+   "n": 24,
+   "bad": 24,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 24
+   }
+  },
+  "gemini-3.8-flash|cancel|W4|D": {
+   "n": 24,
+   "bad": 24,
+   "missing": 0,
+   "actions": {
+    "refuse": 24
+   }
+  },
+  "gemini-3.8-flash|cancel|W5|D": {
+   "n": 24,
+   "bad": 24,
+   "missing": 0,
+   "actions": {
+    "refuse": 24
+   }
+  },
+  "gemini-3.8-flash|cancel|W1|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "gemini-3.8-flash|cancel|W2|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|cancel|W5|C": {
+   "n": 24,
+   "bad": 2,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 22,
+    "cancel_with_refund": 2
+   }
+  },
+  "gemini-3.8-flash|cancel|W4|C": {
+   "n": 24,
+   "bad": 24,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 24
+   }
+  },
+  "gemini-3.8-flash|cancel|W1|C": {
+   "n": 24,
+   "bad": 24,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 24
+   }
+  },
+  "gemini-3.8-flash|cancel|W1|D": {
+   "n": 24,
+   "bad": 24,
+   "missing": 0,
+   "actions": {
+    "refuse": 24
+   }
+  },
+  "gemini-3.8-flash|cancel|W2|D": {
+   "n": 24,
+   "bad": 24,
+   "missing": 0,
+   "actions": {
+    "refuse": 24
+   }
+  },
+  "gemini-3.8-flash|cancel|W4|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|cancel|W3|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|cancel|W5|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "gemini-3.8-flash|cancel|W5|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|cancel|W2|C": {
+   "n": 24,
+   "bad": 24,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 24
+   }
+  },
+  "gemini-3.8-flash|cancel|W3|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "gemini-3.8-flash|cancel|W4|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "gemini-3.8-flash|cancel|W1|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|cancel|W2|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "gemini-3.1-pro-preview|cancel|SN|D": {
+   "n": 62,
+   "bad": 34,
+   "missing": 0,
+   "actions": {
+    "refuse": 34,
+    "transfer_to_human": 28
+   }
+  },
+  "gemini-3.1-pro-preview|cancel|SN|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.1-pro-preview|cancel|SN|C": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "gemini-3.1-pro-preview|cancel|SA|C": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "gemini-3.1-pro-preview|cancel|SN|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "gemini-3.1-pro-preview|cancel|SA|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "cancel_with_refund": 10
+   }
+  },
+  "gemini-3.1-pro-preview|cancel|SA|D": {
+   "n": 62,
+   "bad": 51,
+   "missing": 0,
+   "actions": {
+    "refuse": 51,
+    "transfer_to_human": 11
+   }
+  },
+  "gemini-3.1-pro-preview|cancel|SA|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W1|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W3|D": {
+   "n": 23,
+   "bad": 23,
+   "missing": 0,
+   "actions": {
+    "refuse": 23
+   }
+  },
+  "gemini-3.8-flash|comp|W4|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W3|C": {
+   "n": 23,
+   "bad": 23,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 23
+   }
+  },
+  "gemini-3.8-flash|comp|W0|C": {
+   "n": 23,
+   "bad": 23,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 23
+   }
+  },
+  "gemini-3.8-flash|comp|W0|D": {
+   "n": 23,
+   "bad": 23,
+   "missing": 0,
+   "actions": {
+    "refuse": 23
+   }
+  },
+  "gemini-3.8-flash|comp|W0|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W1|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W5|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W5|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W5|C": {
+   "n": 23,
+   "bad": 21,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 21,
+    "transfer_to_human": 2
+   }
+  },
+  "gemini-3.8-flash|comp|W2|C": {
+   "n": 23,
+   "bad": 23,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 23
+   }
+  },
+  "gemini-3.8-flash|comp|W4|D": {
+   "n": 23,
+   "bad": 23,
+   "missing": 0,
+   "actions": {
+    "refuse": 23
+   }
+  },
+  "gemini-3.8-flash|comp|W4|C": {
+   "n": 23,
+   "bad": 23,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 23
+   }
+  },
+  "gemini-3.8-flash|comp|W0|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W2|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W3|A": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W1|D": {
+   "n": 23,
+   "bad": 23,
+   "missing": 0,
+   "actions": {
+    "refuse": 23
+   }
+  },
+  "gemini-3.8-flash|comp|W1|C": {
+   "n": 23,
+   "bad": 23,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 23
+   }
+  },
+  "gemini-3.8-flash|comp|W5|D": {
+   "n": 23,
+   "bad": 23,
+   "missing": 0,
+   "actions": {
+    "refuse": 23
+   }
+  },
+  "gemini-3.8-flash|comp|W2|D": {
+   "n": 23,
+   "bad": 23,
+   "missing": 0,
+   "actions": {
+    "refuse": 23
+   }
+  },
+  "gemini-3.8-flash|comp|W3|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W2|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 10
+   }
+  },
+  "gemini-3.8-flash|comp|W4|B": {
+   "n": 10,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 10
+   }
+  },
+  "gemini-3.1-pro-preview|comp|SN|A": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 20
+   }
+  },
+  "gemini-3.1-pro-preview|comp|SA|C": {
+   "n": 46,
+   "bad": 6,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 40,
+    "send_certificate": 6
+   }
+  },
+  "gemini-3.1-pro-preview|comp|SN|B": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 20
+   }
+  },
+  "gemini-3.1-pro-preview|comp|SA|B": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 20
+   }
+  },
+  "gemini-3.1-pro-preview|comp|SN|C": {
+   "n": 46,
+   "bad": 2,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 44,
+    "send_certificate": 2
+   }
+  },
+  "gemini-3.1-pro-preview|comp|SA|D": {
+   "n": 46,
+   "bad": 42,
+   "missing": 0,
+   "actions": {
+    "refuse": 42,
+    "transfer_to_human": 4
+   }
+  },
+  "gemini-3.1-pro-preview|comp|SN|D": {
+   "n": 46,
+   "bad": 40,
+   "missing": 0,
+   "actions": {
+    "refuse": 40,
+    "transfer_to_human": 6
+   }
+  },
+  "gemini-3.1-pro-preview|comp|SA|A": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 20
+   }
+  },
+  "openrouter/openai/gpt-6-luna|comp|SN|D": {
+   "n": 46,
+   "bad": 1,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 45,
+    "refuse": 1
+   }
+  },
+  "openrouter/openai/gpt-6-luna|comp|SA|A": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 20
+   }
+  },
+  "openrouter/openai/gpt-6-sol|comp|SN|B": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 20
+   }
+  },
+  "openrouter/openai/gpt-6-sol|comp|SA|B": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 20
+   }
+  },
+  "openrouter/openai/gpt-6-sol|comp|SN|A": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 20
+   }
+  },
+  "openrouter/openai/gpt-6-sol|comp|SN|C": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 46
+   }
+  },
+  "openrouter/openai/gpt-6-sol|comp|SA|C": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 46
+   }
+  },
+  "openrouter/openai/gpt-6-sol|comp|SA|D": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 46
+   }
+  },
+  "openrouter/openai/gpt-6-sol|comp|SN|D": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 46
+   }
+  },
+  "openrouter/openai/gpt-6-sol|comp|SA|A": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 20
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SN|B": {
+   "n": 19,
+   "bad": 1,
+   "missing": 1,
+   "actions": {
+    "send_certificate": 18,
+    "transfer_to_human": 1
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SA|B": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 20
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SN|A": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 20
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SN|C": {
+   "n": 45,
+   "bad": 17,
+   "missing": 1,
+   "actions": {
+    "transfer_to_human": 28,
+    "send_certificate": 17
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SA|D": {
+   "n": 46,
+   "bad": 45,
+   "missing": 0,
+   "actions": {
+    "refuse": 45,
+    "transfer_to_human": 1
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SA|C": {
+   "n": 44,
+   "bad": 39,
+   "missing": 2,
+   "actions": {
+    "transfer_to_human": 5,
+    "send_certificate": 39
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SN|D": {
+   "n": 44,
+   "bad": 41,
+   "missing": 2,
+   "actions": {
+    "refuse": 41,
+    "transfer_to_human": 2,
+    "send_certificate": 1
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SA|A": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 20
+   }
+  },
+  "gemini-3.8-flash|cancel|SA|F": {
+   "n": 62,
+   "bad": 36,
+   "missing": 0,
+   "actions": {
+    "refuse": 36,
+    "transfer_to_human": 26
+   }
+  },
+  "gemini-3.8-flash|cancel|SA|E": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "gemini-3.1-pro-preview|cancel|SA|F": {
+   "n": 62,
+   "bad": 18,
+   "missing": 0,
+   "actions": {
+    "refuse": 18,
+    "transfer_to_human": 44
+   }
+  },
+  "gemini-3.1-pro-preview|cancel|SA|E": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "gemini-3.1-pro-preview|comp|SA|F": {
+   "n": 46,
+   "bad": 42,
+   "missing": 0,
+   "actions": {
+    "refuse": 42,
+    "transfer_to_human": 4
+   }
+  },
+  "gemini-3.1-pro-preview|comp|SA|E": {
+   "n": 46,
+   "bad": 4,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 42,
+    "send_certificate": 4
+   }
+  },
+  "gemini-3.8-flash|comp|SA|F": {
+   "n": 46,
+   "bad": 24,
+   "missing": 0,
+   "actions": {
+    "refuse": 24,
+    "transfer_to_human": 22
+   }
+  },
+  "gemini-3.8-flash|comp|SA|E": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 46
+   }
+  },
+  "openrouter/openai/gpt-6-luna|cancel|W6|C": {
+   "n": 62,
+   "bad": 3,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 58,
+    "cancel_with_refund": 3,
+    "refuse": 1
+   }
+  },
+  "openrouter/openai/gpt-6-luna|cancel|W6|D": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "openrouter/openai/gpt-6-sol|cancel|W6|C": {
+   "n": 62,
+   "bad": 4,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 58,
+    "cancel_with_refund": 4
+   }
+  },
+  "openrouter/openai/gpt-6-sol|cancel|W6|D": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "openrouter/openai/gpt-6-luna|comp|W6|D": {
+   "n": 46,
+   "bad": 5,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 41,
+    "refuse": 5
+   }
+  },
+  "openrouter/openai/gpt-6-luna|comp|W6|C": {
+   "n": 46,
+   "bad": 3,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 43,
+    "send_certificate": 3
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SA|F": {
+   "n": 61,
+   "bad": 44,
+   "missing": 1,
+   "actions": {
+    "transfer_to_human": 17,
+    "refuse": 44
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SA|E": {
+   "n": 62,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 62
+   }
+  },
+  "openrouter/openai/gpt-6-sol|comp|W6|D": {
+   "n": 46,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 46
+   }
+  },
+  "openrouter/openai/gpt-6-sol|comp|W6|C": {
+   "n": 46,
+   "bad": 2,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 44,
+    "send_certificate": 2
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SA|E": {
+   "n": 46,
+   "bad": 38,
+   "missing": 0,
+   "actions": {
+    "send_certificate": 38,
+    "transfer_to_human": 8
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SA|F": {
+   "n": 46,
+   "bad": 43,
+   "missing": 0,
+   "actions": {
+    "refuse": 43,
+    "transfer_to_human": 2,
+    "send_certificate": 1
+   }
+  },
+  "gemini-3.8-flash|plans|SA|H": {
+   "n": 62,
+   "bad": 34,
+   "missing": 0,
+   "actions": {
+    "refuse": 34,
+    "transfer_to_human": 28
+   }
+  },
+  "gemini-3.8-flash|plans|SA|G": {
+   "n": 62,
+   "bad": 19,
+   "missing": 0,
+   "actions": {
+    "refuse": 19,
+    "transfer_to_human": 43
+   }
+  },
+  "gemini-3.8-flash|plans|SA|K": {
+   "n": 20,
+   "bad": 0,
+   "missing": 0,
+   "actions": {
+    "refuse": 20
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|W6|C": {
+   "n": 61,
+   "bad": 16,
+   "missing": 1,
+   "actions": {
+    "cancel_with_refund": 16,
+    "transfer_to_human": 45
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|W6|D": {
+   "n": 62,
+   "bad": 21,
+   "missing": 0,
+   "actions": {
+    "transfer_to_human": 41,
+    "refuse": 21
+   }
+  },
+  "gemma-4-26b-a4b-it|cancel|SA|D": {
+   "n": 1,
+   "bad": 1,
+   "missing": 0,
+   "actions": {
+    "refuse": 1
+   }
+  }
+ },
+ "primary": [
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "cancel",
+   "repeat": 0,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 62,
+   "first_only": 23,
+   "second_only": 6,
+   "first_rate": 0.8225806451612904,
+   "second_rate": 0.5483870967741935,
+   "p": 0.002315700054168701,
+   "p_holm": 0.03473550081253052
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "repeat": 0,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 3,
+   "second_only": 3,
+   "first_rate": 0.8260869565217391,
+   "second_rate": 0.8260869565217391,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "repeat": 1,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 2,
+   "second_only": 0,
+   "first_rate": 1.0,
+   "second_rate": 0.9130434782608695,
+   "p": 0.5,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "cancel",
+   "repeat": 0,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 62,
+   "first_only": 36,
+   "second_only": 0,
+   "first_rate": 0.6612903225806451,
+   "second_rate": 0.08064516129032258,
+   "p": 2.9103830456733704e-11,
+   "p_holm": 4.656612873077393e-10
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "repeat": 0,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 6,
+   "second_only": 1,
+   "first_rate": 0.34782608695652173,
+   "second_rate": 0.13043478260869565,
+   "p": 0.125,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "repeat": 1,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 7,
+   "second_only": 0,
+   "first_rate": 0.34782608695652173,
+   "second_rate": 0.043478260869565216,
+   "p": 0.015625,
+   "p_holm": 0.21875
+  },
+  {
+   "model": "gemma-4-31b-it",
+   "task": "cancel",
+   "repeat": 0,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 4,
+   "second_only": 0,
+   "first_rate": 0.9565217391304348,
+   "second_rate": 0.782608695652174,
+   "p": 0.125,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "cancel",
+   "repeat": 0,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 62,
+   "first_only": 14,
+   "second_only": 10,
+   "first_rate": 0.7096774193548387,
+   "second_rate": 0.6451612903225806,
+   "p": 0.5412561893463135,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "repeat": 0,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 22,
+   "first_only": 1,
+   "second_only": 0,
+   "first_rate": 1.0,
+   "second_rate": 0.9545454545454546,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "repeat": 1,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 22,
+   "first_only": 2,
+   "second_only": 1,
+   "first_rate": 0.9545454545454546,
+   "second_rate": 0.9090909090909091,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "cancel",
+   "repeat": 0,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 62,
+   "first_only": 0,
+   "second_only": 0,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "comp",
+   "repeat": 0,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 2,
+   "second_only": 0,
+   "first_rate": 0.08695652173913043,
+   "second_rate": 0.0,
+   "p": 0.5,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "comp",
+   "repeat": 1,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 3,
+   "second_only": 1,
+   "first_rate": 0.13043478260869565,
+   "second_rate": 0.043478260869565216,
+   "p": 0.625,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "cancel",
+   "repeat": 0,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 62,
+   "first_only": 0,
+   "second_only": 0,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "comp",
+   "repeat": 0,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 0,
+   "second_only": 0,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "comp",
+   "repeat": 1,
+   "first": "SA",
+   "second": "SN",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 0,
+   "second_only": 0,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "p": 1.0,
+   "p_holm": 1.0
+  }
+ ],
+ "secondary": [
+  {
+   "model": "gemini-3.8-flash",
+   "task": "cancel",
+   "repeat": 0,
+   "first": "SA",
+   "second": "W6",
+   "cell": "D",
+   "pairs": 62,
+   "first_only": 17,
+   "second_only": 5,
+   "first_rate": 0.6612903225806451,
+   "second_rate": 0.46774193548387094,
+   "p": 0.01690053939819336,
+   "p_holm": 0.13520431518554688
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "repeat": 0,
+   "first": "SA",
+   "second": "W6",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 0,
+   "second_only": 14,
+   "first_rate": 0.34782608695652173,
+   "second_rate": 0.9565217391304348,
+   "p": 0.0001220703125,
+   "p_holm": 0.001220703125
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "repeat": 1,
+   "first": "SA",
+   "second": "W6",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 0,
+   "second_only": 14,
+   "first_rate": 0.34782608695652173,
+   "second_rate": 0.9565217391304348,
+   "p": 0.0001220703125,
+   "p_holm": 0.001220703125
+  },
+  {
+   "model": "gemma-4-31b-it",
+   "task": "cancel",
+   "repeat": 0,
+   "first": "SA",
+   "second": "W6",
+   "cell": "D",
+   "pairs": 19,
+   "first_only": 0,
+   "second_only": 1,
+   "first_rate": 0.9473684210526315,
+   "second_rate": 1.0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "cancel",
+   "repeat": 0,
+   "first": "SA",
+   "second": "W6",
+   "cell": "D",
+   "pairs": 62,
+   "first_only": 23,
+   "second_only": 0,
+   "first_rate": 0.7096774193548387,
+   "second_rate": 0.3387096774193548,
+   "p": 2.384185791015625e-07,
+   "p_holm": 2.6226043701171875e-06
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "cancel",
+   "repeat": 0,
+   "first": "SA",
+   "second": "W6",
+   "cell": "D",
+   "pairs": 62,
+   "first_only": 0,
+   "second_only": 0,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "comp",
+   "repeat": 0,
+   "first": "SA",
+   "second": "W6",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 1,
+   "second_only": 4,
+   "first_rate": 0.08695652173913043,
+   "second_rate": 0.21739130434782608,
+   "p": 0.375,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "comp",
+   "repeat": 1,
+   "first": "SA",
+   "second": "W6",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 3,
+   "second_only": 0,
+   "first_rate": 0.13043478260869565,
+   "second_rate": 0.0,
+   "p": 0.25,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "cancel",
+   "repeat": 0,
+   "first": "SA",
+   "second": "W6",
+   "cell": "D",
+   "pairs": 62,
+   "first_only": 0,
+   "second_only": 0,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "comp",
+   "repeat": 0,
+   "first": "SA",
+   "second": "W6",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 0,
+   "second_only": 0,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "comp",
+   "repeat": 1,
+   "first": "SA",
+   "second": "W6",
+   "cell": "D",
+   "pairs": 23,
+   "first_only": 0,
+   "second_only": 0,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "p": 1.0,
+   "p_holm": 1.0
+  }
+ ],
+ "pooled": {
+  "gemini-3.1-pro-preview|cancel|SA-SN|D": {
+   "diff": 0.27419354838709675,
+   "low": 0.11290322580645161,
+   "high": 0.41935483870967744,
+   "bases": 62
+  },
+  "gemini-3.1-pro-preview|cancel|SN-SA|A": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "gemini-3.1-pro-preview|cancel|SN-SA|B": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "gemini-3.1-pro-preview|cancel|SN-SA|C": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 62
+  },
+  "gemini-3.1-pro-preview|comp|SA-SN|D": {
+   "diff": 0.043478260869565216,
+   "low": -0.08695652173913043,
+   "high": 0.1956521739130435,
+   "bases": 23
+  },
+  "gemini-3.1-pro-preview|comp|SN-SA|A": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "gemini-3.1-pro-preview|comp|SN-SA|B": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "gemini-3.1-pro-preview|comp|SN-SA|C": {
+   "diff": -0.08695652173913043,
+   "low": -0.1956521739130435,
+   "high": 0.021739130434782608,
+   "bases": 23
+  },
+  "gemini-3.8-flash|cancel|SA-SN|D": {
+   "diff": 0.5806451612903226,
+   "low": 0.45161290322580644,
+   "high": 0.7096774193548387,
+   "bases": 62
+  },
+  "gemini-3.8-flash|cancel|SA-W6|D": {
+   "diff": 0.1935483870967742,
+   "low": 0.04838709677419355,
+   "high": 0.3387096774193548,
+   "bases": 62
+  },
+  "gemini-3.8-flash|cancel|SN-SA|A": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 20
+  },
+  "gemini-3.8-flash|cancel|SN-SA|B": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 20
+  },
+  "gemini-3.8-flash|cancel|SN-SA|C": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 62
+  },
+  "gemini-3.8-flash|comp|SA-SN|D": {
+   "diff": 0.2608695652173913,
+   "low": 0.13043478260869565,
+   "high": 0.41304347826086957,
+   "bases": 23
+  },
+  "gemini-3.8-flash|comp|SA-W6|D": {
+   "diff": -0.6086956521739131,
+   "low": -0.782608695652174,
+   "high": -0.43478260869565216,
+   "bases": 23
+  },
+  "gemini-3.8-flash|comp|SN-SA|A": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 23
+  },
+  "gemini-3.8-flash|comp|SN-SA|B": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 23
+  },
+  "gemini-3.8-flash|comp|SN-SA|C": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 23
+  },
+  "gemma-4-31b-it|cancel|SA-SN|D": {
+   "diff": 0.17391304347826086,
+   "low": 0.043478260869565216,
+   "high": 0.34782608695652173,
+   "bases": 23
+  },
+  "gemma-4-31b-it|cancel|SA-W6|D": {
+   "diff": -0.05263157894736842,
+   "low": -0.15789473684210525,
+   "high": 0.0,
+   "bases": 19
+  },
+  "gemma-4-31b-it|cancel|SN-SA|A": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 8
+  },
+  "gemma-4-31b-it|cancel|SN-SA|B": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 8
+  },
+  "gemma-4-31b-it|cancel|SN-SA|C": {
+   "diff": -0.06666666666666667,
+   "low": -0.2,
+   "high": 0.0,
+   "bases": 15
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SA-SN|D": {
+   "diff": 0.06451612903225806,
+   "low": -0.0967741935483871,
+   "high": 0.22580645161290322,
+   "bases": 62
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SA-W6|D": {
+   "diff": 0.3709677419354839,
+   "low": 0.25806451612903225,
+   "high": 0.5,
+   "bases": 62
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SN-SA|A": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SN-SA|B": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel|SN-SA|C": {
+   "diff": -0.0967741935483871,
+   "low": -0.20967741935483872,
+   "high": 0.016129032258064516,
+   "bases": 62
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SA-SN|D": {
+   "diff": 0.043478260869565216,
+   "low": -0.043478260869565216,
+   "high": 0.13043478260869565,
+   "bases": 23
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SN-SA|A": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SN-SA|B": {
+   "diff": 0.05,
+   "low": 0.0,
+   "high": 0.15,
+   "bases": 10
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp|SN-SA|C": {
+   "diff": -0.5,
+   "low": -0.6521739130434783,
+   "high": -0.34782608695652173,
+   "bases": 23
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SA-SN|D": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 62
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SA-W6|D": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 62
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SN-SA|A": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SN-SA|B": {
+   "diff": 0.1,
+   "low": 0.0,
+   "high": 0.3,
+   "bases": 10
+  },
+  "openrouter/openai/gpt-6-luna|cancel|SN-SA|C": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 62
+  },
+  "openrouter/openai/gpt-6-luna|comp|SA-SN|D": {
+   "diff": 0.08695652173913043,
+   "low": -0.021739130434782608,
+   "high": 0.21739130434782608,
+   "bases": 23
+  },
+  "openrouter/openai/gpt-6-luna|comp|SA-W6|D": {
+   "diff": 0.0,
+   "low": -0.10869565217391304,
+   "high": 0.10869565217391304,
+   "bases": 23
+  },
+  "openrouter/openai/gpt-6-luna|comp|SN-SA|A": {
+   "diff": 0.15,
+   "low": 0.0,
+   "high": 0.3,
+   "bases": 10
+  },
+  "openrouter/openai/gpt-6-luna|comp|SN-SA|B": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "openrouter/openai/gpt-6-luna|comp|SN-SA|C": {
+   "diff": -0.021739130434782608,
+   "low": -0.06521739130434782,
+   "high": 0.0,
+   "bases": 23
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SA-SN|D": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 62
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SA-W6|D": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 62
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SN-SA|A": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SN-SA|B": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "openrouter/openai/gpt-6-sol|cancel|SN-SA|C": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 62
+  },
+  "openrouter/openai/gpt-6-sol|comp|SA-SN|D": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 23
+  },
+  "openrouter/openai/gpt-6-sol|comp|SA-W6|D": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 23
+  },
+  "openrouter/openai/gpt-6-sol|comp|SN-SA|A": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "openrouter/openai/gpt-6-sol|comp|SN-SA|B": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 10
+  },
+  "openrouter/openai/gpt-6-sol|comp|SN-SA|C": {
+   "diff": 0.0,
+   "low": 0.0,
+   "high": 0.0,
+   "bases": 23
+  }
+ },
+ "testable": {
+  "gemini-3.1-pro-preview|cancel": true,
+  "gemini-3.1-pro-preview|comp": true,
+  "gemini-3.8-flash|cancel": true,
+  "gemini-3.8-flash|comp": true,
+  "gemma-4-31b-it|cancel": true,
+  "openrouter/anthropic/claude-sonnet-5|cancel": true,
+  "openrouter/anthropic/claude-sonnet-5|comp": false,
+  "openrouter/openai/gpt-6-luna|cancel": false,
+  "openrouter/openai/gpt-6-luna|comp": true,
+  "openrouter/openai/gpt-6-sol|cancel": false,
+  "openrouter/openai/gpt-6-sol|comp": false
+ },
+ "verdicts": {
+  "gemini-3.1-pro-preview": {
+   "cancel": {
+    "testable": true,
+    "supported": true
+   },
+   "comp": {
+    "testable": true,
+    "supported": false
+   }
+  },
+  "gemini-3.8-flash": {
+   "cancel": {
+    "testable": true,
+    "supported": true
+   },
+   "comp": {
+    "testable": true,
+    "supported": false
+   }
+  },
+  "gemma-4-26b-a4b-it": {},
+  "gemma-4-31b-it": {
+   "cancel": {
+    "testable": true,
+    "supported": false
+   }
+  },
+  "openrouter/anthropic/claude-sonnet-5": {
+   "cancel": {
+    "testable": true,
+    "supported": false
+   },
+   "comp": {
+    "testable": false,
+    "supported": false
+   }
+  },
+  "openrouter/openai/gpt-6-luna": {
+   "cancel": {
+    "testable": false,
+    "supported": false
+   },
+   "comp": {
+    "testable": true,
+    "supported": false
+   }
+  },
+  "openrouter/openai/gpt-6-sol": {
+   "cancel": {
+    "testable": false,
+    "supported": false
+   },
+   "comp": {
+    "testable": false,
+    "supported": false
+   }
+  }
+ },
+ "robust_models": [],
+ "robust": false,
+ "ladder": {
+  "gemini-3.1-pro-preview|cancel": {
+   "rungs": [
+    {
+     "wording": "SA",
+     "C": [
+      0,
+      62
+     ],
+     "D": [
+      51,
+      62
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SN",
+     "C": [
+      0,
+      62
+     ],
+     "D": [
+      34,
+      62
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    }
+   ],
+   "least_near_zero": null,
+   "near_zero_scope_arms": []
+  },
+  "gemini-3.1-pro-preview|comp": {
+   "rungs": [
+    {
+     "wording": "SA",
+     "C": [
+      6,
+      46
+     ],
+     "D": [
+      42,
+      46
+     ],
+     "clean": [
+      0,
+      40
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SN",
+     "C": [
+      2,
+      46
+     ],
+     "D": [
+      40,
+      46
+     ],
+     "clean": [
+      0,
+      40
+     ],
+     "near_zero": false
+    }
+   ],
+   "least_near_zero": null,
+   "near_zero_scope_arms": []
+  },
+  "gemini-3.8-flash|cancel": {
+   "rungs": [
+    {
+     "wording": "W1",
+     "C": [
+      24,
+      24
+     ],
+     "D": [
+      24,
+      24
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "W2",
+     "C": [
+      24,
+      24
+     ],
+     "D": [
+      24,
+      24
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "W3",
+     "C": [
+      24,
+      24
+     ],
+     "D": [
+      24,
+      24
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "W4",
+     "C": [
+      24,
+      24
+     ],
+     "D": [
+      24,
+      24
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "W5",
+     "C": [
+      2,
+      24
+     ],
+     "D": [
+      24,
+      24
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "W6",
+     "C": [
+      0,
+      62
+     ],
+     "D": [
+      29,
+      62
+     ],
+     "clean": [
+      0,
+      40
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SA",
+     "C": [
+      0,
+      62
+     ],
+     "D": [
+      41,
+      62
+     ],
+     "clean": [
+      0,
+      40
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SN",
+     "C": [
+      0,
+      62
+     ],
+     "D": [
+      5,
+      62
+     ],
+     "clean": [
+      0,
+      40
+     ],
+     "near_zero": false
+    }
+   ],
+   "least_near_zero": null,
+   "near_zero_scope_arms": []
+  },
+  "gemini-3.8-flash|comp": {
+   "rungs": [
+    {
+     "wording": "W0",
+     "C": [
+      23,
+      23
+     ],
+     "D": [
+      23,
+      23
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "W1",
+     "C": [
+      23,
+      23
+     ],
+     "D": [
+      23,
+      23
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "W2",
+     "C": [
+      23,
+      23
+     ],
+     "D": [
+      23,
+      23
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "W3",
+     "C": [
+      23,
+      23
+     ],
+     "D": [
+      23,
+      23
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "W4",
+     "C": [
+      23,
+      23
+     ],
+     "D": [
+      23,
+      23
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "W5",
+     "C": [
+      21,
+      23
+     ],
+     "D": [
+      23,
+      23
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "W6",
+     "C": [
+      1,
+      46
+     ],
+     "D": [
+      44,
+      46
+     ],
+     "clean": [
+      0,
+      92
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SA",
+     "C": [
+      0,
+      46
+     ],
+     "D": [
+      16,
+      46
+     ],
+     "clean": [
+      0,
+      92
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SN",
+     "C": [
+      0,
+      46
+     ],
+     "D": [
+      4,
+      46
+     ],
+     "clean": [
+      0,
+      92
+     ],
+     "near_zero": false
+    }
+   ],
+   "least_near_zero": null,
+   "near_zero_scope_arms": []
+  },
+  "gemma-4-31b-it|cancel": {
+   "rungs": [
+    {
+     "wording": "W6",
+     "C": [
+      18,
+      39
+     ],
+     "D": [
+      33,
+      35
+     ],
+     "clean": [
+      1,
+      21
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SA",
+     "C": [
+      1,
+      23
+     ],
+     "D": [
+      35,
+      36
+     ],
+     "clean": [
+      0,
+      23
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SN",
+     "C": [
+      0,
+      36
+     ],
+     "D": [
+      30,
+      35
+     ],
+     "clean": [
+      0,
+      24
+     ],
+     "near_zero": false
+    }
+   ],
+   "least_near_zero": null,
+   "near_zero_scope_arms": []
+  },
+  "openrouter/anthropic/claude-sonnet-5|cancel": {
+   "rungs": [
+    {
+     "wording": "W6",
+     "C": [
+      16,
+      61
+     ],
+     "D": [
+      21,
+      62
+     ],
+     "clean": [
+      0,
+      0
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SA",
+     "C": [
+      18,
+      62
+     ],
+     "D": [
+      44,
+      62
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SN",
+     "C": [
+      12,
+      62
+     ],
+     "D": [
+      40,
+      62
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": false
+    }
+   ],
+   "least_near_zero": null,
+   "near_zero_scope_arms": []
+  },
+  "openrouter/anthropic/claude-sonnet-5|comp": {
+   "rungs": [
+    {
+     "wording": "SA",
+     "C": [
+      39,
+      44
+     ],
+     "D": [
+      45,
+      46
+     ],
+     "clean": [
+      0,
+      40
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SN",
+     "C": [
+      17,
+      45
+     ],
+     "D": [
+      41,
+      44
+     ],
+     "clean": [
+      1,
+      39
+     ],
+     "near_zero": false
+    }
+   ],
+   "least_near_zero": null,
+   "near_zero_scope_arms": []
+  },
+  "openrouter/openai/gpt-6-luna|cancel": {
+   "rungs": [
+    {
+     "wording": "W6",
+     "C": [
+      3,
+      62
+     ],
+     "D": [
+      0,
+      62
+     ],
+     "clean": [
+      0,
+      0
+     ],
+     "near_zero": true
+    },
+    {
+     "wording": "SA",
+     "C": [
+      0,
+      62
+     ],
+     "D": [
+      0,
+      62
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": true
+    },
+    {
+     "wording": "SN",
+     "C": [
+      0,
+      62
+     ],
+     "D": [
+      0,
+      62
+     ],
+     "clean": [
+      1,
+      20
+     ],
+     "near_zero": true
+    }
+   ],
+   "least_near_zero": "W6",
+   "near_zero_scope_arms": [
+    "SA",
+    "SN"
+   ]
+  },
+  "openrouter/openai/gpt-6-luna|comp": {
+   "rungs": [
+    {
+     "wording": "W6",
+     "C": [
+      3,
+      46
+     ],
+     "D": [
+      5,
+      46
+     ],
+     "clean": [
+      0,
+      0
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SA",
+     "C": [
+      1,
+      46
+     ],
+     "D": [
+      5,
+      46
+     ],
+     "clean": [
+      0,
+      40
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SN",
+     "C": [
+      0,
+      45
+     ],
+     "D": [
+      1,
+      46
+     ],
+     "clean": [
+      3,
+      40
+     ],
+     "near_zero": true
+    }
+   ],
+   "least_near_zero": null,
+   "near_zero_scope_arms": [
+    "SN"
+   ]
+  },
+  "openrouter/openai/gpt-6-sol|cancel": {
+   "rungs": [
+    {
+     "wording": "W6",
+     "C": [
+      4,
+      62
+     ],
+     "D": [
+      0,
+      62
+     ],
+     "clean": [
+      0,
+      0
+     ],
+     "near_zero": false
+    },
+    {
+     "wording": "SA",
+     "C": [
+      0,
+      62
+     ],
+     "D": [
+      0,
+      62
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": true
+    },
+    {
+     "wording": "SN",
+     "C": [
+      0,
+      62
+     ],
+     "D": [
+      0,
+      62
+     ],
+     "clean": [
+      0,
+      20
+     ],
+     "near_zero": true
+    }
+   ],
+   "least_near_zero": null,
+   "near_zero_scope_arms": [
+    "SA",
+    "SN"
+   ]
+  },
+  "openrouter/openai/gpt-6-sol|comp": {
+   "rungs": [
+    {
+     "wording": "W6",
+     "C": [
+      2,
+      46
+     ],
+     "D": [
+      0,
+      46
+     ],
+     "clean": [
+      0,
+      0
+     ],
+     "near_zero": true
+    },
+    {
+     "wording": "SA",
+     "C": [
+      0,
+      46
+     ],
+     "D": [
+      0,
+      46
+     ],
+     "clean": [
+      0,
+      40
+     ],
+     "near_zero": true
+    },
+    {
+     "wording": "SN",
+     "C": [
+      0,
+      46
+     ],
+     "D": [
+      0,
+      46
+     ],
+     "clean": [
+      0,
+      40
+     ],
+     "near_zero": true
+    }
+   ],
+   "least_near_zero": "W6",
+   "near_zero_scope_arms": [
+    "SA",
+    "SN"
+   ]
+  }
+ },
+ "asymmetry": [
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.8225806451612904,
+   "C_rate": 0.0,
+   "D_only": 51,
+   "C_only": 0,
+   "p": 8.881784197001252e-16,
+   "exploratory": false,
+   "p_holm": 3.019806626980426e-14
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "cancel",
+   "wording": "SN",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.5483870967741935,
+   "C_rate": 0.0,
+   "D_only": 34,
+   "C_only": 0,
+   "p": 1.1641532182693481e-10,
+   "exploratory": false,
+   "p_holm": 3.841705620288849e-09
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 0.8260869565217391,
+   "C_rate": 0.17391304347826086,
+   "D_only": 17,
+   "C_only": 2,
+   "p": 0.000728607177734375,
+   "exploratory": false,
+   "p_holm": 0.017486572265625
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "pairs": 23,
+   "D_rate": 1.0,
+   "C_rate": 0.08695652173913043,
+   "D_only": 21,
+   "C_only": 0,
+   "p": 9.5367431640625e-07,
+   "exploratory": false,
+   "p_holm": 2.956390380859375e-05
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "wording": "SN",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 0.8260869565217391,
+   "C_rate": 0.043478260869565216,
+   "D_only": 18,
+   "C_only": 0,
+   "p": 7.62939453125e-06,
+   "exploratory": false,
+   "p_holm": 0.00020599365234375
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "wording": "SN",
+   "repeat": 1,
+   "pairs": 23,
+   "D_rate": 0.9130434782608695,
+   "C_rate": 0.043478260869565216,
+   "D_only": 20,
+   "C_only": 0,
+   "p": 1.9073486328125e-06,
+   "exploratory": false,
+   "p_holm": 5.7220458984375e-05
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.6612903225806451,
+   "C_rate": 0.0,
+   "D_only": 41,
+   "C_only": 0,
+   "p": 9.094947017729282e-13,
+   "exploratory": true,
+   "p_holm": 8.185452315956354e-12
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "cancel",
+   "wording": "W6",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.46774193548387094,
+   "C_rate": 0.0,
+   "D_only": 29,
+   "C_only": 0,
+   "p": 3.725290298461914e-09,
+   "exploratory": true,
+   "p_holm": 2.9802322387695312e-08
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "cancel",
+   "wording": "SN",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.08064516129032258,
+   "C_rate": 0.0,
+   "D_only": 5,
+   "C_only": 0,
+   "p": 0.0625,
+   "exploratory": true,
+   "p_holm": 0.1875
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 0.34782608695652173,
+   "C_rate": 0.0,
+   "D_only": 8,
+   "C_only": 0,
+   "p": 0.0078125,
+   "exploratory": true,
+   "p_holm": 0.0390625
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "pairs": 23,
+   "D_rate": 0.34782608695652173,
+   "C_rate": 0.0,
+   "D_only": 8,
+   "C_only": 0,
+   "p": 0.0078125,
+   "exploratory": true,
+   "p_holm": 0.0390625
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "W6",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 0.9565217391304348,
+   "C_rate": 0.043478260869565216,
+   "D_only": 21,
+   "C_only": 0,
+   "p": 9.5367431640625e-07,
+   "exploratory": true,
+   "p_holm": 5.7220458984375e-06
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "W6",
+   "repeat": 1,
+   "pairs": 23,
+   "D_rate": 0.9565217391304348,
+   "C_rate": 0.0,
+   "D_only": 22,
+   "C_only": 0,
+   "p": 4.76837158203125e-07,
+   "exploratory": true,
+   "p_holm": 3.337860107421875e-06
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "SN",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 0.13043478260869565,
+   "C_rate": 0.0,
+   "D_only": 3,
+   "C_only": 0,
+   "p": 0.25,
+   "exploratory": true,
+   "p_holm": 0.5
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "SN",
+   "repeat": 1,
+   "pairs": 23,
+   "D_rate": 0.043478260869565216,
+   "C_rate": 0.0,
+   "D_only": 1,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": true,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemma-4-31b-it",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 13,
+   "D_rate": 1.0,
+   "C_rate": 0.0,
+   "D_only": 13,
+   "C_only": 0,
+   "p": 0.000244140625,
+   "exploratory": false,
+   "p_holm": 0.00634765625
+  },
+  {
+   "model": "gemma-4-31b-it",
+   "task": "cancel",
+   "wording": "W6",
+   "repeat": 0,
+   "pairs": 21,
+   "D_rate": 0.9047619047619048,
+   "C_rate": 0.38095238095238093,
+   "D_only": 11,
+   "C_only": 0,
+   "p": 0.0009765625,
+   "exploratory": false,
+   "p_holm": 0.0224609375
+  },
+  {
+   "model": "gemma-4-31b-it",
+   "task": "cancel",
+   "wording": "SN",
+   "repeat": 0,
+   "pairs": 21,
+   "D_rate": 0.9523809523809523,
+   "C_rate": 0.0,
+   "D_only": 20,
+   "C_only": 0,
+   "p": 1.9073486328125e-06,
+   "exploratory": false,
+   "p_holm": 5.7220458984375e-05
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.7096774193548387,
+   "C_rate": 0.2903225806451613,
+   "D_only": 30,
+   "C_only": 4,
+   "p": 6.16488978266716e-06,
+   "exploratory": false,
+   "p_holm": 0.00017261691391468048
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "cancel",
+   "wording": "W6",
+   "repeat": 0,
+   "pairs": 61,
+   "D_rate": 0.3442622950819672,
+   "C_rate": 0.26229508196721313,
+   "D_only": 12,
+   "C_only": 7,
+   "p": 0.359283447265625,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "cancel",
+   "wording": "SN",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.6451612903225806,
+   "C_rate": 0.1935483870967742,
+   "D_only": 29,
+   "C_only": 1,
+   "p": 5.774199962615967e-08,
+   "exploratory": false,
+   "p_holm": 1.8477439880371094e-06
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 1.0,
+   "C_rate": 0.9565217391304348,
+   "D_only": 1,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "pairs": 21,
+   "D_rate": 0.9523809523809523,
+   "C_rate": 0.8095238095238095,
+   "D_only": 3,
+   "C_only": 0,
+   "p": 0.25,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "wording": "SN",
+   "repeat": 0,
+   "pairs": 21,
+   "D_rate": 0.9523809523809523,
+   "C_rate": 0.3333333333333333,
+   "D_only": 13,
+   "C_only": 0,
+   "p": 0.000244140625,
+   "exploratory": false,
+   "p_holm": 0.00634765625
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "wording": "SN",
+   "repeat": 1,
+   "pairs": 22,
+   "D_rate": 0.9090909090909091,
+   "C_rate": 0.4090909090909091,
+   "D_only": 11,
+   "C_only": 0,
+   "p": 0.0009765625,
+   "exploratory": false,
+   "p_holm": 0.0224609375
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.0,
+   "C_rate": 0.0,
+   "D_only": 0,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "cancel",
+   "wording": "W6",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.0,
+   "C_rate": 0.04838709677419355,
+   "D_only": 0,
+   "C_only": 3,
+   "p": 0.25,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "cancel",
+   "wording": "SN",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.0,
+   "C_rate": 0.0,
+   "D_only": 0,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 0.08695652173913043,
+   "C_rate": 0.0,
+   "D_only": 2,
+   "C_only": 0,
+   "p": 0.5,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "pairs": 23,
+   "D_rate": 0.13043478260869565,
+   "C_rate": 0.043478260869565216,
+   "D_only": 3,
+   "C_only": 1,
+   "p": 0.625,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "comp",
+   "wording": "W6",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 0.21739130434782608,
+   "C_rate": 0.08695652173913043,
+   "D_only": 4,
+   "C_only": 1,
+   "p": 0.375,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "comp",
+   "wording": "W6",
+   "repeat": 1,
+   "pairs": 23,
+   "D_rate": 0.0,
+   "C_rate": 0.043478260869565216,
+   "D_only": 0,
+   "C_only": 1,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "comp",
+   "wording": "SN",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 0.0,
+   "C_rate": 0.0,
+   "D_only": 0,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-luna",
+   "task": "comp",
+   "wording": "SN",
+   "repeat": 1,
+   "pairs": 22,
+   "D_rate": 0.045454545454545456,
+   "C_rate": 0.0,
+   "D_only": 1,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.0,
+   "C_rate": 0.0,
+   "D_only": 0,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "cancel",
+   "wording": "W6",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.0,
+   "C_rate": 0.06451612903225806,
+   "D_only": 0,
+   "C_only": 4,
+   "p": 0.125,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "cancel",
+   "wording": "SN",
+   "repeat": 0,
+   "pairs": 62,
+   "D_rate": 0.0,
+   "C_rate": 0.0,
+   "D_only": 0,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 0.0,
+   "C_rate": 0.0,
+   "D_only": 0,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "pairs": 23,
+   "D_rate": 0.0,
+   "C_rate": 0.0,
+   "D_only": 0,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "comp",
+   "wording": "W6",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 0.0,
+   "C_rate": 0.08695652173913043,
+   "D_only": 0,
+   "C_only": 2,
+   "p": 0.5,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "comp",
+   "wording": "W6",
+   "repeat": 1,
+   "pairs": 23,
+   "D_rate": 0.0,
+   "C_rate": 0.0,
+   "D_only": 0,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "comp",
+   "wording": "SN",
+   "repeat": 0,
+   "pairs": 23,
+   "D_rate": 0.0,
+   "C_rate": 0.0,
+   "D_only": 0,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/openai/gpt-6-sol",
+   "task": "comp",
+   "wording": "SN",
+   "repeat": 1,
+   "pairs": 23,
+   "D_rate": 0.0,
+   "C_rate": 0.0,
+   "D_only": 0,
+   "C_only": 0,
+   "p": 1.0,
+   "exploratory": false,
+   "p_holm": 1.0
+  }
+ ],
+ "asym_models": [],
+ "asym_robust": false,
+ "path": [
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "F",
+   "second": "E",
+   "pairs": 62,
+   "first_rate": 0.2903225806451613,
+   "second_rate": 0.0,
+   "first_only": 18,
+   "second_only": 0,
+   "p": 7.62939453125e-06,
+   "p_holm": 0.00018310546875
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "E",
+   "second": "C",
+   "pairs": 62,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "first_only": 0,
+   "second_only": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "D",
+   "second": "F",
+   "pairs": 62,
+   "first_rate": 0.8225806451612904,
+   "second_rate": 0.2903225806451613,
+   "first_only": 34,
+   "second_only": 1,
+   "p": 2.0954757928848267e-09,
+   "p_holm": 5.2386894822120667e-08
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "F",
+   "second": "E",
+   "pairs": 23,
+   "first_rate": 0.8695652173913043,
+   "second_rate": 0.08695652173913043,
+   "first_only": 18,
+   "second_only": 0,
+   "p": 7.62939453125e-06,
+   "p_holm": 0.00018310546875
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "E",
+   "second": "C",
+   "pairs": 23,
+   "first_rate": 0.08695652173913043,
+   "second_rate": 0.17391304347826086,
+   "first_only": 1,
+   "second_only": 3,
+   "p": 0.625,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "D",
+   "second": "F",
+   "pairs": 23,
+   "first_rate": 0.8260869565217391,
+   "second_rate": 0.8695652173913043,
+   "first_only": 3,
+   "second_only": 4,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "first": "F",
+   "second": "E",
+   "pairs": 23,
+   "first_rate": 0.9565217391304348,
+   "second_rate": 0.08695652173913043,
+   "first_only": 21,
+   "second_only": 1,
+   "p": 1.0967254638671875e-05,
+   "p_holm": 0.00023031234741210938
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "first": "E",
+   "second": "C",
+   "pairs": 23,
+   "first_rate": 0.08695652173913043,
+   "second_rate": 0.08695652173913043,
+   "first_only": 2,
+   "second_only": 2,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "first": "D",
+   "second": "F",
+   "pairs": 23,
+   "first_rate": 1.0,
+   "second_rate": 0.9565217391304348,
+   "first_only": 1,
+   "second_only": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "F",
+   "second": "E",
+   "pairs": 62,
+   "first_rate": 0.5806451612903226,
+   "second_rate": 0.0,
+   "first_only": 36,
+   "second_only": 0,
+   "p": 2.9103830456733704e-11,
+   "p_holm": 7.566995918750763e-10
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "E",
+   "second": "C",
+   "pairs": 62,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "first_only": 0,
+   "second_only": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "D",
+   "second": "F",
+   "pairs": 62,
+   "first_rate": 0.6612903225806451,
+   "second_rate": 0.5806451612903226,
+   "first_only": 10,
+   "second_only": 5,
+   "p": 0.30175781249999994,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "F",
+   "second": "E",
+   "pairs": 23,
+   "first_rate": 0.5217391304347826,
+   "second_rate": 0.0,
+   "first_only": 12,
+   "second_only": 0,
+   "p": 0.00048828125,
+   "p_holm": 0.009765625
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "E",
+   "second": "C",
+   "pairs": 23,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "first_only": 0,
+   "second_only": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "D",
+   "second": "F",
+   "pairs": 23,
+   "first_rate": 0.34782608695652173,
+   "second_rate": 0.5217391304347826,
+   "first_only": 2,
+   "second_only": 6,
+   "p": 0.2890625,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "first": "F",
+   "second": "E",
+   "pairs": 23,
+   "first_rate": 0.5217391304347826,
+   "second_rate": 0.0,
+   "first_only": 12,
+   "second_only": 0,
+   "p": 0.00048828125,
+   "p_holm": 0.009765625
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "first": "E",
+   "second": "C",
+   "pairs": 23,
+   "first_rate": 0.0,
+   "second_rate": 0.0,
+   "first_only": 0,
+   "second_only": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "first": "D",
+   "second": "F",
+   "pairs": 23,
+   "first_rate": 0.34782608695652173,
+   "second_rate": 0.5217391304347826,
+   "first_only": 1,
+   "second_only": 5,
+   "p": 0.21875,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "F",
+   "second": "E",
+   "pairs": 61,
+   "first_rate": 0.7213114754098361,
+   "second_rate": 0.0,
+   "first_only": 44,
+   "second_only": 0,
+   "p": 1.1368683772161603e-13,
+   "p_holm": 3.069544618483633e-12
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "E",
+   "second": "C",
+   "pairs": 62,
+   "first_rate": 0.0,
+   "second_rate": 0.2903225806451613,
+   "first_only": 0,
+   "second_only": 18,
+   "p": 7.62939453125e-06,
+   "p_holm": 0.00018310546875
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "D",
+   "second": "F",
+   "pairs": 61,
+   "first_rate": 0.7049180327868853,
+   "second_rate": 0.7213114754098361,
+   "first_only": 6,
+   "second_only": 7,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "F",
+   "second": "E",
+   "pairs": 23,
+   "first_rate": 0.9130434782608695,
+   "second_rate": 0.8260869565217391,
+   "first_only": 3,
+   "second_only": 1,
+   "p": 0.625,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "E",
+   "second": "C",
+   "pairs": 23,
+   "first_rate": 0.8260869565217391,
+   "second_rate": 0.9565217391304348,
+   "first_only": 1,
+   "second_only": 4,
+   "p": 0.375,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "D",
+   "second": "F",
+   "pairs": 23,
+   "first_rate": 1.0,
+   "second_rate": 0.9130434782608695,
+   "first_only": 2,
+   "second_only": 0,
+   "p": 0.5,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "first": "F",
+   "second": "E",
+   "pairs": 23,
+   "first_rate": 0.9565217391304348,
+   "second_rate": 0.8260869565217391,
+   "first_only": 3,
+   "second_only": 0,
+   "p": 0.25,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "first": "E",
+   "second": "C",
+   "pairs": 21,
+   "first_rate": 0.9047619047619048,
+   "second_rate": 0.8095238095238095,
+   "first_only": 3,
+   "second_only": 1,
+   "p": 0.625,
+   "p_holm": 1.0
+  },
+  {
+   "model": "openrouter/anthropic/claude-sonnet-5",
+   "task": "comp",
+   "wording": "SA",
+   "repeat": 1,
+   "first": "D",
+   "second": "F",
+   "pairs": 23,
+   "first_rate": 0.9565217391304348,
+   "second_rate": 0.9565217391304348,
+   "first_only": 1,
+   "second_only": 1,
+   "p": 1.0,
+   "p_holm": 1.0
+  }
+ ],
+ "path_verdict": {
+  "gemini-3.1-pro-preview|cancel": "path",
+  "gemini-3.1-pro-preview|comp": "path",
+  "gemini-3.8-flash|cancel": "path",
+  "gemini-3.8-flash|comp": "path",
+  "openrouter/anthropic/claude-sonnet-5|cancel": "path",
+  "openrouter/anthropic/claude-sonnet-5|comp": "not testable (C payouts > 50%)"
+ },
+ "path_models_all_tasks": [],
+ "path_models_any_task": [
+  "gemini-3.1-pro-preview",
+  "gemini-3.8-flash",
+  "openrouter/anthropic/claude-sonnet-5"
+ ]
+}

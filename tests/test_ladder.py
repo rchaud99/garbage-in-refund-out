@@ -104,3 +104,17 @@ def test_parse_takes_the_decision_object_among_several():
     assert ladder.parse("comp", text)[0] == "transfer_to_human"
     two = '{"action":"refuse","message_to_customer":"a"} {"action":"transfer_to_human","message_to_customer":"b"}'
     assert ladder.parse("comp", two)[2]
+
+
+def test_resumed_answer_replaces_earlier_failure(tmp_path):
+    import json as _json
+    for name, rec in (("a", {"reply": None, "error": "HTTP 429", "action": None}),
+                      ("b", {"reply": {"text": '{"action":"refuse","message_to_customer":"x"}'}, "error": None})):
+        d = tmp_path / name
+        d.mkdir()
+        (d / "run.json").write_text(_json.dumps({"config": {}}))
+        base = {"model": "m", "id": "cancel:X:D:SA:0", "task": "cancel", "base": "X", "cell": "D", "wording": "SA",
+                "repeat": 0}
+        (d / "decisions.jsonl").write_text(_json.dumps({**base, **rec}) + "\n")
+    rows = ladder_analysis.load([tmp_path / "a", tmp_path / "b"])
+    assert len(rows) == 1 and rows[0]["action"] == "refuse"

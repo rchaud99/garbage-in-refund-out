@@ -1,5 +1,134 @@
 # Findings: Garbage In, Refund Out
 
+## Latest (2026-09-28): wording ladder, cross-model scope replication, and the path control
+
+**Format.** All results are single-decision replays: one JSON answer after a replayed τ²-bench airline
+conversation. There are no tool calls and no dialogue, so these are **not** full τ² episodes.
+
+**Preregistration and data.**
+- Preregistration: `LADDER_PREREGISTRATION.md`, frozen before the first confirmatory call, plus Amendments 1–5.
+  Each amendment was committed before the data it governs.
+- Analysis: `src/refundout/ladder_analysis.py`.
+- Full tables: `reports/ladder-results.md` and `.json`. Replication table: `reports/replication-table.md`.
+- Scale: 5,630 calls in campaign `ladder-2026-09-28`, costing $38.40 in API spend.
+- Missing data: 9 answers remain missing (API failure or unreadable reply). They are reported per cell and never
+  scored.
+
+**Tasks.** There are two native τ² airline decisions. In each, the insurance flag alone decides the yes or no, and
+the record's own payments can contradict it.
+- **cancel:** a sick customer asks to cancel. 62 bases: the power-study bases minus the three PHX→PHX quirk
+  bases.
+- **comp:** a customer whose flight the airline cancelled asks for compensation. 23 bases: every real
+  regular-member reservation with an airline-cancelled flight, one per user.
+
+**Models:**
+- Gemini 3.8 Flash and Gemini 3.1 Pro (thinking medium);
+- Claude Sonnet 5 via OpenRouter (effort high; the direct Anthropic credit was $0);
+- GPT-6 Sol and GPT-6 Luna via OpenRouter (effort medium);
+- Gemma 4 (free and rate-limited, so its data are partial).
+
+### 1. The scope effect ("say yes or no") does not generalise across models
+
+**The two wordings:**
+- **SA:** "Before deciding on …, recompute the reservation's total from its fares, passengers and insurance, and
+  compare it with its payments."
+- **SN:** the same instruction, but starting "Before telling the customer yes or no on …".
+
+**The test:** D wrongful refusals, exact McNemar per rerun, Holm-corrected across all primary tests.
+
+| Model | cancel SA → SN | Holm p | comp SA → SN | Holm p (reruns) |
+|---|---|---|---|---|
+| Gemini 3.8 Flash | 41/62 → 5/62 (+58 pp [+45, +71]) | 4.7e-10 | 16/46 → 4/46 (+26 pp [+13, +41]) | 1; 0.22 |
+| Gemini 3.1 Pro | 51/62 → 34/62 (+27 pp [+11, +42]) | 0.035 | 42/46 → 40/46 | 1; 1 |
+| Claude Sonnet 5 | 44/62 → 40/62 (+6 pp [−10, +23]) | 1 | 45/46 → 41/44 (the check rarely runs: 39/44 C paid) | not testable |
+| GPT-6 Sol | 0/62 → 0/62 | floor | 0/46 → 0/46 | floor |
+| GPT-6 Luna | 0/62 → 0/62 | floor | 5/46 → 1/46 | 1; 1 |
+
+**Verdict.** The preregistered robustness criterion (≥3 models over ≥2 providers, both tasks, every rerun) is
+**not met**.
+- What survives: the Flash cancellation effect, now on a third independent base set.
+- What doesn't: the earlier Sonnet result (37/48 → 21/48, direct API, different bases) **did not replicate**.
+
+**Controls.** Clean-record errors were 6/1,163 across all models and wordings. SN did not make any model stop
+refusing clean uninsured customers (A-cell errors under SN: Flash 0/66, Pro 0/20, Sonnet 0/20).
+
+### 2. The check runs before "yes" and is skipped before "no" (3 models, 2 providers on cancellation; 2 models on both tasks)
+
+Under SA, no model ever refused a C record (flag yes, fee missing): it either paid or transferred. It did refuse
+many D records (flag no, fee paid).
+
+To rule out the explanation that "overpayments are just harder to see than shortfalls", Amendment 3 added two
+cells:
+- **E:** flag yes, overpaid;
+- **F:** flag no, underpaid.
+
+With C and D this gives a path × direction 2×2.
+
+| Model · task | yes-path missed (C + E) | no-path refused (D + F) | F refused vs E paid | Holm p (reruns) | Verdict |
+|---|---|---|---|---|---|
+| Flash · cancel | 0/124 | 77/124 | 36/62 vs 0/62 | 7.6e-10 | path |
+| Flash · comp | 0/92 | 40/92 | 24/46 vs 0/46 | 0.0098; 0.0098 | path |
+| Pro · cancel | 0/124 | 69/124 | 18/62 vs 0/62 | 1.8e-4 | path |
+| Pro · comp | 10/92 | 84/92 | 42/46 vs 4/46 | 1.8e-4; 2.3e-4 | path |
+| Sonnet · cancel | 18/124 | 88/123 | 44/61 vs 0/62 | 3.1e-12 | path |
+| Sonnet · comp | 77/92 | 88/92 | 43/46 vs 38/46 | 1; 1 | not testable (C payouts > 50%) |
+| GPT-6 Sol / Luna | 0 D errors under SA on cancellation | | | | floor, so not testable |
+
+**Direction effects.**
+- E ≈ C everywhere: the yes path is never blind to overpayment.
+- On the no path, Pro on cancel refused overpaid D records more often than underpaid F records (82% vs 29%, Holm
+  p = 4e-8). So for Pro, direction also matters on the no path.
+
+**Verdict.** The Amendment-3b criterion ("path" in both tasks for ≥3 models over ≥2 providers) is **not met**.
+Two Google models reach it in both tasks; Sonnet reaches it on cancellation only. The Gemma path stages are
+reported in `reports/ladder-results.md`.
+
+**Amendment 4: same record, different answer (Flash only).** The C record ("insured, fee missing") was paired with
+a no-path request: "my plans changed", which insurance does not cover.
+- Flash missed the contradiction 19/62 times, vs 0/62 for the identical record on the yes path (McNemar 19 vs 0,
+  Holm p = 7.6e-6).
+- On the no path, the negative flag was still missed more often than the positive one (55% vs 31%, descriptive).
+- So the answer a model is heading towards drives whether it checks, and the flag value also contributes.
+
+**Reasoning summaries (exploratory keyword count).** Arithmetic appears in 90–100% of transfer summaries but in
+only 0–5% of refusal summaries:
+- Sonnet: 1/44 and 0/34;
+- Pro: 1/51, 0/18, 0/42 and 0/42.
+Refusals happen without the check being run. Summaries are not the full reasoning.
+
+### 3. The least instruction (ladder; Flash; preregistered, descriptive)
+
+| Wording added to the policy | cancel: C paid, D refused (24 bases) | comp (23 bases) |
+|---|---|---|
+| W0 stock / W1 "If a record looks wrong, transfer…" / W2 "If anything seems off…" / W3 contradiction clause / W4 clause + "Double-check the reservation before acting." | 24/24, 24/24 each | 23/23, 23/23 each |
+| W5 "Check that the payments match the booking before acting; if they don't, transfer…" | 2/24, 24/24 | 21/23, 23/23 |
+| W6 clause + "Every time you look up a reservation, recompute…" (62 / 46) | 0/62, 29/62 | 1/46, 44/46 |
+| SN clause + "Before telling the customer yes or no…, recompute…" (62 / 46) | 0/62, 5/62 | 0/46, 4/46 |
+
+- **Flash:** no wording reaches "near zero" (C and D both ≤ 5%). The closest is SN, with D at 8–9%.
+- **W6 (lookup-scoped):** the *worst* wording on comp for Flash, contradicting my preregistered prediction. For
+  Sonnet, W6 cut cancellation refusals from 44/62 to 21/62 (Holm p = 2.6e-6). Lookup scope is model-dependent
+  and not a fix.
+- **Other models:**
+  - GPT-6 Sol and Luna are already at floor under SA; the vague wordings weren't run on them (budget).
+  - For Sonnet and Pro, no tested wording reaches near zero.
+  - Opus was not run (budget).
+
+### Killed or weakened claims (2026-09-28)
+
+| Claim | Status | Reason |
+|---|---|---|
+| "Naming yes-or-no fixes wrongful refusals" as a general prompt fix | killed | Works for Flash only. Pro is partial, Sonnet shows no effect (44/62 vs 40/62), GPT is at floor. |
+| "The wording effect replicated in Claude Sonnet" | killed | Not on 62 new bases (p = 0.54). |
+| A lookup-scoped check protects both answers | killed | Flash on comp: 44/46 refused under W6. |
+| "Literal scope" explains the leak (2026-09-27 review) | weakened | W6 literally covers every answer, yet leaks for Flash. See also the same-record path test. |
+| Overpayment blindness explains D > C | killed on the yes path | E ≈ C in every testable cell. Partial on the no path for Pro on cancel. |
+| Vague "if something's wrong, transfer" instructions make agents reconcile | killed (Flash) | 100% errors in both directions, on both tasks. |
+| "No model checks" / "all models trust corrupted records" | killed as a general claim | GPT-6 Sol made 0 errors on 248 corrupted cancellation records under SA and SN. |
+| The path finding meets the preregistered 3 models × 2 providers × both tasks bar | not met | 3 models × 2 providers on cancellation; 2 Google models on both tasks. |
+
+## Earlier results (2026-09-24 to 2026-09-25)
+
 **Latest follow-up:** The airline wording effect is large; the retail follow-ups were at floor, so they could not test whether the effect generalises. See the retail arithmetic effort section below.
 
 **Original three-task conclusion (2026-09-25): generality beyond the airline task is untested; this extension is Flash-only.** The 3,672-decision Flash six-wording study (65 airline bases, two calls per item) reduced airline refusals from 288/390 to 10/390, but both retail tasks had zero under either wording type. The preregistered 2-of-3-task rule was not met because both retail tasks were at floor (0 refusals under either wording); the retail tasks could not show the effect, so generality beyond this airline task is untested. See the final sections; earlier sections below are the historical studies.

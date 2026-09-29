@@ -50,8 +50,10 @@ def load(dirs):
         if r.get("reply"):
             r["action"], r["message"], r["parse_error"] = ladder.parse(r["task"], r["reply"]["text"])
     seen = {}
-    for r in rows:  # a (model, id) answered twice (e.g. a resumed stage) keeps its first record
-        seen.setdefault((r["model"], r["id"]), r)
+    for r in rows:  # a (model, id) asked twice (a resumed stage) keeps its first *answered* record
+        k = (r["model"], r["id"])
+        if k not in seen or (seen[k].get("reply") is None and r.get("reply") is not None):
+            seen[k] = r
     return list(seen.values())
 
 
