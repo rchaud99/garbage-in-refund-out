@@ -34,5 +34,9 @@ case $S in
   ef-sonnet-comp)  $R --stage $S --model openrouter/anthropic/claude-sonnet-5 --tasks comp --wordings SA --corrupt-cells EF --clean 0 --repeats 2 --estimate-per-call 0.013 --workers 10 --pace 3.3 "$@";;
   plans-flash) $R --stage $S --model gemini-3.8-flash --tasks plans --wordings SA --corrupt-cells GH --clean-cells K --clean 20 --repeats 1 --estimate-per-call 0.0065 --workers 8 "$@";;
   plans-pro)   $R --stage $S --model gemini-3.1-pro-preview --tasks plans --wordings SA --corrupt-cells GH --clean-cells K --clean 20 --repeats 1 --estimate-per-call 0.0125 --workers 8 "$@";;
+  path-gemma31-cancel) $R --stage $S --model gemma-4-31b-it --tasks cancel --wordings SA --corrupt-cells CDEF --clean 0 --repeats 1 --workers 2 --pace 14 "$@";;
+  path-gemma31-comp)   $R --stage $S --model gemma-4-31b-it --tasks comp --wordings SA --corrupt-cells CDEF --clean 0 --repeats 2 --workers 2 --pace 14 "$@";;
+  path-gemma26-cancel) $R --stage $S --model gemma-4-26b-a4b-it --tasks cancel --wordings SA --corrupt-cells CDEF --clean 0 --repeats 1 --workers 2 --pace 14 "$@";;
+  path-gemma26-comp)   $R --stage $S --model gemma-4-26b-a4b-it --tasks comp --wordings SA --corrupt-cells CDEF --clean 0 --repeats 2 --workers 2 --pace 14 "$@";;
   *) echo "unknown stage $S"; exit 1;;
 esac

@@ -304,3 +304,22 @@ models (budget).
 model might therefore legitimately ignore the payments here, and the clause still requires transfer. So high G
 errors show that the check is skipped when the answer is "no". They do not show that the model saw the
 contradiction and ignored it.
+
+## Amendment 5 (2026-09-28 ~20:15): path test on the two free Gemma models, frozen before their E/F calls
+
+The paid budget is spent ($38.4 of $40). The Gemma models on Google's API are free (rate-limited), so this
+amendment adds the Amendment-3 path test for them.
+
+- **Stages** `path-gemma31-*` and `path-gemma26-*`: cells C, D, E, F under SA, on both tasks (cancel: 62 bases,
+  ×1; comp: 23 bases, ×2), 432 calls per model, $0. Everything is self-contained, so no earlier Gemma data is needed.
+- **Status of what I had seen when writing this:**
+  - Gemma 4 31B: partial scope data (≈15 cancel bases). On cancel under SA, 10/10 D refused and 0/10 C paid.
+  - Gemma 4 26B-A4B: a 4-call pilot (2 C transferred, 2 D refused).
+  - No E/F data for either model.
+- **Stopped for time:** the preregistered `gemma31-scope-*` stages share the 31B quota. They are stopped and
+  reported as partial.
+- **Criteria:** the same verdict rules as Amendments 3/3b.
+- **Why the provider criterion still can't be met this way:** Gemma adds models, not providers (both are
+  Google). Reported as such.
+- Stages that have not finished when the session ends are reported as partial. Their missing items are "not
+  asked", not errors.
