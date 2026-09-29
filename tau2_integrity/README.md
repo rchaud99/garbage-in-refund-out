@@ -56,18 +56,26 @@ python -m tau2_integrity.score path/to/tau2-bench/data/simulations/my_run/result
 
 ## Worked example (single-decision replays, from the parent study)
 
-The parent repository ran the same four cells as **single-decision replays**: one JSON answer after a replayed
-conversation, not full τ² episodes. It compared the same arithmetic check in two scopes:
-- **action-scoped** (`--check action`): "Before deciding on …, recompute…";
-- **answer-scoped** (`--check answer`): "Before telling the customer yes or no on …, recompute…".
+The parent repository ran these cells as **single-decision replays**: one JSON answer after a replayed conversation,
+not full τ² episodes. It also added two diagnostic cells, E (flag yes, overpaid) and F (flag no, underpaid). Raw
+counts under the action-scoped check (`--check action`) on 62 cancellation bases:
 
-Raw counts of D wrongful refusals are in the parent repo's `reports/ladder-results.md`. For example, Gemini 3.8
-Flash on 62 cancellation bases gave **41/62 (action) vs 5/62 (answer)**, with 0/62 C payouts under both. Full τ²
-episodes may differ: an earlier 8-base conversation run found smaller gaps.
+| model | C paid | E paid | D refused | F refused | clean B held |
+|---|---|---|---|---|---|
+| Gemini 3.8 Flash | 0/62 | 0/62 | 41/62 | 36/62 | 0/20 |
+| Gemini 3.1 Pro | 0/62 | 0/62 | 51/62 | 18/62 | 0/10 |
+| Claude Sonnet 5 | 18/62 | 0/62 | 44/62 | 44/61 | 0/10 |
+| GPT-6 Sol | 0/62 | – | 0/62 | – | 0/10 |
+
+Errors follow the answer the record points to (yes vs no), not the direction of the discrepancy. The answer-scoped
+wording (`--check answer`) cut Flash's D refusals to 5/62, Pro's to 34/62, and Sonnet's to only 40/62.
+
+Full τ² episodes may differ: an earlier 8-base conversation run found smaller gaps. This package is how you would
+measure that.
 
 **Verification run** (this package, τ²'s orchestrator, Flash as agent and user, 1 base × cells C and D × 1 trial,
-`--check answer`): both transferred, pass^1 = 1.00, $0.12. This shows the pipeline works end to end. It is not
-a result.
+`--check answer`): both episodes transferred, pass^1 = 1.00, $0.12. This shows the pipeline works end to end; it is
+not a result.
 
 ## Limits
 
