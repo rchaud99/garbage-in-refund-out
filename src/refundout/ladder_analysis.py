@@ -208,7 +208,12 @@ def analyse(rows):
         fe = [x for x in xs if (x["first"], x["second"]) == ("F", "E")]
         ec = [x for x in xs if (x["first"], x["second"]) == ("E", "C")]
         blind = any(x["p_holm"] < 0.05 and x["first_only"] > x["second_only"] for x in ec)
-        if all(x["p_holm"] < 0.05 and x["first_only"] > x["second_only"] for x in fe) and fe and not blind:
+        c, d, f = (table.get((m, t, "SA", k)) for k in "CDF")
+        if c and c["n"] and rate(c) > CHECK_PAYOUT:  # Amendment 3b: the check rarely runs even on the grant path
+            path_verdict[f"{m}|{t}"] = "not testable (C payouts > 50%)"
+        elif d and f and d["bad"] == 0 and f["bad"] == 0:
+            path_verdict[f"{m}|{t}"] = "not testable (floor)"
+        elif all(x["p_holm"] < 0.05 and x["first_only"] > x["second_only"] for x in fe) and fe and not blind:
             path_verdict[f"{m}|{t}"] = "path"
         elif blind:
             path_verdict[f"{m}|{t}"] = "direction"
@@ -255,7 +260,9 @@ def analyse(rows):
             "testable": {"|".join(k): v for k, v in testable.items()}, "verdicts": verdicts,
             "robust_models": robust_models, "robust": robust, "ladder": ladder,
             "asymmetry": asym, "asym_models": asym_models, "asym_robust": asym_robust,
-            "path": path, "path_verdict": path_verdict}
+            "path": path, "path_verdict": path_verdict,
+            "path_models_all_tasks": [m for m in models if all(path_verdict.get(f"{m}|{t}") == "path" for t in tasks)],
+            "path_models_any_task": [m for m in models if any(path_verdict.get(f"{m}|{t}") == "path" for t in tasks)]}
 
 
 def markdown(res):
@@ -305,6 +312,10 @@ def markdown(res):
                 f"{x['first_rate']:.2f} | {x['second_rate']:.2f} | {x['first_only']} | {x['second_only']} | "
                 f"{x['p_holm']:.2g} |" for x in res["path"]], "",
               "Verdicts: " + json.dumps(res["path_verdict"]), "",
+              f"Models with the path verdict in every task: {res['path_models_all_tasks']}; in at least one task: "
+              f"{res['path_models_any_task']}. Criterion (Amendment 3b: ≥3 models, ≥2 providers, every task) met: "
+              f"**{len(res['path_models_all_tasks']) >= 3 and len({provider(m) for m in res['path_models_all_tasks']}) >= 2}**",
+              "",
               "## Ladder: least wording with C and D ≤ 5% and clean errors ≤ 10%", "",
               "| model | task | " + " | ".join(ORDER + ("SA", "SN")) + " | least (W0–W6) | SA/SN near zero |",
               "|---" * (len(ORDER) + 6) + "|"]
