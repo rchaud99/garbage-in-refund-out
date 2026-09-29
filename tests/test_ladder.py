@@ -118,3 +118,13 @@ def test_resumed_answer_replaces_earlier_failure(tmp_path):
         (d / "decisions.jsonl").write_text(_json.dumps({**base, **rec}) + "\n")
     rows = ladder_analysis.load([tmp_path / "a", tmp_path / "b"])
     assert len(rows) == 1 and rows[0]["action"] == "refuse"
+
+
+def test_extra_task_does_not_change_criteria():
+    rows = []
+    for m in ("gemini-3.8-flash", "gemma-4-31b-it", "openrouter/openai/gpt-6-sol"):
+        for t in ("cancel", "comp"):
+            rows += _rows(m, t, 16, 1, repeats=(0, 1))
+    rows.append({"model": "gemini-3.8-flash", "task": "plans", "wording": "SA", "cell": "G", "base": "b0", "repeat": 0,
+                 "action": "refuse", "id": "plans:b0:G:SA:0"})
+    assert ladder_analysis.analyse(rows)["robust"]

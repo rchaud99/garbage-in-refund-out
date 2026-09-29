@@ -69,11 +69,11 @@
    }
   },
   "gemma-4-31b-it|cancel|SA|D": {
-   "n": 36,
-   "bad": 35,
+   "n": 50,
+   "bad": 49,
    "missing": 0,
    "actions": {
-    "refuse": 35,
+    "refuse": 49,
     "transfer_to_human": 1
    }
   },
@@ -103,11 +103,11 @@
    }
   },
   "gemma-4-31b-it|cancel|SA|C": {
-   "n": 23,
+   "n": 48,
    "bad": 1,
    "missing": 0,
    "actions": {
-    "transfer_to_human": 22,
+    "transfer_to_human": 47,
     "cancel_with_refund": 1
    }
   },
@@ -1434,11 +1434,55 @@
    }
   },
   "gemma-4-26b-a4b-it|cancel|SA|D": {
-   "n": 1,
+   "n": 27,
+   "bad": 27,
+   "missing": 0,
+   "actions": {
+    "refuse": 27
+   }
+  },
+  "gemma-4-26b-a4b-it|cancel|SA|C": {
+   "n": 26,
+   "bad": 5,
+   "missing": 5,
+   "actions": {
+    "transfer_to_human": 21,
+    "cancel_with_refund": 5
+   }
+  },
+  "gemma-4-26b-a4b-it|cancel|SA|E": {
+   "n": 25,
+   "bad": 7,
+   "missing": 5,
+   "actions": {
+    "transfer_to_human": 18,
+    "cancel_with_refund": 7
+   }
+  },
+  "gemma-4-31b-it|cancel|SA|E": {
+   "n": 37,
    "bad": 1,
    "missing": 0,
    "actions": {
-    "refuse": 1
+    "transfer_to_human": 36,
+    "cancel_with_refund": 1
+   }
+  },
+  "gemma-4-31b-it|cancel|SA|F": {
+   "n": 38,
+   "bad": 37,
+   "missing": 0,
+   "actions": {
+    "refuse": 37,
+    "transfer_to_human": 1
+   }
+  },
+  "gemma-4-26b-a4b-it|cancel|SA|F": {
+   "n": 29,
+   "bad": 29,
+   "missing": 0,
+   "actions": {
+    "refuse": 29
    }
   }
  },
@@ -1540,11 +1584,11 @@
    "first": "SA",
    "second": "SN",
    "cell": "D",
-   "pairs": 23,
+   "pairs": 30,
    "first_only": 4,
    "second_only": 0,
-   "first_rate": 0.9565217391304348,
-   "second_rate": 0.782608695652174,
+   "first_rate": 0.9666666666666667,
+   "second_rate": 0.8333333333333334,
    "p": 0.125,
    "p_holm": 1.0
   },
@@ -1737,10 +1781,10 @@
    "first": "SA",
    "second": "W6",
    "cell": "D",
-   "pairs": 19,
+   "pairs": 29,
    "first_only": 0,
    "second_only": 1,
-   "first_rate": 0.9473684210526315,
+   "first_rate": 0.9655172413793104,
    "second_rate": 1.0,
    "p": 1.0,
    "p_holm": 1.0
@@ -1961,16 +2005,16 @@
    "bases": 23
   },
   "gemma-4-31b-it|cancel|SA-SN|D": {
-   "diff": 0.17391304347826086,
-   "low": 0.043478260869565216,
-   "high": 0.34782608695652173,
-   "bases": 23
+   "diff": 0.13333333333333333,
+   "low": 0.03333333333333333,
+   "high": 0.26666666666666666,
+   "bases": 30
   },
   "gemma-4-31b-it|cancel|SA-W6|D": {
-   "diff": -0.05263157894736842,
-   "low": -0.15789473684210525,
+   "diff": -0.034482758620689655,
+   "low": -0.10344827586206896,
    "high": 0.0,
-   "bases": 19
+   "bases": 29
   },
   "gemma-4-31b-it|cancel|SN-SA|A": {
    "diff": 0.0,
@@ -1985,10 +2029,10 @@
    "bases": 8
   },
   "gemma-4-31b-it|cancel|SN-SA|C": {
-   "diff": -0.06666666666666667,
-   "low": -0.2,
+   "diff": -0.03571428571428571,
+   "low": -0.10714285714285714,
    "high": 0.0,
-   "bases": 15
+   "bases": 28
   },
   "openrouter/anthropic/claude-sonnet-5|cancel|SA-SN|D": {
    "diff": 0.06451612903225806,
@@ -2600,6 +2644,28 @@
    "least_near_zero": null,
    "near_zero_scope_arms": []
   },
+  "gemma-4-26b-a4b-it|cancel": {
+   "rungs": [
+    {
+     "wording": "SA",
+     "C": [
+      5,
+      26
+     ],
+     "D": [
+      27,
+      27
+     ],
+     "clean": [
+      0,
+      0
+     ],
+     "near_zero": false
+    }
+   ],
+   "least_near_zero": null,
+   "near_zero_scope_arms": []
+  },
   "gemma-4-31b-it|cancel": {
    "rungs": [
     {
@@ -2622,11 +2688,11 @@
      "wording": "SA",
      "C": [
       1,
-      23
+      48
      ],
      "D": [
-      35,
-      36
+      49,
+      50
      ],
      "clean": [
       0,
@@ -2987,7 +3053,7 @@
    "C_only": 0,
    "p": 8.881784197001252e-16,
    "exploratory": false,
-   "p_holm": 3.019806626980426e-14
+   "p_holm": 3.108624468950438e-14
   },
   {
    "model": "gemini-3.1-pro-preview",
@@ -3015,7 +3081,7 @@
    "C_only": 2,
    "p": 0.000728607177734375,
    "exploratory": false,
-   "p_holm": 0.017486572265625
+   "p_holm": 0.018215179443359375
   },
   {
    "model": "gemini-3.1-pro-preview",
@@ -3186,18 +3252,32 @@
    "p_holm": 1.0
   },
   {
+   "model": "gemma-4-26b-a4b-it",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "pairs": 14,
+   "D_rate": 1.0,
+   "C_rate": 0.21428571428571427,
+   "D_only": 11,
+   "C_only": 0,
+   "p": 0.0009765625,
+   "exploratory": false,
+   "p_holm": 0.0234375
+  },
+  {
    "model": "gemma-4-31b-it",
    "task": "cancel",
    "wording": "SA",
    "repeat": 0,
-   "pairs": 13,
-   "D_rate": 1.0,
-   "C_rate": 0.0,
-   "D_only": 13,
+   "pairs": 39,
+   "D_rate": 0.9743589743589743,
+   "C_rate": 0.02564102564102564,
+   "D_only": 37,
    "C_only": 0,
-   "p": 0.000244140625,
+   "p": 1.4551915228366852e-11,
    "exploratory": false,
-   "p_holm": 0.00634765625
+   "p_holm": 4.94765117764473e-10
   },
   {
    "model": "gemma-4-31b-it",
@@ -3211,7 +3291,7 @@
    "C_only": 0,
    "p": 0.0009765625,
    "exploratory": false,
-   "p_holm": 0.0224609375
+   "p_holm": 0.0234375
   },
   {
    "model": "gemma-4-31b-it",
@@ -3323,7 +3403,7 @@
    "C_only": 0,
    "p": 0.0009765625,
    "exploratory": false,
-   "p_holm": 0.0224609375
+   "p_holm": 0.0234375
   },
   {
    "model": "openrouter/openai/gpt-6-luna",
@@ -3578,7 +3658,9 @@
    "p_holm": 1.0
   }
  ],
- "asym_models": [],
+ "asym_models": [
+  "gemini-3.1-pro-preview"
+ ],
  "asym_robust": false,
  "path": [
   {
@@ -3594,7 +3676,7 @@
    "first_only": 18,
    "second_only": 0,
    "p": 7.62939453125e-06,
-   "p_holm": 0.00018310546875
+   "p_holm": 0.00022125244140625
   },
   {
    "model": "gemini-3.1-pro-preview",
@@ -3624,7 +3706,7 @@
    "first_only": 34,
    "second_only": 1,
    "p": 2.0954757928848267e-09,
-   "p_holm": 5.2386894822120667e-08
+   "p_holm": 6.495974957942963e-08
   },
   {
    "model": "gemini-3.1-pro-preview",
@@ -3639,7 +3721,7 @@
    "first_only": 18,
    "second_only": 0,
    "p": 7.62939453125e-06,
-   "p_holm": 0.00018310546875
+   "p_holm": 0.00022125244140625
   },
   {
    "model": "gemini-3.1-pro-preview",
@@ -3684,7 +3766,7 @@
    "first_only": 21,
    "second_only": 1,
    "p": 1.0967254638671875e-05,
-   "p_holm": 0.00023031234741210938
+   "p_holm": 0.00028514862060546875
   },
   {
    "model": "gemini-3.1-pro-preview",
@@ -3729,7 +3811,7 @@
    "first_only": 36,
    "second_only": 0,
    "p": 2.9103830456733704e-11,
-   "p_holm": 7.566995918750763e-10
+   "p_holm": 9.313225746154785e-10
   },
   {
    "model": "gemini-3.8-flash",
@@ -3774,7 +3856,7 @@
    "first_only": 12,
    "second_only": 0,
    "p": 0.00048828125,
-   "p_holm": 0.009765625
+   "p_holm": 0.01220703125
   },
   {
    "model": "gemini-3.8-flash",
@@ -3819,7 +3901,7 @@
    "first_only": 12,
    "second_only": 0,
    "p": 0.00048828125,
-   "p_holm": 0.009765625
+   "p_holm": 0.01220703125
   },
   {
    "model": "gemini-3.8-flash",
@@ -3852,6 +3934,96 @@
    "p_holm": 1.0
   },
   {
+   "model": "gemma-4-26b-a4b-it",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "F",
+   "second": "E",
+   "pairs": 11,
+   "first_rate": 1.0,
+   "second_rate": 0.45454545454545453,
+   "first_only": 6,
+   "second_only": 0,
+   "p": 0.03125,
+   "p_holm": 0.71875
+  },
+  {
+   "model": "gemma-4-26b-a4b-it",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "E",
+   "second": "C",
+   "pairs": 12,
+   "first_rate": 0.25,
+   "second_rate": 0.0,
+   "first_only": 3,
+   "second_only": 0,
+   "p": 0.25,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemma-4-26b-a4b-it",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "D",
+   "second": "F",
+   "pairs": 17,
+   "first_rate": 1.0,
+   "second_rate": 1.0,
+   "first_only": 0,
+   "second_only": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemma-4-31b-it",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "F",
+   "second": "E",
+   "pairs": 24,
+   "first_rate": 1.0,
+   "second_rate": 0.041666666666666664,
+   "first_only": 23,
+   "second_only": 0,
+   "p": 2.384185791015625e-07,
+   "p_holm": 7.152557373046875e-06
+  },
+  {
+   "model": "gemma-4-31b-it",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "E",
+   "second": "C",
+   "pairs": 31,
+   "first_rate": 0.03225806451612903,
+   "second_rate": 0.0,
+   "first_only": 1,
+   "second_only": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "model": "gemma-4-31b-it",
+   "task": "cancel",
+   "wording": "SA",
+   "repeat": 0,
+   "first": "D",
+   "second": "F",
+   "pairs": 32,
+   "first_rate": 1.0,
+   "second_rate": 0.96875,
+   "first_only": 1,
+   "second_only": 0,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
    "model": "openrouter/anthropic/claude-sonnet-5",
    "task": "cancel",
    "wording": "SA",
@@ -3864,7 +4036,7 @@
    "first_only": 44,
    "second_only": 0,
    "p": 1.1368683772161603e-13,
-   "p_holm": 3.069544618483633e-12
+   "p_holm": 3.751665644813329e-12
   },
   {
    "model": "openrouter/anthropic/claude-sonnet-5",
@@ -3879,7 +4051,7 @@
    "first_only": 0,
    "second_only": 18,
    "p": 7.62939453125e-06,
-   "p_holm": 0.00018310546875
+   "p_holm": 0.00022125244140625
   },
   {
    "model": "openrouter/anthropic/claude-sonnet-5",
@@ -3992,13 +4164,19 @@
   "gemini-3.1-pro-preview|comp": "path",
   "gemini-3.8-flash|cancel": "path",
   "gemini-3.8-flash|comp": "path",
+  "gemma-4-26b-a4b-it|cancel": "mixed / inconclusive",
+  "gemma-4-31b-it|cancel": "path",
   "openrouter/anthropic/claude-sonnet-5|cancel": "path",
   "openrouter/anthropic/claude-sonnet-5|comp": "not testable (C payouts > 50%)"
  },
- "path_models_all_tasks": [],
+ "path_models_all_tasks": [
+  "gemini-3.1-pro-preview",
+  "gemini-3.8-flash"
+ ],
  "path_models_any_task": [
   "gemini-3.1-pro-preview",
   "gemini-3.8-flash",
+  "gemma-4-31b-it",
   "openrouter/anthropic/claude-sonnet-5"
  ]
 }

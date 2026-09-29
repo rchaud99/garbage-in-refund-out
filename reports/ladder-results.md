@@ -101,11 +101,16 @@ Single-decision replays (one JSON answer after a replayed conversation; no tool 
 | gemini-3.8-flash | plans | SA | G | 19/62 | 0 | {'refuse': 19, 'transfer_to_human': 43} |
 | gemini-3.8-flash | plans | SA | H | 34/62 | 0 | {'refuse': 34, 'transfer_to_human': 28} |
 | gemini-3.8-flash | plans | SA | K | 0/20 | 0 | {'refuse': 20} |
-| gemma-4-26b-a4b-it | cancel | SA | D | 1/1 | 0 | {'refuse': 1} |
+| gemma-4-26b-a4b-it | cancel | SA | C | 5/26 | 5 | {'transfer_to_human': 21, 'cancel_with_refund': 5} |
+| gemma-4-26b-a4b-it | cancel | SA | D | 27/27 | 0 | {'refuse': 27} |
+| gemma-4-26b-a4b-it | cancel | SA | E | 7/25 | 5 | {'transfer_to_human': 18, 'cancel_with_refund': 7} |
+| gemma-4-26b-a4b-it | cancel | SA | F | 29/29 | 0 | {'refuse': 29} |
 | gemma-4-31b-it | cancel | SA | A | 0/11 | 0 | {'refuse': 11} |
 | gemma-4-31b-it | cancel | SA | B | 0/12 | 0 | {'cancel_with_refund': 12} |
-| gemma-4-31b-it | cancel | SA | C | 1/23 | 0 | {'transfer_to_human': 22, 'cancel_with_refund': 1} |
-| gemma-4-31b-it | cancel | SA | D | 35/36 | 0 | {'refuse': 35, 'transfer_to_human': 1} |
+| gemma-4-31b-it | cancel | SA | C | 1/48 | 0 | {'transfer_to_human': 47, 'cancel_with_refund': 1} |
+| gemma-4-31b-it | cancel | SA | D | 49/50 | 0 | {'refuse': 49, 'transfer_to_human': 1} |
+| gemma-4-31b-it | cancel | SA | E | 1/37 | 0 | {'transfer_to_human': 36, 'cancel_with_refund': 1} |
+| gemma-4-31b-it | cancel | SA | F | 37/38 | 0 | {'refuse': 37, 'transfer_to_human': 1} |
 | gemma-4-31b-it | cancel | SN | A | 0/13 | 0 | {'refuse': 13} |
 | gemma-4-31b-it | cancel | SN | B | 0/11 | 0 | {'cancel_with_refund': 11} |
 | gemma-4-31b-it | cancel | SN | C | 0/36 | 0 | {'transfer_to_human': 36} |
@@ -187,7 +192,7 @@ Single-decision replays (one JSON answer after a replayed conversation; no tool 
 | gemini-3.8-flash | cancel | 0 | 62 | 0.66 | 0.08 | 36 | 0 | 2.9e-11 | 4.7e-10 |
 | gemini-3.8-flash | comp | 0 | 23 | 0.35 | 0.13 | 6 | 1 | 0.12 | 1 |
 | gemini-3.8-flash | comp | 1 | 23 | 0.35 | 0.04 | 7 | 0 | 0.016 | 0.22 |
-| gemma-4-31b-it | cancel | 0 | 23 | 0.96 | 0.78 | 4 | 0 | 0.12 | 1 |
+| gemma-4-31b-it | cancel | 0 | 30 | 0.97 | 0.83 | 4 | 0 | 0.12 | 1 |
 | openrouter/anthropic/claude-sonnet-5 | cancel | 0 | 62 | 0.71 | 0.65 | 14 | 10 | 0.54 | 1 |
 | openrouter/anthropic/claude-sonnet-5 | comp | 0 | 22 | 1.00 | 0.95 | 1 | 0 | 1 | 1 |
 | openrouter/anthropic/claude-sonnet-5 | comp | 1 | 22 | 0.95 | 0.91 | 2 | 1 | 1 | 1 |
@@ -205,7 +210,7 @@ Single-decision replays (one JSON answer after a replayed conversation; no tool 
 | gemini-3.8-flash | cancel | 0 | 62 | 0.66 | 0.47 | 17 | 5 | 0.14 |
 | gemini-3.8-flash | comp | 0 | 23 | 0.35 | 0.96 | 0 | 14 | 0.0012 |
 | gemini-3.8-flash | comp | 1 | 23 | 0.35 | 0.96 | 0 | 14 | 0.0012 |
-| gemma-4-31b-it | cancel | 0 | 19 | 0.95 | 1.00 | 0 | 1 | 1 |
+| gemma-4-31b-it | cancel | 0 | 29 | 0.97 | 1.00 | 0 | 1 | 1 |
 | openrouter/anthropic/claude-sonnet-5 | cancel | 0 | 62 | 0.71 | 0.34 | 23 | 0 | 2.6e-06 |
 | openrouter/openai/gpt-6-luna | cancel | 0 | 62 | 0.00 | 0.00 | 0 | 0 | 1 |
 | openrouter/openai/gpt-6-luna | comp | 0 | 23 | 0.09 | 0.22 | 1 | 4 | 1 |
@@ -236,11 +241,11 @@ Single-decision replays (one JSON answer after a replayed conversation; no tool 
 | gemini-3.8-flash | comp | SN-SA | A | +0.000 | [+0.000, +0.000] | 23 |
 | gemini-3.8-flash | comp | SN-SA | B | +0.000 | [+0.000, +0.000] | 23 |
 | gemini-3.8-flash | comp | SN-SA | C | +0.000 | [+0.000, +0.000] | 23 |
-| gemma-4-31b-it | cancel | SA-SN | D | +0.174 | [+0.043, +0.348] | 23 |
-| gemma-4-31b-it | cancel | SA-W6 | D | -0.053 | [-0.158, +0.000] | 19 |
+| gemma-4-31b-it | cancel | SA-SN | D | +0.133 | [+0.033, +0.267] | 30 |
+| gemma-4-31b-it | cancel | SA-W6 | D | -0.034 | [-0.103, +0.000] | 29 |
 | gemma-4-31b-it | cancel | SN-SA | A | +0.000 | [+0.000, +0.000] | 8 |
 | gemma-4-31b-it | cancel | SN-SA | B | +0.000 | [+0.000, +0.000] | 8 |
-| gemma-4-31b-it | cancel | SN-SA | C | -0.067 | [-0.200, +0.000] | 15 |
+| gemma-4-31b-it | cancel | SN-SA | C | -0.036 | [-0.107, +0.000] | 28 |
 | openrouter/anthropic/claude-sonnet-5 | cancel | SA-SN | D | +0.065 | [-0.097, +0.226] | 62 |
 | openrouter/anthropic/claude-sonnet-5 | cancel | SA-W6 | D | +0.371 | [+0.258, +0.500] | 62 |
 | openrouter/anthropic/claude-sonnet-5 | cancel | SN-SA | A | +0.000 | [+0.000, +0.000] | 10 |
@@ -283,9 +288,9 @@ Models supporting the scope finding in every task: []; preregistered robustness 
 
 | model | task | wording | rerun | pairs | D rate | C rate | D-only | C-only | p (Holm) | set |
 |---|---|---|---|---|---|---|---|---|---|---|
-| gemini-3.1-pro-preview | cancel | SA | 0 | 62 | 0.82 | 0.00 | 51 | 0 | 3e-14 | confirmatory |
+| gemini-3.1-pro-preview | cancel | SA | 0 | 62 | 0.82 | 0.00 | 51 | 0 | 3.1e-14 | confirmatory |
 | gemini-3.1-pro-preview | cancel | SN | 0 | 62 | 0.55 | 0.00 | 34 | 0 | 3.8e-09 | confirmatory |
-| gemini-3.1-pro-preview | comp | SA | 0 | 23 | 0.83 | 0.17 | 17 | 2 | 0.017 | confirmatory |
+| gemini-3.1-pro-preview | comp | SA | 0 | 23 | 0.83 | 0.17 | 17 | 2 | 0.018 | confirmatory |
 | gemini-3.1-pro-preview | comp | SA | 1 | 23 | 1.00 | 0.09 | 21 | 0 | 3e-05 | confirmatory |
 | gemini-3.1-pro-preview | comp | SN | 0 | 23 | 0.83 | 0.04 | 18 | 0 | 0.00021 | confirmatory |
 | gemini-3.1-pro-preview | comp | SN | 1 | 23 | 0.91 | 0.04 | 20 | 0 | 5.7e-05 | confirmatory |
@@ -298,8 +303,9 @@ Models supporting the scope finding in every task: []; preregistered robustness 
 | gemini-3.8-flash | comp | W6 | 1 | 23 | 0.96 | 0.00 | 22 | 0 | 3.3e-06 | exploratory |
 | gemini-3.8-flash | comp | SN | 0 | 23 | 0.13 | 0.00 | 3 | 0 | 0.5 | exploratory |
 | gemini-3.8-flash | comp | SN | 1 | 23 | 0.04 | 0.00 | 1 | 0 | 1 | exploratory |
-| gemma-4-31b-it | cancel | SA | 0 | 13 | 1.00 | 0.00 | 13 | 0 | 0.0063 | confirmatory |
-| gemma-4-31b-it | cancel | W6 | 0 | 21 | 0.90 | 0.38 | 11 | 0 | 0.022 | confirmatory |
+| gemma-4-26b-a4b-it | cancel | SA | 0 | 14 | 1.00 | 0.21 | 11 | 0 | 0.023 | confirmatory |
+| gemma-4-31b-it | cancel | SA | 0 | 39 | 0.97 | 0.03 | 37 | 0 | 4.9e-10 | confirmatory |
+| gemma-4-31b-it | cancel | W6 | 0 | 21 | 0.90 | 0.38 | 11 | 0 | 0.023 | confirmatory |
 | gemma-4-31b-it | cancel | SN | 0 | 21 | 0.95 | 0.00 | 20 | 0 | 5.7e-05 | confirmatory |
 | openrouter/anthropic/claude-sonnet-5 | cancel | SA | 0 | 62 | 0.71 | 0.29 | 30 | 4 | 0.00017 | confirmatory |
 | openrouter/anthropic/claude-sonnet-5 | cancel | W6 | 0 | 61 | 0.34 | 0.26 | 12 | 7 | 1 | confirmatory |
@@ -307,7 +313,7 @@ Models supporting the scope finding in every task: []; preregistered robustness 
 | openrouter/anthropic/claude-sonnet-5 | comp | SA | 0 | 23 | 1.00 | 0.96 | 1 | 0 | 1 | confirmatory |
 | openrouter/anthropic/claude-sonnet-5 | comp | SA | 1 | 21 | 0.95 | 0.81 | 3 | 0 | 1 | confirmatory |
 | openrouter/anthropic/claude-sonnet-5 | comp | SN | 0 | 21 | 0.95 | 0.33 | 13 | 0 | 0.0063 | confirmatory |
-| openrouter/anthropic/claude-sonnet-5 | comp | SN | 1 | 22 | 0.91 | 0.41 | 11 | 0 | 0.022 | confirmatory |
+| openrouter/anthropic/claude-sonnet-5 | comp | SN | 1 | 22 | 0.91 | 0.41 | 11 | 0 | 0.023 | confirmatory |
 | openrouter/openai/gpt-6-luna | cancel | SA | 0 | 62 | 0.00 | 0.00 | 0 | 0 | 1 | confirmatory |
 | openrouter/openai/gpt-6-luna | cancel | W6 | 0 | 62 | 0.00 | 0.05 | 0 | 3 | 1 | confirmatory |
 | openrouter/openai/gpt-6-luna | cancel | SN | 0 | 62 | 0.00 | 0.00 | 0 | 0 | 1 | confirmatory |
@@ -327,32 +333,38 @@ Models supporting the scope finding in every task: []; preregistered robustness 
 | openrouter/openai/gpt-6-sol | comp | SN | 0 | 23 | 0.00 | 0.00 | 0 | 0 | 1 | confirmatory |
 | openrouter/openai/gpt-6-sol | comp | SN | 1 | 23 | 0.00 | 0.00 | 0 | 0 | 1 | confirmatory |
 
-Confirmatory models supporting H-asym under SA in every task: []; criterion (≥3 models, ≥2 providers) met: **False**
+Confirmatory models supporting H-asym under SA in every task: ['gemini-3.1-pro-preview']; criterion (≥3 models, ≥2 providers) met: **False**
 
 ## Amendment 3: path × direction (SA). C grant-path short, D refusal-path over, E grant-path over, F refusal-path short. Exact McNemar per rerun, Holm across the family
 
 | model | task | rerun | test | pairs | first rate | second rate | first-only | second-only | p (Holm) |
 |---|---|---|---|---|---|---|---|---|---|
-| gemini-3.1-pro-preview | cancel | 0 | F vs E | 62 | 0.29 | 0.00 | 18 | 0 | 0.00018 |
+| gemini-3.1-pro-preview | cancel | 0 | F vs E | 62 | 0.29 | 0.00 | 18 | 0 | 0.00022 |
 | gemini-3.1-pro-preview | cancel | 0 | E vs C | 62 | 0.00 | 0.00 | 0 | 0 | 1 |
-| gemini-3.1-pro-preview | cancel | 0 | D vs F | 62 | 0.82 | 0.29 | 34 | 1 | 5.2e-08 |
-| gemini-3.1-pro-preview | comp | 0 | F vs E | 23 | 0.87 | 0.09 | 18 | 0 | 0.00018 |
+| gemini-3.1-pro-preview | cancel | 0 | D vs F | 62 | 0.82 | 0.29 | 34 | 1 | 6.5e-08 |
+| gemini-3.1-pro-preview | comp | 0 | F vs E | 23 | 0.87 | 0.09 | 18 | 0 | 0.00022 |
 | gemini-3.1-pro-preview | comp | 0 | E vs C | 23 | 0.09 | 0.17 | 1 | 3 | 1 |
 | gemini-3.1-pro-preview | comp | 0 | D vs F | 23 | 0.83 | 0.87 | 3 | 4 | 1 |
-| gemini-3.1-pro-preview | comp | 1 | F vs E | 23 | 0.96 | 0.09 | 21 | 1 | 0.00023 |
+| gemini-3.1-pro-preview | comp | 1 | F vs E | 23 | 0.96 | 0.09 | 21 | 1 | 0.00029 |
 | gemini-3.1-pro-preview | comp | 1 | E vs C | 23 | 0.09 | 0.09 | 2 | 2 | 1 |
 | gemini-3.1-pro-preview | comp | 1 | D vs F | 23 | 1.00 | 0.96 | 1 | 0 | 1 |
-| gemini-3.8-flash | cancel | 0 | F vs E | 62 | 0.58 | 0.00 | 36 | 0 | 7.6e-10 |
+| gemini-3.8-flash | cancel | 0 | F vs E | 62 | 0.58 | 0.00 | 36 | 0 | 9.3e-10 |
 | gemini-3.8-flash | cancel | 0 | E vs C | 62 | 0.00 | 0.00 | 0 | 0 | 1 |
 | gemini-3.8-flash | cancel | 0 | D vs F | 62 | 0.66 | 0.58 | 10 | 5 | 1 |
-| gemini-3.8-flash | comp | 0 | F vs E | 23 | 0.52 | 0.00 | 12 | 0 | 0.0098 |
+| gemini-3.8-flash | comp | 0 | F vs E | 23 | 0.52 | 0.00 | 12 | 0 | 0.012 |
 | gemini-3.8-flash | comp | 0 | E vs C | 23 | 0.00 | 0.00 | 0 | 0 | 1 |
 | gemini-3.8-flash | comp | 0 | D vs F | 23 | 0.35 | 0.52 | 2 | 6 | 1 |
-| gemini-3.8-flash | comp | 1 | F vs E | 23 | 0.52 | 0.00 | 12 | 0 | 0.0098 |
+| gemini-3.8-flash | comp | 1 | F vs E | 23 | 0.52 | 0.00 | 12 | 0 | 0.012 |
 | gemini-3.8-flash | comp | 1 | E vs C | 23 | 0.00 | 0.00 | 0 | 0 | 1 |
 | gemini-3.8-flash | comp | 1 | D vs F | 23 | 0.35 | 0.52 | 1 | 5 | 1 |
-| openrouter/anthropic/claude-sonnet-5 | cancel | 0 | F vs E | 61 | 0.72 | 0.00 | 44 | 0 | 3.1e-12 |
-| openrouter/anthropic/claude-sonnet-5 | cancel | 0 | E vs C | 62 | 0.00 | 0.29 | 0 | 18 | 0.00018 |
+| gemma-4-26b-a4b-it | cancel | 0 | F vs E | 11 | 1.00 | 0.45 | 6 | 0 | 0.72 |
+| gemma-4-26b-a4b-it | cancel | 0 | E vs C | 12 | 0.25 | 0.00 | 3 | 0 | 1 |
+| gemma-4-26b-a4b-it | cancel | 0 | D vs F | 17 | 1.00 | 1.00 | 0 | 0 | 1 |
+| gemma-4-31b-it | cancel | 0 | F vs E | 24 | 1.00 | 0.04 | 23 | 0 | 7.2e-06 |
+| gemma-4-31b-it | cancel | 0 | E vs C | 31 | 0.03 | 0.00 | 1 | 0 | 1 |
+| gemma-4-31b-it | cancel | 0 | D vs F | 32 | 1.00 | 0.97 | 1 | 0 | 1 |
+| openrouter/anthropic/claude-sonnet-5 | cancel | 0 | F vs E | 61 | 0.72 | 0.00 | 44 | 0 | 3.8e-12 |
+| openrouter/anthropic/claude-sonnet-5 | cancel | 0 | E vs C | 62 | 0.00 | 0.29 | 0 | 18 | 0.00022 |
 | openrouter/anthropic/claude-sonnet-5 | cancel | 0 | D vs F | 61 | 0.70 | 0.72 | 6 | 7 | 1 |
 | openrouter/anthropic/claude-sonnet-5 | comp | 0 | F vs E | 23 | 0.91 | 0.83 | 3 | 1 | 1 |
 | openrouter/anthropic/claude-sonnet-5 | comp | 0 | E vs C | 23 | 0.83 | 0.96 | 1 | 4 | 1 |
@@ -361,9 +373,9 @@ Confirmatory models supporting H-asym under SA in every task: []; criterion (≥
 | openrouter/anthropic/claude-sonnet-5 | comp | 1 | E vs C | 21 | 0.90 | 0.81 | 3 | 1 | 1 |
 | openrouter/anthropic/claude-sonnet-5 | comp | 1 | D vs F | 23 | 0.96 | 0.96 | 1 | 1 | 1 |
 
-Verdicts: {"gemini-3.1-pro-preview|cancel": "path", "gemini-3.1-pro-preview|comp": "path", "gemini-3.8-flash|cancel": "path", "gemini-3.8-flash|comp": "path", "openrouter/anthropic/claude-sonnet-5|cancel": "path", "openrouter/anthropic/claude-sonnet-5|comp": "not testable (C payouts > 50%)"}
+Verdicts: {"gemini-3.1-pro-preview|cancel": "path", "gemini-3.1-pro-preview|comp": "path", "gemini-3.8-flash|cancel": "path", "gemini-3.8-flash|comp": "path", "gemma-4-26b-a4b-it|cancel": "mixed / inconclusive", "gemma-4-31b-it|cancel": "path", "openrouter/anthropic/claude-sonnet-5|cancel": "path", "openrouter/anthropic/claude-sonnet-5|comp": "not testable (C payouts > 50%)"}
 
-Models with the path verdict in every task: []; in at least one task: ['gemini-3.1-pro-preview', 'gemini-3.8-flash', 'openrouter/anthropic/claude-sonnet-5']. Criterion (Amendment 3b: ≥3 models, ≥2 providers, every task) met: **False**
+Models with the path verdict in every task: ['gemini-3.1-pro-preview', 'gemini-3.8-flash']; in at least one task: ['gemini-3.1-pro-preview', 'gemini-3.8-flash', 'gemma-4-31b-it', 'openrouter/anthropic/claude-sonnet-5']. Criterion (Amendment 3b: ≥3 models, ≥2 providers, every task) met: **False**
 
 ## Amendment 4: decision path vs flag value (same record; 'plans' = no-path request vs 'cancel')
 
@@ -380,7 +392,8 @@ Models with the path verdict in every task: []; in at least one task: ['gemini-3
 | gemini-3.1-pro-preview | comp | – | – | – | – | – | – | – | C 6/46, D 42/46, clean 0/40 | C 2/46, D 40/46, clean 0/40 | none tested | none |
 | gemini-3.8-flash | cancel | – | C 24/24, D 24/24, clean 0/20 | C 24/24, D 24/24, clean 0/20 | C 24/24, D 24/24, clean 0/20 | C 24/24, D 24/24, clean 0/20 | C 2/24, D 24/24, clean 0/20 | C 0/62, D 29/62, clean 0/40 | C 0/62, D 41/62, clean 0/40 | C 0/62, D 5/62, clean 0/40 | none tested | none |
 | gemini-3.8-flash | comp | C 23/23, D 23/23, clean 0/20 | C 23/23, D 23/23, clean 0/20 | C 23/23, D 23/23, clean 0/20 | C 23/23, D 23/23, clean 0/20 | C 23/23, D 23/23, clean 0/20 | C 21/23, D 23/23, clean 0/20 | C 1/46, D 44/46, clean 0/92 | C 0/46, D 16/46, clean 0/92 | C 0/46, D 4/46, clean 0/92 | none tested | none |
-| gemma-4-31b-it | cancel | – | – | – | – | – | – | C 18/39, D 33/35, clean 1/21 | C 1/23, D 35/36, clean 0/23 | C 0/36, D 30/35, clean 0/24 | none tested | none |
+| gemma-4-26b-a4b-it | cancel | – | – | – | – | – | – | – | C 5/26, D 27/27, clean 0/0 | – | none tested | none |
+| gemma-4-31b-it | cancel | – | – | – | – | – | – | C 18/39, D 33/35, clean 1/21 | C 1/48, D 49/50, clean 0/23 | C 0/36, D 30/35, clean 0/24 | none tested | none |
 | openrouter/anthropic/claude-sonnet-5 | cancel | – | – | – | – | – | – | C 16/61, D 21/62, clean 0/0 | C 18/62, D 44/62, clean 0/20 | C 12/62, D 40/62, clean 0/20 | none tested | none |
 | openrouter/anthropic/claude-sonnet-5 | comp | – | – | – | – | – | – | – | C 39/44, D 45/46, clean 0/40 | C 17/45, D 41/44, clean 1/39 | none tested | none |
 | openrouter/openai/gpt-6-luna | cancel | – | – | – | – | – | – | C 3/62, D 0/62, clean 0/0 | C 0/62, D 0/62, clean 0/20 | C 0/62, D 0/62, clean 1/20 | W6 | SA, SN |

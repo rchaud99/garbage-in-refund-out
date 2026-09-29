@@ -31,6 +31,8 @@ PROVIDER = {"gemini": "Google", "gemma": "Google", "claude": "Anthropic", "anthr
             "openai": "OpenAI", "gpt": "OpenAI"}
 ASYM_EXPLORATORY = {"gemini-3.8-flash"}
 """H-asym (Amendment 2) was written after seeing Flash's results: Flash is exploratory for it."""
+CRITERION_TASKS = ("cancel", "comp")
+"""The two preregistered tasks every robustness criterion is judged on; "plans" (Amendment 4) has its own test."""
 ORDER = ("W0", "W1", "W2", "W3", "W4", "W5", "W6")
 
 
@@ -156,7 +158,7 @@ def rate(c):
 def analyse(rows):
     table = cells(rows)
     models = sorted({r["model"] for r in rows})
-    tasks = sorted({r["task"] for r in rows})
+    tasks = sorted({r["task"] for r in rows} & set(CRITERION_TASKS))
     repeats = sorted({r["repeat"] for r in rows})
     have = {(m, t, w) for (m, t, w, _c) in table}
 
