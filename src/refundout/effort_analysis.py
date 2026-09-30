@@ -85,7 +85,7 @@ def analyse(run):
             == expected[r["id"]]
         )
     assert (
-        hashlib.sha256((ROOT / "EFFORT_PREREGISTRATION.md").read_bytes()).hexdigest()
+        hashlib.sha256((ROOT / "preregistration" / "EFFORT_PREREGISTRATION.md").read_bytes()).hexdigest()
         == meta["config"]["preregistration_sha256"]
     )
     results = {

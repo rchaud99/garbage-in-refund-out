@@ -1,0 +1,96 @@
+{
+  "id": "2026-09-28_185419_pilot-pilot4-claude-sonnet-5",
+  "name": "pilot-pilot4-claude-sonnet-5",
+  "status": "stopped",
+  "started": "2026-09-28T18:54:19.820-04:00",
+  "finished": "2026-09-28T18:54:20.352-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "pilot4",
+    "pilot": true,
+    "design": {
+      "stage": "pilot4",
+      "model": "claude-sonnet-5",
+      "tasks": [
+        "comp"
+      ],
+      "wordings": [
+        "SA"
+      ],
+      "corrupt": 1,
+      "clean": 0,
+      "repeats": 1,
+      "seed": 20260928,
+      "max_dollars": 0.3,
+      "estimate_per_call": null,
+      "workers": 2,
+      "pilot": true
+    },
+    "wording_lines": {
+      "SA": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before deciding on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ]
+    },
+    "manifest_sha256": "319915fbe34a5b53d286b76e10a0c02ef4c5188e15387fdd18536f0a1302f193",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "model": {
+      "name": "claude-sonnet-5",
+      "provider": "anthropic",
+      "effort": "high",
+      "thinking": {
+        "type": "adaptive",
+        "display": "summarized"
+      },
+      "max_tokens": 8192,
+      "sdk_retries": 0
+    },
+    "limit_usd": 0.3,
+    "prior_campaign_usd": 0.7294847500000001,
+    "reserve_per_call_usd": 0.115818,
+    "planned_calls": 2
+  },
+  "environment": {
+    "git": {
+      "commit": "ed123744f6712f7c4eaf548f77d039bf21327642",
+      "dirty": true
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--pilot",
+      "--stage",
+      "pilot4",
+      "--model",
+      "claude-sonnet-5",
+      "--tasks",
+      "comp",
+      "--wordings",
+      "SA",
+      "--corrupt",
+      "1",
+      "--clean",
+      "0",
+      "--max-dollars",
+      "0.3",
+      "--workers",
+      "2"
+    ]
+  },
+  "summary": {
+    "cost_usd": 0.231636,
+    "records": 2,
+    "planned": 2,
+    "stopped": "API error: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfWfFsPBV7WVPLXnFK1BK'}",
+    "campaign_total_usd": 0.9611207500000001
+  }
+}

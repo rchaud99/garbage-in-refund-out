@@ -1,0 +1,104 @@
+{
+  "id": "2026-09-28_190744_ladder-gptluna-scope-comp-openrouter-openai-gpt-6-luna",
+  "name": "ladder-gptluna-scope-comp-openrouter_openai_gpt-6-luna",
+  "status": "stopped",
+  "started": "2026-09-28T19:07:44.971-04:00",
+  "finished": "2026-09-28T19:08:16.037-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "gptluna-scope-comp",
+    "pilot": false,
+    "design": {
+      "stage": "gptluna-scope-comp",
+      "model": "openrouter/openai/gpt-6-luna",
+      "tasks": [
+        "comp"
+      ],
+      "wordings": [
+        "SA",
+        "SN"
+      ],
+      "corrupt": 0,
+      "clean": 10,
+      "repeats": 2,
+      "seed": 20260928,
+      "max_dollars": 0.6,
+      "estimate_per_call": 0.001,
+      "workers": 8,
+      "pace": 0.0,
+      "pilot": false
+    },
+    "wording_lines": {
+      "SA": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before deciding on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ],
+      "SN": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before telling the customer yes or no on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ]
+    },
+    "manifest_sha256": "b2087b9c8608a04573ba8ae121b677a6de54c6590f0f72d3db19bce7659aa9a3",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "preregistration_sha256": "dcd2c2ea2488be018f34344db294ec9d128663649edaa52e8cdead9525c79a68",
+    "model": {
+      "name": "openrouter/openai/gpt-6-luna",
+      "provider": "openrouter",
+      "model": "openai/gpt-6-luna",
+      "reasoning_effort": "medium",
+      "max_tokens": 8192,
+      "temperature": "provider default",
+      "sdk_retries": 0,
+      "json_schema_enforced": true
+    },
+    "limit_usd": 0.6,
+    "prior_campaign_usd": 4.660916310000008,
+    "reserve_per_call_usd": 0.0058151999999999995,
+    "planned_calls": 264
+  },
+  "environment": {
+    "git": {
+      "commit": "bf3eecd8b2848ad8146d4a3f5e60f607fee8bc63",
+      "dirty": false
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--stage",
+      "gptluna-scope-comp",
+      "--model",
+      "openrouter/openai/gpt-6-luna",
+      "--tasks",
+      "comp",
+      "--wordings",
+      "SA",
+      "SN",
+      "--clean",
+      "10",
+      "--repeats",
+      "2",
+      "--estimate-per-call",
+      "0.001",
+      "--max-dollars",
+      "0.6",
+      "--workers",
+      "8"
+    ]
+  },
+  "summary": {
+    "cost_usd": 0.00212047,
+    "records": 12,
+    "planned": 264,
+    "stopped": "API error: TransientError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: new-account-rpm/openai/gpt-6-luna-20260922. Rate limit reached: new accounts are limited to 20 requests per minute for this model. Please retry shortly.\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"20\",\"X-RateLimit-Remain",
+    "campaign_total_usd": 4.6630367800000085
+  }
+}

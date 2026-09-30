@@ -1,0 +1,109 @@
+{
+  "id": "2026-09-28_190608_ladder-flash-scope-comp-gemini-3.8-flash",
+  "name": "ladder-flash-scope-comp-gemini-3.8-flash",
+  "status": "complete",
+  "started": "2026-09-28T19:06:08.426-04:00",
+  "finished": "2026-09-28T19:12:47.692-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "flash-scope-comp",
+    "pilot": false,
+    "design": {
+      "stage": "flash-scope-comp",
+      "model": "gemini-3.8-flash",
+      "tasks": [
+        "comp"
+      ],
+      "wordings": [
+        "SA",
+        "SN",
+        "W6"
+      ],
+      "corrupt": 0,
+      "clean": 23,
+      "repeats": 2,
+      "seed": 20260928,
+      "max_dollars": 5.0,
+      "estimate_per_call": 0.006,
+      "workers": 10,
+      "pace": 0.0,
+      "pilot": false
+    },
+    "wording_lines": {
+      "SA": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before deciding on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ],
+      "SN": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before telling the customer yes or no on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ],
+      "W6": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Every time you look up a reservation, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ]
+    },
+    "manifest_sha256": "aacf33c95c1925068e324d14756f9558495729adf9492cfedc491e39394426ed",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "preregistration_sha256": "d0918cc2240176c34cbb599ea0bd99fabb4a3dd3ae61073b380e5e6658443181",
+    "model": {
+      "name": "gemini-3.8-flash",
+      "provider": "google",
+      "thinking_level": "medium",
+      "max_output_tokens": 8192,
+      "temperature": "provider default",
+      "sdk_retries": 0,
+      "json_schema_enforced": true
+    },
+    "limit_usd": 5.0,
+    "prior_campaign_usd": 3.781038249999998,
+    "reserve_per_call_usd": 0.043614,
+    "planned_calls": 552
+  },
+  "environment": {
+    "git": {
+      "commit": "61cb86433491785f3f27bdb7a70f224822095dd4",
+      "dirty": false
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--stage",
+      "flash-scope-comp",
+      "--model",
+      "gemini-3.8-flash",
+      "--tasks",
+      "comp",
+      "--wordings",
+      "SA",
+      "SN",
+      "W6",
+      "--clean",
+      "23",
+      "--repeats",
+      "2",
+      "--estimate-per-call",
+      "0.006",
+      "--max-dollars",
+      "5",
+      "--workers",
+      "10"
+    ]
+  },
+  "summary": {
+    "cost_usd": 3.6761947499999987,
+    "records": 552,
+    "planned": 552,
+    "stopped": null,
+    "campaign_total_usd": 7.457232999999997
+  }
+}

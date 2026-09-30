@@ -1,0 +1,104 @@
+{
+  "id": "2026-09-28_191800_ladder-pro-scope-cancel-gemini-3.1-pro-preview",
+  "name": "ladder-pro-scope-cancel-gemini-3.1-pro-preview",
+  "status": "complete",
+  "started": "2026-09-28T19:18:00.712-04:00",
+  "finished": "2026-09-28T19:22:12.571-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "pro-scope-cancel",
+    "pilot": false,
+    "design": {
+      "stage": "pro-scope-cancel",
+      "model": "gemini-3.1-pro-preview",
+      "tasks": [
+        "cancel"
+      ],
+      "wordings": [
+        "SA",
+        "SN"
+      ],
+      "corrupt": 0,
+      "clean": 10,
+      "repeats": 1,
+      "seed": 20260928,
+      "max_dollars": 5.4,
+      "estimate_per_call": 0.0125,
+      "workers": 8,
+      "pace": 0.0,
+      "pilot": false,
+      "resume": []
+    },
+    "wording_lines": {
+      "SA": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before deciding on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ],
+      "SN": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before telling the customer yes or no on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ]
+    },
+    "manifest_sha256": "05c3b46dfd2a53403bf0cb62634dcb600c4594fe709250ca44a17308803797d8",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "preregistration_sha256": "4825a80738a912a93f22bafcc56adba7fb05fa637b21df76fcd83cf0141b6041",
+    "model": {
+      "name": "gemini-3.1-pro-preview",
+      "provider": "google",
+      "thinking_level": "medium",
+      "max_output_tokens": 8192,
+      "temperature": "provider default",
+      "sdk_retries": 0,
+      "json_schema_enforced": true
+    },
+    "limit_usd": 5.4,
+    "prior_campaign_usd": 9.616032414999987,
+    "reserve_per_call_usd": 0.132428,
+    "planned_calls": 288
+  },
+  "environment": {
+    "git": {
+      "commit": "0b88b137cb2cacce76c23381b6273a99d2b8351d",
+      "dirty": false
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--stage",
+      "pro-scope-cancel",
+      "--model",
+      "gemini-3.1-pro-preview",
+      "--tasks",
+      "cancel",
+      "--wordings",
+      "SA",
+      "SN",
+      "--clean",
+      "10",
+      "--repeats",
+      "1",
+      "--estimate-per-call",
+      "0.0125",
+      "--max-dollars",
+      "5.4",
+      "--workers",
+      "8"
+    ]
+  },
+  "summary": {
+    "cost_usd": 3.519651999999999,
+    "records": 288,
+    "planned": 288,
+    "stopped": null,
+    "campaign_total_usd": 13.135684414999986
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "id": "2026-09-28_191910_ladder-flash-ladder-comp-gemini-3.8-flash",
+  "name": "ladder-flash-ladder-comp-gemini-3.8-flash",
+  "status": "complete",
+  "started": "2026-09-28T19:19:10.053-04:00",
+  "finished": "2026-09-28T19:22:40.941-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "flash-ladder-comp",
+    "pilot": false,
+    "design": {
+      "stage": "flash-ladder-comp",
+      "model": "gemini-3.8-flash",
+      "tasks": [
+        "comp"
+      ],
+      "wordings": [
+        "W0",
+        "W1",
+        "W2",
+        "W3",
+        "W4",
+        "W5"
+      ],
+      "corrupt": 0,
+      "clean": 10,
+      "repeats": 1,
+      "seed": 20260928,
+      "max_dollars": 3.6,
+      "estimate_per_call": 0.006,
+      "workers": 8,
+      "pace": 0.0,
+      "pilot": false,
+      "resume": []
+    },
+    "wording_lines": {
+      "W0": [],
+      "W1": [
+        "If a record looks wrong, transfer to a human agent."
+      ],
+      "W2": [
+        "If anything seems off, transfer to a human agent."
+      ],
+      "W3": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent."
+      ],
+      "W4": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Double-check the reservation before acting."
+      ],
+      "W5": [
+        "Check that the payments match the booking before acting; if they don't, transfer to a human."
+      ]
+    },
+    "manifest_sha256": "8fd9aabe1229c7c7f9058b505abcda806c35cdf23ee38017469b52398043e0b8",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "preregistration_sha256": "4825a80738a912a93f22bafcc56adba7fb05fa637b21df76fcd83cf0141b6041",
+    "model": {
+      "name": "gemini-3.8-flash",
+      "provider": "google",
+      "thinking_level": "medium",
+      "max_output_tokens": 8192,
+      "temperature": "provider default",
+      "sdk_retries": 0,
+      "json_schema_enforced": true
+    },
+    "limit_usd": 3.6,
+    "prior_campaign_usd": 11.348062019999983,
+    "reserve_per_call_usd": 0.04352325,
+    "planned_calls": 396
+  },
+  "environment": {
+    "git": {
+      "commit": "13f66b212ca6ee4b9e097ed9aa3e3e274f9cae2c",
+      "dirty": false
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--stage",
+      "flash-ladder-comp",
+      "--model",
+      "gemini-3.8-flash",
+      "--tasks",
+      "comp",
+      "--wordings",
+      "W0",
+      "W1",
+      "W2",
+      "W3",
+      "W4",
+      "W5",
+      "--clean",
+      "10",
+      "--estimate-per-call",
+      "0.006",
+      "--max-dollars",
+      "3.6",
+      "--workers",
+      "8"
+    ]
+  },
+  "summary": {
+    "cost_usd": 1.6161502500000005,
+    "records": 396,
+    "planned": 396,
+    "stopped": null,
+    "campaign_total_usd": 12.964212269999983
+  }
+}

@@ -5,7 +5,7 @@
     uv run python -m refundout.ladder_run --stage flash-ladder --model gemini-3.8-flash ... --estimate
     uv run python -m refundout.ladder_run --stage flash-ladder --model gemini-3.8-flash ... --max-dollars 8
 
-A non-pilot stage refuses to run unless `LADDER_PREREGISTRATION.md` exists and the exact queue's manifest hash was
+A non-pilot stage refuses to run unless `preregistration/LADDER_PREREGISTRATION.md` exists and the exact queue's manifest hash was
 written by `--estimate` into reports/ladder-plans/<stage>.json first. Every call is recorded, failures included; a
 failed call is missing data, never a refusal. Spend across the whole campaign is capped (CAMPAIGN_CAP).
 """
@@ -30,7 +30,7 @@ from refundout.tau2 import Airline
 CAMPAIGN = "ladder-2026-09-28"
 CAMPAIGN_CAP = 40.0
 """Hard cap in dollars across every run in this campaign (all models), including pilots and failed-call reserves."""
-PREREG = ROOT / "LADDER_PREREGISTRATION.md"
+PREREG = ROOT / "preregistration" / "LADDER_PREREGISTRATION.md"
 PLANS = ROOT / "reports" / "ladder-plans"
 LOCAL_ENV = ROOT / ".env"
 """Optional project-local keys (e.g. OPENROUTER_API_KEY); loaded after lookworth's .env, never overriding it."""
@@ -115,7 +115,7 @@ def main(argv=None):
         if not plan.exists() or json.loads(plan.read_text())["manifest_sha256"] != digest:
             raise SystemExit("estimate this exact stage first (manifest hash mismatch)")
         if not PREREG.exists():
-            raise SystemExit("write LADDER_PREREGISTRATION.md before a non-pilot stage")
+            raise SystemExit("write preregistration/LADDER_PREREGISTRATION.md before a non-pilot stage")
         config["preregistration_sha256"] = hashlib.sha256(PREREG.read_bytes()).hexdigest()
     done_ids = set()
     for d in a.resume:

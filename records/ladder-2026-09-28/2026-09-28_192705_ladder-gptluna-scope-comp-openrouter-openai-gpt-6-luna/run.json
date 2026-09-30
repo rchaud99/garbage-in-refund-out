@@ -1,0 +1,114 @@
+{
+  "id": "2026-09-28_192705_ladder-gptluna-scope-comp-openrouter-openai-gpt-6-luna",
+  "name": "ladder-gptluna-scope-comp-openrouter_openai_gpt-6-luna",
+  "status": "complete",
+  "started": "2026-09-28T19:27:05.642-04:00",
+  "finished": "2026-09-28T19:41:23.358-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "gptluna-scope-comp",
+    "pilot": false,
+    "design": {
+      "stage": "gptluna-scope-comp",
+      "model": "openrouter/openai/gpt-6-luna",
+      "tasks": [
+        "comp"
+      ],
+      "wordings": [
+        "SA",
+        "SN"
+      ],
+      "corrupt": 0,
+      "clean": 10,
+      "repeats": 2,
+      "seed": 20260928,
+      "max_dollars": 0.6,
+      "estimate_per_call": 0.001,
+      "workers": 10,
+      "pace": 3.3,
+      "pilot": false,
+      "resume": [
+        "runs/2026-09-28_190744_ladder-gptluna-scope-comp-openrouter-openai-gpt-6-luna"
+      ]
+    },
+    "wording_lines": {
+      "SA": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before deciding on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ],
+      "SN": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before telling the customer yes or no on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ]
+    },
+    "manifest_sha256": "b2087b9c8608a04573ba8ae121b677a6de54c6590f0f72d3db19bce7659aa9a3",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "preregistration_sha256": "4825a80738a912a93f22bafcc56adba7fb05fa637b21df76fcd83cf0141b6041",
+    "resumes": [
+      "runs/2026-09-28_190744_ladder-gptluna-scope-comp-openrouter-openai-gpt-6-luna"
+    ],
+    "model": {
+      "name": "openrouter/openai/gpt-6-luna",
+      "provider": "openrouter",
+      "model": "openai/gpt-6-luna",
+      "reasoning_effort": "medium",
+      "max_tokens": 8192,
+      "temperature": "provider default",
+      "sdk_retries": 0,
+      "json_schema_enforced": true
+    },
+    "limit_usd": 0.6,
+    "prior_campaign_usd": 20.716700014999955,
+    "reserve_per_call_usd": 0.0058151999999999995,
+    "planned_calls": 259
+  },
+  "environment": {
+    "git": {
+      "commit": "040ca766abf7f257afd2c739c9c8038b85fb0ebf",
+      "dirty": true
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--stage",
+      "gptluna-scope-comp",
+      "--model",
+      "openrouter/openai/gpt-6-luna",
+      "--tasks",
+      "comp",
+      "--wordings",
+      "SA",
+      "SN",
+      "--clean",
+      "10",
+      "--repeats",
+      "2",
+      "--estimate-per-call",
+      "0.001",
+      "--workers",
+      "10",
+      "--pace",
+      "3.3",
+      "--max-dollars",
+      "0.6",
+      "--resume",
+      "runs/2026-09-28_190744_ladder-gptluna-scope-comp-openrouter-openai-gpt-6-luna"
+    ]
+  },
+  "summary": {
+    "cost_usd": 0.06260044,
+    "records": 259,
+    "planned": 259,
+    "stopped": null,
+    "campaign_total_usd": 20.779300454999955
+  }
+}

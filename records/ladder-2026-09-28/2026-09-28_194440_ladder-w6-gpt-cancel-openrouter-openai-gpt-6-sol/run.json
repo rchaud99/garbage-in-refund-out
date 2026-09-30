@@ -1,0 +1,102 @@
+{
+  "id": "2026-09-28_194440_ladder-w6-gpt-cancel-openrouter-openai-gpt-6-sol",
+  "name": "ladder-w6-gpt-cancel-openrouter_openai_gpt-6-sol",
+  "status": "complete",
+  "started": "2026-09-28T19:44:40.019-04:00",
+  "finished": "2026-09-28T19:51:34.708-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "w6-gpt-cancel",
+    "pilot": false,
+    "design": {
+      "stage": "w6-gpt-cancel",
+      "model": "openrouter/openai/gpt-6-sol",
+      "tasks": [
+        "cancel"
+      ],
+      "wordings": [
+        "W6"
+      ],
+      "corrupt": 0,
+      "clean": 0,
+      "repeats": 1,
+      "corrupt_cells": "CD",
+      "seed": 20260928,
+      "max_dollars": 1.0,
+      "estimate_per_call": 0.005,
+      "workers": 10,
+      "pace": 3.3,
+      "pilot": false,
+      "resume": []
+    },
+    "wording_lines": {
+      "W6": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Every time you look up a reservation, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ]
+    },
+    "manifest_sha256": "0dede22e1f665199682c1ddb61fc8a0344c7895e067adeb48cf15c59c2b2cf94",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "preregistration_sha256": "2f7282b698c4b2cf75d17a488abf2d7c77a9ef26d7ed23fd8a4634b8baf36e2d",
+    "model": {
+      "name": "openrouter/openai/gpt-6-sol",
+      "provider": "openrouter",
+      "model": "openai/gpt-6-sol",
+      "reasoning_effort": "medium",
+      "max_tokens": 8192,
+      "temperature": "provider default",
+      "sdk_retries": 0,
+      "json_schema_enforced": true
+    },
+    "limit_usd": 1.0,
+    "prior_campaign_usd": 30.018239789999885,
+    "reserve_per_call_usd": 0.115986,
+    "planned_calls": 124
+  },
+  "environment": {
+    "git": {
+      "commit": "31d18bbec821dd24881e62fe9d8b9d17234edb11",
+      "dirty": true
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--stage",
+      "w6-gpt-cancel",
+      "--model",
+      "openrouter/openai/gpt-6-sol",
+      "--tasks",
+      "cancel",
+      "--wordings",
+      "W6",
+      "--clean",
+      "0",
+      "--repeats",
+      "1",
+      "--estimate-per-call",
+      "0.005",
+      "--workers",
+      "10",
+      "--pace",
+      "3.3",
+      "--max-dollars",
+      "1.0"
+    ]
+  },
+  "summary": {
+    "cost_usd": 0.5634233000000002,
+    "records": 124,
+    "planned": 124,
+    "stopped": null,
+    "campaign_total_usd": 30.581663089999886
+  }
+}

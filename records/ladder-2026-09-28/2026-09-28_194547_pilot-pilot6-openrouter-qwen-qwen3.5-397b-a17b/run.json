@@ -1,0 +1,102 @@
+{
+  "id": "2026-09-28_194547_pilot-pilot6-openrouter-qwen-qwen3.5-397b-a17b",
+  "name": "pilot-pilot6-openrouter_qwen_qwen3.5-397b-a17b",
+  "status": "complete",
+  "started": "2026-09-28T19:45:47.773-04:00",
+  "finished": "2026-09-28T19:50:10.071-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "pilot6",
+    "pilot": true,
+    "design": {
+      "stage": "pilot6",
+      "model": "openrouter/qwen/qwen3.5-397b-a17b",
+      "tasks": [
+        "cancel",
+        "comp"
+      ],
+      "wordings": [
+        "SA"
+      ],
+      "corrupt": 6,
+      "clean": 0,
+      "repeats": 1,
+      "corrupt_cells": "CD",
+      "seed": 20260928,
+      "max_dollars": 0.3,
+      "estimate_per_call": null,
+      "workers": 6,
+      "pace": 3.3,
+      "pilot": true,
+      "resume": []
+    },
+    "wording_lines": {
+      "SA": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before deciding on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ]
+    },
+    "manifest_sha256": "cedd005aa00bae5681cd189cdd991b3e9ddc5b3f10587225bba963494a68453d",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "model": {
+      "name": "openrouter/qwen/qwen3.5-397b-a17b",
+      "provider": "openrouter",
+      "model": "qwen/qwen3.5-397b-a17b",
+      "reasoning_effort": "medium",
+      "max_tokens": 8192,
+      "temperature": "provider default",
+      "sdk_retries": 0,
+      "json_schema_enforced": true
+    },
+    "limit_usd": 0.3,
+    "prior_campaign_usd": 30.353290319999886,
+    "reserve_per_call_usd": 0.0381155,
+    "planned_calls": 24
+  },
+  "environment": {
+    "git": {
+      "commit": "ac9a729b1d77a7d0b9bdd0c89224b2c3922d9fb8",
+      "dirty": true
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--pilot",
+      "--stage",
+      "pilot6",
+      "--model",
+      "openrouter/qwen/qwen3.5-397b-a17b",
+      "--tasks",
+      "cancel",
+      "comp",
+      "--wordings",
+      "SA",
+      "--corrupt",
+      "6",
+      "--clean",
+      "0",
+      "--max-dollars",
+      "0.3",
+      "--workers",
+      "6",
+      "--pace",
+      "3.3"
+    ]
+  },
+  "summary": {
+    "cost_usd": 0.19229322000000004,
+    "records": 24,
+    "planned": 24,
+    "stopped": null,
+    "campaign_total_usd": 30.545583539999885
+  }
+}

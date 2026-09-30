@@ -1,0 +1,100 @@
+{
+  "id": "2026-09-28_201318_pilot-pilot8-gemma-4-26b-a4b-it",
+  "name": "pilot-pilot8-gemma-4-26b-a4b-it",
+  "status": "complete",
+  "started": "2026-09-28T20:13:18.417-04:00",
+  "finished": "2026-09-28T20:19:24.293-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "pilot8",
+    "pilot": true,
+    "design": {
+      "stage": "pilot8",
+      "model": "gemma-4-26b-a4b-it",
+      "tasks": [
+        "cancel"
+      ],
+      "wordings": [
+        "SA"
+      ],
+      "corrupt": 2,
+      "clean": 0,
+      "repeats": 1,
+      "corrupt_cells": "CD",
+      "clean_cells": "AB",
+      "seed": 20260928,
+      "max_dollars": 0.1,
+      "estimate_per_call": null,
+      "workers": 1,
+      "pace": 10.0,
+      "pilot": true,
+      "resume": []
+    },
+    "wording_lines": {
+      "SA": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before deciding on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ]
+    },
+    "manifest_sha256": "b2ad22a7b5de3e1fafceb40121481c6804378aad48eb6e3264b2a66b71909318",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "model": {
+      "name": "gemma-4-26b-a4b-it",
+      "provider": "google",
+      "thinking_level": null,
+      "max_output_tokens": 8192,
+      "temperature": "provider default",
+      "sdk_retries": 0,
+      "json_schema_enforced": false
+    },
+    "limit_usd": 0.1,
+    "prior_campaign_usd": 38.40260856755999,
+    "reserve_per_call_usd": 0.0,
+    "planned_calls": 4
+  },
+  "environment": {
+    "git": {
+      "commit": "750944a986e3141271561dd734bae601ff1b69d4",
+      "dirty": true
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--pilot",
+      "--stage",
+      "pilot8",
+      "--model",
+      "gemma-4-26b-a4b-it",
+      "--tasks",
+      "cancel",
+      "--wordings",
+      "SA",
+      "--corrupt",
+      "2",
+      "--clean",
+      "0",
+      "--max-dollars",
+      "0.1",
+      "--workers",
+      "1",
+      "--pace",
+      "10"
+    ]
+  },
+  "summary": {
+    "cost_usd": 0.0,
+    "records": 4,
+    "planned": 4,
+    "stopped": null,
+    "campaign_total_usd": 38.40260856755999
+  }
+}

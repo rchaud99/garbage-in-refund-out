@@ -1,0 +1,113 @@
+{
+  "id": "2026-09-28_200415_ladder-plans-flash-gemini-3.8-flash",
+  "name": "ladder-plans-flash-gemini-3.8-flash",
+  "status": "complete",
+  "started": "2026-09-28T20:04:15.980-04:00",
+  "finished": "2026-09-28T20:06:52.993-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "plans-flash",
+    "pilot": false,
+    "design": {
+      "stage": "plans-flash",
+      "model": "gemini-3.8-flash",
+      "tasks": [
+        "plans"
+      ],
+      "wordings": [
+        "SA"
+      ],
+      "corrupt": 0,
+      "clean": 20,
+      "repeats": 1,
+      "corrupt_cells": "GH",
+      "clean_cells": "K",
+      "seed": 20260928,
+      "max_dollars": 1.0,
+      "estimate_per_call": 0.0095,
+      "workers": 8,
+      "pace": 0.0,
+      "pilot": false,
+      "resume": [
+        "runs/2026-09-28_200230_ladder-plans-flash-gemini-3.8-flash"
+      ]
+    },
+    "wording_lines": {
+      "SA": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before deciding on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ]
+    },
+    "manifest_sha256": "4a93ee51ff17f31e1a58ad87f838ea480f714dafaa5c2c538cff1522a40499e7",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "preregistration_sha256": "528e5b3ad6a67189981339c29b4765d89055c46b318beb00c7100197df835eee",
+    "resumes": [
+      "runs/2026-09-28_200230_ladder-plans-flash-gemini-3.8-flash"
+    ],
+    "model": {
+      "name": "gemini-3.8-flash",
+      "provider": "google",
+      "thinking_level": "medium",
+      "max_output_tokens": 8192,
+      "temperature": "provider default",
+      "sdk_retries": 0,
+      "json_schema_enforced": true
+    },
+    "limit_usd": 1.0,
+    "prior_campaign_usd": 35.80305281756003,
+    "reserve_per_call_usd": 0.043512,
+    "planned_calls": 86
+  },
+  "environment": {
+    "git": {
+      "commit": "750944a986e3141271561dd734bae601ff1b69d4",
+      "dirty": false
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--stage",
+      "plans-flash",
+      "--model",
+      "gemini-3.8-flash",
+      "--tasks",
+      "plans",
+      "--wordings",
+      "SA",
+      "--corrupt-cells",
+      "GH",
+      "--clean-cells",
+      "K",
+      "--clean",
+      "20",
+      "--repeats",
+      "1",
+      "--estimate-per-call",
+      "0.0065",
+      "--workers",
+      "8",
+      "--max-dollars",
+      "1.0",
+      "--estimate-per-call",
+      "0.0095",
+      "--resume",
+      "runs/2026-09-28_200230_ladder-plans-flash-gemini-3.8-flash"
+    ]
+  },
+  "summary": {
+    "cost_usd": 0.9172597499999999,
+    "records": 86,
+    "planned": 86,
+    "stopped": null,
+    "campaign_total_usd": 36.72031256756003
+  }
+}

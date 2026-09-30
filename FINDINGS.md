@@ -5,12 +5,16 @@
 **Format and scope.**
 - **Format:** everything below is a *single-decision replay*: one JSON answer after a replayed τ²-bench airline
   conversation, with no tool calls and no dialogue. It is not a full τ² episode.
-- **Preregistration:** `LADDER_PREREGISTRATION.md`, frozen before the first confirmatory call, plus Amendments 1–5.
+- **Preregistration:** `preregistration/LADDER_PREREGISTRATION.md`, frozen before the first confirmatory call, plus Amendments 1–5.
   Each amendment was committed before the data it governs.
 - **Analysis:** `src/refundout/ladder_analysis.py`, which writes `reports/ladder-results.{md,json}` and
   `reports/replication-table.md`.
-- **Scale and cost:** 6,159 calls in campaign `ladder-2026-09-28`. API spend was $38.40, plus $0.12 for a
-  τ²-native verification run. Gemma calls were free.
+- **Scale and cost:** 6,159 non-pilot calls in campaign `ladder-2026-09-28`. Resumed stages re-asked 80 items, so
+  there are 6,079 distinct items, 27 of them missing. There were also 177 pilot calls, excluded from all analyses.
+  API spend was $38.40 (runner ledger, pilots included; the per-call logged costs sum to $38.36), plus $0.12 for a
+  τ²-native verification run. Costs are logged tokens × list price, not invoices. Gemma calls were free.
+- **Records:** the raw per-call records are committed in `records/ladder-2026-09-28/`. `scripts/verify_headline.py`
+  recomputes the headline numbers from them independently of the analysis package (checked 2026-09-30).
 - **Missing data:** 9 answers from the paid models remain missing (API failure or unreadable reply). They are
   reported per cell and never scored.
 - **Tasks:** two native τ² airline decisions, both decided by the insurance flag alone. In each, the record's own
@@ -89,8 +93,9 @@ On **compensation** (23 bases × 2 reruns; Gemma partial):
 - GPT: no meaningful change.
 
 **Vague wordings (Flash, the ladder).** Each of these gave 100% errors in both directions on both tasks (24/24 and
-23/23 per cell):
-- stock policy;
+23/23 per cell). The exception is the stock policy, which the ladder ran on comp only; on cancel it was tested in the
+2026-09-24 study.
+- stock policy (comp);
 - "If a record looks wrong, transfer to a human agent.";
 - "If anything seems off…";
 - the bare contradiction clause;
@@ -111,6 +116,12 @@ On **compensation** (23 bases × 2 reruns; Gemma partial):
 Under SA, no model ever refused a C record: it paid or transferred. To rule out "overpayments are just harder to
 see", Amendment 3 crossed decision path × direction.
 
+Reading the pooled columns:
+- **No path (D + F):** the correct action was to escalate. A refusal of D turns away a customer whose payments show
+  the fee was paid. A refusal of F (underpaid) harms no customer, but it is still a missed contradiction.
+- **Yes path (C + E):** "missed" means paid out, for Sonnet on cancel 18/62 C vs 0/62 E. Nothing else counts:
+  under SA, no model refused a C or E record.
+
 | Model · task | yes path missed (C + E) | no path refused (D + F) | F refused vs E paid | Holm p (reruns) | Verdict |
 |---|---|---|---|---|---|
 | Flash · cancel | 0/124 | 77/124 | 36/62 vs 0/62 | 9.3e-10 | path |
@@ -118,7 +129,7 @@ see", Amendment 3 crossed decision path × direction.
 | Pro · cancel | 0/124 | 69/124 | 18/62 vs 0/62 | 2.3e-4 | path |
 | Pro · comp | 10/92 | 84/92 | 42/46 vs 4/46 | 2.3e-4; 3.0e-4 | path |
 | Sonnet · cancel | 18/124 | 88/123 | 44/61 vs 0/62 | 3.9e-12 | path |
-| Sonnet · comp | 77/92 | 88/92 | 43/46 vs 38/46 | 1; 1 | not testable: it rarely checks at all |
+| Sonnet · comp | 77/90 | 88/92 | 43/46 vs 38/46 | 1; 1 | not testable: it rarely checks at all |
 | Gemma 31B · cancel | 2/124 | 120/124 | 59/62 vs 1/62 | 2.4e-16 | path |
 | Gemma 26B · cancel (partial) | 26/106 | 122/122 | 60/60 vs 15/53 (37 vs 0 discordant) | 4.8e-10 | path |
 | GPT-6 Sol / Luna | 0 D errors under SA on cancel | | | | floor, not testable |

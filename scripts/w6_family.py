@@ -3,7 +3,8 @@ task × rerun with W6 data. Exact McNemar, paired by base; Holm across this whol
 the paired difference. W6-vs-SA on D was preregistered (secondary); the rest are exploratory, added on request."""
 import glob, json, os, sys
 from refundout.ladder_analysis import load, mcnemar, boot_diff, holm
-dirs = [d for d in sorted(glob.glob("runs/2026-09-28_*ladder-*")) if os.path.exists(d + "/decisions.jsonl")]
+dirs = [d for d in sorted(glob.glob("records/ladder-2026-09-28/*_ladder-*"))
+        if os.path.exists(d + "/decisions.jsonl") or os.path.exists(d + "/decisions.jsonl.gz")]
 rows = load(dirs)
 have = {(r["model"], r["task"], r["wording"]) for r in rows}
 fam, ci = [], {}

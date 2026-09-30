@@ -1,0 +1,106 @@
+{
+  "id": "2026-09-28_185239_pilot-pilot2-gemma-4-31b-it",
+  "name": "pilot-pilot2-gemma-4-31b-it",
+  "status": "stopped",
+  "started": "2026-09-28T18:52:39.153-04:00",
+  "finished": "2026-09-28T18:53:20.622-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "pilot2",
+    "pilot": true,
+    "design": {
+      "stage": "pilot2",
+      "model": "gemma-4-31b-it",
+      "tasks": [
+        "cancel",
+        "comp"
+      ],
+      "wordings": [
+        "SA",
+        "SN"
+      ],
+      "corrupt": 3,
+      "clean": 0,
+      "repeats": 1,
+      "seed": 20260928,
+      "max_dollars": 1.0,
+      "estimate_per_call": null,
+      "workers": 6,
+      "pilot": true
+    },
+    "wording_lines": {
+      "SA": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before deciding on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ],
+      "SN": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Before telling the customer yes or no on {noun}, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ]
+    },
+    "manifest_sha256": "3c7864a1d61425a6a3e919e080d882d0c68a6dc9387396270d897d7c432228cd",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "model": {
+      "name": "gemma-4-31b-it",
+      "provider": "google",
+      "thinking_level": null,
+      "max_output_tokens": 8192,
+      "temperature": "provider default",
+      "sdk_retries": 0,
+      "json_schema_enforced": false,
+      "price_placeholder_per_mtok": [
+        2.0,
+        12.0
+      ]
+    },
+    "limit_usd": 1.0,
+    "prior_campaign_usd": 0.3606007500000001,
+    "reserve_per_call_usd": 0.132246,
+    "planned_calls": 24
+  },
+  "environment": {
+    "git": {
+      "commit": "ed123744f6712f7c4eaf548f77d039bf21327642",
+      "dirty": true
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--pilot",
+      "--stage",
+      "pilot2",
+      "--model",
+      "gemma-4-31b-it",
+      "--tasks",
+      "cancel",
+      "comp",
+      "--wordings",
+      "SA",
+      "SN",
+      "--corrupt",
+      "3",
+      "--clean",
+      "0",
+      "--max-dollars",
+      "1",
+      "--workers",
+      "6"
+    ]
+  },
+  "summary": {
+    "cost_usd": 0.868184,
+    "records": 11,
+    "planned": 24,
+    "stopped": "budget: $0.8682 spent of $1.00",
+    "campaign_total_usd": 1.22878475
+  }
+}

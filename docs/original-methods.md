@@ -1,6 +1,6 @@
 # Original gate methods (historical)
 
-See the root README and PREREGISTRATION.md for the latest study and safe Gemini-only commands.
+See the root README and preregistration/PREREGISTRATION.md for the latest study and safe Gemini-only commands.
 
 **Question.** A sick customer asks to cancel. The agent has just looked up the reservation. Does it
 notice that the reservation's own payments contradict its insurance flag? How does that change

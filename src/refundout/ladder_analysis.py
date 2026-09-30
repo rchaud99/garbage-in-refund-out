@@ -1,6 +1,9 @@
-"""The preregistered analysis of the wording ladder and scope replication (LADDER_PREREGISTRATION.md).
+"""The preregistered analysis of the wording ladder and scope replication (preregistration/LADDER_PREREGISTRATION.md).
 
-    uv run python -m refundout.ladder_analysis runs/<dir> [runs/<dir> ...] [--out reports/ladder-results]
+    uv run python -m refundout.ladder_analysis records/ladder-2026-09-28/*_ladder-* --out reports/ladder-results
+
+Each run directory holds run.json and decisions.jsonl (local `runs/`) or decisions.jsonl.gz (the committed copies in
+`records/`); a stage that never recorded a call has neither and contributes no rows.
 
 Pilot runs (config.pilot) are refused. Failed calls and unreadable replies are missing data: counted and
 reported per cell, never scored as refusals, and a base enters a paired test only if both of its paired answers
@@ -10,6 +13,7 @@ are valid.
 from __future__ import annotations
 
 import argparse
+import gzip
 import json
 import random
 from collections import defaultdict
@@ -47,7 +51,10 @@ def load(dirs):
         meta = json.loads((Path(d) / "run.json").read_text())
         if meta["config"].get("pilot"):
             raise SystemExit(f"{d} is a pilot run; pilots are excluded from the confirmatory analysis")
-        rows += [json.loads(line) for line in (Path(d) / "decisions.jsonl").read_text().splitlines()]
+        plain, packed = Path(d) / "decisions.jsonl", Path(d) / "decisions.jsonl.gz"
+        text = plain.read_text() if plain.exists() else gzip.decompress(packed.read_bytes()).decode() \
+            if packed.exists() else ""
+        rows += [json.loads(line) for line in text.splitlines()]
     for r in rows:  # one parser for every run: re-read the stored reply with the current rule
         if r.get("reply"):
             r["action"], r["message"], r["parse_error"] = ladder.parse(r["task"], r["reply"]["text"])

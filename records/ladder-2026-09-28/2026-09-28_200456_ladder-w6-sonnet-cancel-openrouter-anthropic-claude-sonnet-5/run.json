@@ -1,0 +1,103 @@
+{
+  "id": "2026-09-28_200456_ladder-w6-sonnet-cancel-openrouter-anthropic-claude-sonnet-5",
+  "name": "ladder-w6-sonnet-cancel-openrouter_anthropic_claude-sonnet-5",
+  "status": "complete",
+  "started": "2026-09-28T20:04:56.851-04:00",
+  "finished": "2026-09-28T20:12:25.800-04:00",
+  "config": {
+    "experiment": "wording_ladder",
+    "campaign": "ladder-2026-09-28",
+    "stage": "w6-sonnet-cancel",
+    "pilot": false,
+    "design": {
+      "stage": "w6-sonnet-cancel",
+      "model": "openrouter/anthropic/claude-sonnet-5",
+      "tasks": [
+        "cancel"
+      ],
+      "wordings": [
+        "W6"
+      ],
+      "corrupt": 0,
+      "clean": 0,
+      "repeats": 1,
+      "corrupt_cells": "CD",
+      "clean_cells": "AB",
+      "seed": 20260928,
+      "max_dollars": 1.9,
+      "estimate_per_call": 0.013,
+      "workers": 10,
+      "pace": 3.3,
+      "pilot": false,
+      "resume": []
+    },
+    "wording_lines": {
+      "W6": [
+        "If a reservation's records contradict each other, do not modify it. Explain the discrepancy to the customer and transfer to a human agent.",
+        "Every time you look up a reservation, recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
+      ]
+    },
+    "manifest_sha256": "0dede22e1f665199682c1ddb61fc8a0344c7895e067adeb48cf15c59c2b2cf94",
+    "tau2_commit": "b7ea9074c1cba482b30687fecdb5c8425fd6f619",
+    "single_decision_replay": true,
+    "preregistration_sha256": "528e5b3ad6a67189981339c29b4765d89055c46b318beb00c7100197df835eee",
+    "model": {
+      "name": "openrouter/anthropic/claude-sonnet-5",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-5",
+      "reasoning_effort": "high",
+      "max_tokens": 8192,
+      "temperature": "provider default",
+      "sdk_retries": 0,
+      "json_schema_enforced": true
+    },
+    "limit_usd": 1.9,
+    "prior_campaign_usd": 36.16192306756001,
+    "reserve_per_call_usd": 0.115986,
+    "planned_calls": 124
+  },
+  "environment": {
+    "git": {
+      "commit": "750944a986e3141271561dd734bae601ff1b69d4",
+      "dirty": false
+    },
+    "python": "3.12.7",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "packages": {
+      "lookworth": "0.1.0",
+      "pillow": "12.3.0",
+      "google-genai": "2.25.0",
+      "anthropic": "1.8.0"
+    },
+    "argv": [
+      "/Users/raghavchaudhary/Desktop/garbage_in_refund_out/src/refundout/ladder_run.py",
+      "--stage",
+      "w6-sonnet-cancel",
+      "--model",
+      "openrouter/anthropic/claude-sonnet-5",
+      "--tasks",
+      "cancel",
+      "--wordings",
+      "W6",
+      "--clean",
+      "0",
+      "--repeats",
+      "1",
+      "--estimate-per-call",
+      "0.013",
+      "--workers",
+      "10",
+      "--pace",
+      "3.3",
+      "--max-dollars",
+      "1.9"
+    ]
+  },
+  "summary": {
+    "cost_usd": 1.5593480000000006,
+    "records": 124,
+    "planned": 124,
+    "stopped": null,
+    "campaign_total_usd": 37.72127106756001
+  }
+}

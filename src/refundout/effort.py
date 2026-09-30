@@ -196,7 +196,7 @@ def main():
         "synthetic": "Gift-card balances in both baseline families; first-payment amount is the sole within-family corruption.",
     }
     plan = ROOT / "reports/effort-plan.json"
-    prereg = ROOT / "EFFORT_PREREGISTRATION.md"
+    prereg = ROOT / "preregistration" / "EFFORT_PREREGISTRATION.md"
     if a.estimate:
         plan.write_text(json.dumps({**config, "items": manifest}, indent=2))
         return

@@ -1,5 +1,5 @@
 #!/bin/sh
-# The preregistered stages (LADDER_PREREGISTRATION.md). MODE is --estimate (writes the frozen plan) or a spend cap.
+# The preregistered stages (preregistration/LADDER_PREREGISTRATION.md). MODE is --estimate (writes the frozen plan) or a spend cap.
 # Usage: sh scripts/ladder_stages.sh <stage> [--estimate | --max-dollars N]
 set -e
 R="uv run python -m refundout.ladder_run"

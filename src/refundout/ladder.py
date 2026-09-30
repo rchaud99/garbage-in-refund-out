@@ -36,7 +36,7 @@ from refundout.cells import CLAIMING, NEUTRAL, Cell, edit
 from refundout.tau2 import INSURANCE_FEE, Airline, Record, due, paid, reservation_json, user_json
 
 QUIRKS = frozenset({"FMQD8I", "ZYD2S9", "LH9KMJ", "K2LPTR", "3SHBFW", "MQS6FV"})
-"""τ² one-way PHX→PHX records that Opus flags as inconsistent: excluded from bases (NEXT_EXPERIMENT.md)."""
+"""τ² one-way PHX→PHX records that Opus flags as inconsistent: excluded from bases (docs/history/NEXT_EXPERIMENT_2026-09-27.md)."""
 
 CHECK = "recompute the reservation's total from its fares, passengers and insurance, and compare it with its payments."
 NOUN = {"cancel": "a cancellation or refund", "comp": "compensation", "plans": "a cancellation or refund"}
@@ -52,7 +52,7 @@ WORDINGS: dict[str, tuple[str, ...]] = {
     "SA": (prompts.CLAUSE, "Before deciding on {noun}, " + CHECK),
     "SN": (prompts.CLAUSE, "Before telling the customer yes or no on {noun}, " + CHECK),
 }
-"""W0 stock policy; W1–W6 the ladder from NEXT_EXPERIMENT.md, least to most specific; SA/SN the action- and
+"""W0 stock policy; W1–W6 the ladder from docs/history/NEXT_EXPERIMENT_2026-09-27.md, least to most specific; SA/SN the action- and
 answer-scoped checks (for `cancel`, byte-identical to F1 and F1d). W6 uses SA/SN's exact check content, so W6, SA
 and SN differ only in scope (every lookup / the action / the answer)."""
 

@@ -342,10 +342,10 @@ def main():
     frozen = json.loads((ROOT / "reports" / "power-plan.json").read_text())
     if frozen["manifest_sha256"] != digest:
         raise RuntimeError("Estimate the exact design first")
-    if not (ROOT / "PREREGISTRATION.md").exists():
+    if not (ROOT / "preregistration" / "PREREGISTRATION.md").exists():
         raise RuntimeError("Write preregistration before running")
     config["preregistration_sha256"] = hashlib.sha256(
-        (ROOT / "PREREGISTRATION.md").read_bytes()
+        (ROOT / "preregistration" / "PREREGISTRATION.md").read_bytes()
     ).hexdigest()
     execute(queue, config, record, parse, "power-flash", a.max_dollars, a.workers)
 
